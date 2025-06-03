@@ -1,0 +1,51 @@
+C:\Users\MCABANILLASS\Documents\Visual Studio 2015\Projects\RepApssaExactus-ArticulosConsulta\Libreria\Exactus.LIBVB\bin\Debug\ApssaExactus.LIBVB.dll
+C:\Users\MCABANILLASS\Documents\Visual Studio 2015\Projects\RepApssaExactus-ArticulosConsulta\Libreria\Exactus.LIBVB\bin\Debug\ApssaExactus.LIBVB.pdb
+C:\Users\MCABANILLASS\Documents\Visual Studio 2015\Projects\RepApssaExactus-ArticulosConsulta\Libreria\Exactus.LIBVB\bin\Debug\ApssaExactus.LIBVB.xml
+C:\Users\MCABANILLASS\Documents\Visual Studio 2015\Projects\RepApssaExactus-ArticulosConsulta\Libreria\Exactus.LIBVB\obj\Debug\ApssaExactus.LIBVB.Resources.resources
+C:\Users\MCABANILLASS\Documents\Visual Studio 2015\Projects\RepApssaExactus-ArticulosConsulta\Libreria\Exactus.LIBVB\obj\Debug\ApssaExactus.LIBVB.vbproj.GenerateResource.Cache
+C:\Users\MCABANILLASS\Documents\Visual Studio 2015\Projects\RepApssaExactus-ArticulosConsulta\Libreria\Exactus.LIBVB\obj\Debug\ApssaExactus.LIBVB.dll
+C:\Users\MCABANILLASS\Documents\Visual Studio 2015\Projects\RepApssaExactus-ArticulosConsulta\Libreria\Exactus.LIBVB\obj\Debug\ApssaExactus.LIBVB.xml
+C:\Users\MCABANILLASS\Documents\Visual Studio 2015\Projects\RepApssaExactus-ArticulosConsulta\Libreria\Exactus.LIBVB\obj\Debug\ApssaExactus.LIBVB.pdb
+C:\Users\MCABANILLASS\Documents\Visual Studio 2015\Projects\RepApssaExactus\RepApssaExactus-ArticulosConsulta\Libreria\Exactus.LIBVB\bin\Debug\ApssaExactus.LIBVB.dll
+C:\Users\MCABANILLASS\Documents\Visual Studio 2015\Projects\RepApssaExactus\RepApssaExactus-ArticulosConsulta\Libreria\Exactus.LIBVB\bin\Debug\ApssaExactus.LIBVB.pdb
+C:\Users\MCABANILLASS\Documents\Visual Studio 2015\Projects\RepApssaExactus\RepApssaExactus-ArticulosConsulta\Libreria\Exactus.LIBVB\bin\Debug\ApssaExactus.LIBVB.xml
+C:\Users\MCABANILLASS\Documents\Visual Studio 2015\Projects\RepApssaExactus\RepApssaExactus-ArticulosConsulta\Libreria\Exactus.LIBVB\obj\Debug\ApssaExactus.LIBVB.vbprojResolveAssemblyReference.cache
+C:\Users\MCABANILLASS\Documents\Visual Studio 2015\Projects\RepApssaExactus\RepApssaExactus-ArticulosConsulta\Libreria\Exactus.LIBVB\obj\Debug\ApssaExactus.LIBVB.Resources.resources
+C:\Users\MCABANILLASS\Documents\Visual Studio 2015\Projects\RepApssaExactus\RepApssaExactus-ArticulosConsulta\Libreria\Exactus.LIBVB\obj\Debug\ApssaExactus.LIBVB.vbproj.GenerateResource.Cache
+C:\Users\MCABANILLASS\Documents\Visual Studio 2015\Projects\RepApssaExactus\RepApssaExactus-ArticulosConsulta\Libreria\Exactus.LIBVB\obj\Debug\ApssaExactus.LIBVB.dll
+C:\Users\MCABANILLASS\Documents\Visual Studio 2015\Projects\RepApssaExactus\RepApssaExactus-ArticulosConsulta\Libreria\Exactus.LIBVB\obj\Debug\ApssaExactus.LIBVB.xml
+C:\Users\MCABANILLASS\Documents\Visual Studio 2015\Projects\RepApssaExactus\RepApssaExactus-ArticulosConsulta\Libreria\Exactus.LIBVB\obj\Debug\ApssaExactus.LIBVB.pdb
+C:\Users\Max\Documents\Visual Studio 2015\Projects\RepApssaExactus\RepApssaExactus-ArticulosConsulta\Libreria\Exactus.LIBVB\bin\Debug\ApssaExactus.LIBVB.dll
+C:\Users\Max\Documents\Visual Studio 2015\Projects\RepApssaExactus\RepApssaExactus-ArticulosConsulta\Libreria\Exactus.LIBVB\bin\Debug\ApssaExactus.LIBVB.pdb
+C:\Users\Max\Documents\Visual Studio 2015\Projects\RepApssaExactus\RepApssaExactus-ArticulosConsulta\Libreria\Exactus.LIBVB\bin\Debug\ApssaExactus.LIBVB.xml
+C:\Users\Max\Documents\Visual Studio 2015\Projects\RepApssaExactus\RepApssaExactus-ArticulosConsulta\Libreria\Exactus.LIBVB\obj\Debug\ApssaExactus.LIBVB.Resources.resources
+C:\Users\Max\Documents\Visual Studio 2015\Projects\RepApssaExactus\RepApssaExactus-ArticulosConsulta\Libreria\Exactus.LIBVB\obj\Debug\ApssaExactus.LIBVB.vbproj.GenerateResource.Cache
+C:\Users\Max\Documents\Visual Studio 2015\Projects\RepApssaExactus\RepApssaExactus-ArticulosConsulta\Libreria\Exactus.LIBVB\obj\Debug\ApssaExactus.LIBVB.dll
+C:\Users\Max\Documents\Visual Studio 2015\Projects\RepApssaExactus\RepApssaExactus-ArticulosConsulta\Libreria\Exactus.LIBVB\obj\Debug\ApssaExactus.LIBVB.xml
+C:\Users\Max\Documents\Visual Studio 2015\Projects\RepApssaExactus\RepApssaExactus-ArticulosConsulta\Libreria\Exactus.LIBVB\obj\Debug\ApssaExactus.LIBVB.pdb
+C:\Users\Max\Documents\Visual Studio 2015\Projects\RepApssaExactus\RepApssaExactus-PrivilegiosTesoreria\Libreria\Exactus.LIBVB\bin\Debug\ApssaExactus.LIBVB.dll
+C:\Users\Max\Documents\Visual Studio 2015\Projects\RepApssaExactus\RepApssaExactus-PrivilegiosTesoreria\Libreria\Exactus.LIBVB\bin\Debug\ApssaExactus.LIBVB.pdb
+C:\Users\Max\Documents\Visual Studio 2015\Projects\RepApssaExactus\RepApssaExactus-PrivilegiosTesoreria\Libreria\Exactus.LIBVB\bin\Debug\ApssaExactus.LIBVB.xml
+C:\Users\Max\Documents\Visual Studio 2015\Projects\RepApssaExactus\RepApssaExactus-PrivilegiosTesoreria\Libreria\Exactus.LIBVB\obj\Debug\ApssaExactus.LIBVB.vbprojResolveAssemblyReference.cache
+C:\Users\Max\Documents\Visual Studio 2015\Projects\RepApssaExactus\RepApssaExactus-PrivilegiosTesoreria\Libreria\Exactus.LIBVB\obj\Debug\ApssaExactus.LIBVB.Resources.resources
+C:\Users\Max\Documents\Visual Studio 2015\Projects\RepApssaExactus\RepApssaExactus-PrivilegiosTesoreria\Libreria\Exactus.LIBVB\obj\Debug\ApssaExactus.LIBVB.vbproj.GenerateResource.Cache
+C:\Users\Max\Documents\Visual Studio 2015\Projects\RepApssaExactus\RepApssaExactus-PrivilegiosTesoreria\Libreria\Exactus.LIBVB\obj\Debug\ApssaExactus.LIBVB.dll
+C:\Users\Max\Documents\Visual Studio 2015\Projects\RepApssaExactus\RepApssaExactus-PrivilegiosTesoreria\Libreria\Exactus.LIBVB\obj\Debug\ApssaExactus.LIBVB.xml
+C:\Users\Max\Documents\Visual Studio 2015\Projects\RepApssaExactus\RepApssaExactus-PrivilegiosTesoreria\Libreria\Exactus.LIBVB\obj\Debug\ApssaExactus.LIBVB.pdb
+C:\Users\Max\Documents\Visual Studio 2015\Projects\RepApssaExactus\RepApssaExactus-GuiaRemisonElectronica\Libreria\Exactus.LIBVB\bin\Debug\ApssaExactus.LIBVB.dll
+C:\Users\Max\Documents\Visual Studio 2015\Projects\RepApssaExactus\RepApssaExactus-GuiaRemisonElectronica\Libreria\Exactus.LIBVB\bin\Debug\ApssaExactus.LIBVB.pdb
+C:\Users\Max\Documents\Visual Studio 2015\Projects\RepApssaExactus\RepApssaExactus-GuiaRemisonElectronica\Libreria\Exactus.LIBVB\bin\Debug\ApssaExactus.LIBVB.xml
+C:\Users\Max\Documents\Visual Studio 2015\Projects\RepApssaExactus\RepApssaExactus-GuiaRemisonElectronica\Libreria\Exactus.LIBVB\obj\Debug\ApssaExactus.LIBVB.vbprojResolveAssemblyReference.cache
+C:\Users\Max\Documents\Visual Studio 2015\Projects\RepApssaExactus\RepApssaExactus-GuiaRemisonElectronica\Libreria\Exactus.LIBVB\obj\Debug\ApssaExactus.LIBVB.Resources.resources
+C:\Users\Max\Documents\Visual Studio 2015\Projects\RepApssaExactus\RepApssaExactus-GuiaRemisonElectronica\Libreria\Exactus.LIBVB\obj\Debug\ApssaExactus.LIBVB.vbproj.GenerateResource.Cache
+C:\Users\Max\Documents\Visual Studio 2015\Projects\RepApssaExactus\RepApssaExactus-GuiaRemisonElectronica\Libreria\Exactus.LIBVB\obj\Debug\ApssaExactus.LIBVB.dll
+C:\Users\Max\Documents\Visual Studio 2015\Projects\RepApssaExactus\RepApssaExactus-GuiaRemisonElectronica\Libreria\Exactus.LIBVB\obj\Debug\ApssaExactus.LIBVB.xml
+C:\Users\Max\Documents\Visual Studio 2015\Projects\RepApssaExactus\RepApssaExactus-GuiaRemisonElectronica\Libreria\Exactus.LIBVB\obj\Debug\ApssaExactus.LIBVB.pdb
+D:\APSSA\RepApssaExactus-2023-09-05\RepApssaExactus-CargoEntregaRendir\Libreria\Exactus.LIBVB\bin\Debug\ApssaExactus.LIBVB.dll
+D:\APSSA\RepApssaExactus-2023-09-05\RepApssaExactus-CargoEntregaRendir\Libreria\Exactus.LIBVB\bin\Debug\ApssaExactus.LIBVB.pdb
+D:\APSSA\RepApssaExactus-2023-09-05\RepApssaExactus-CargoEntregaRendir\Libreria\Exactus.LIBVB\bin\Debug\ApssaExactus.LIBVB.xml
+D:\APSSA\RepApssaExactus-2023-09-05\RepApssaExactus-CargoEntregaRendir\Libreria\Exactus.LIBVB\obj\Debug\ApssaExactus.LIBVB.Resources.resources
+D:\APSSA\RepApssaExactus-2023-09-05\RepApssaExactus-CargoEntregaRendir\Libreria\Exactus.LIBVB\obj\Debug\ApssaExactus.LIBVB.vbproj.GenerateResource.Cache
+D:\APSSA\RepApssaExactus-2023-09-05\RepApssaExactus-CargoEntregaRendir\Libreria\Exactus.LIBVB\obj\Debug\ApssaExactus.LIBVB.dll
+D:\APSSA\RepApssaExactus-2023-09-05\RepApssaExactus-CargoEntregaRendir\Libreria\Exactus.LIBVB\obj\Debug\ApssaExactus.LIBVB.xml
+D:\APSSA\RepApssaExactus-2023-09-05\RepApssaExactus-CargoEntregaRendir\Libreria\Exactus.LIBVB\obj\Debug\ApssaExactus.LIBVB.pdb

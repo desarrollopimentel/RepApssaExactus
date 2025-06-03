@@ -1,0 +1,10 @@
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\Bitacora\obj\Debug\RepApssaExactus-Bitacora.csprojResolveAssemblyReference.cache
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\Bitacora\obj\Debug\RepApssaExactus-Bitacora.csproj.RepApssaExactus-Bitacora.exe.config
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\Bitacora\obj\Debug\ApssaExactus.frmBuscaArticulo.resources
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\Bitacora\obj\Debug\ApssaExactus.frmBuscaClienteV2.resources
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\Bitacora\obj\Debug\ApssaExactus.frmBusca_Articulo.resources
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\Bitacora\obj\Debug\ApssaExactus.frm_Bitacora.resources
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\Bitacora\obj\Debug\ApssaExactus.frm_ConsultaArticulos_Kardex_Transacciones.resources
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\Bitacora\obj\Debug\ApssaExactus.Properties.Resources.resources
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\Bitacora\obj\Debug\RepApssaExactus-Bitacora.csproj.GenerateResource.Cache
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\Bitacora\obj\Debug\RepApssaExactus-Bitacora.exe.licenses

@@ -1,0 +1,17 @@
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\CG-FacturasGY\obj\Debug\RepApssaExactus-CG-FacturasGY.csprojResolveAssemblyReference.cache
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\CG-FacturasGY\obj\Debug\RepApssaExactus-CG-FacturasGY.csproj.RepApssaExactus-CG-FacturasGY.exe.config
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\CG-FacturasGY\obj\Debug\ApssaExactus.frmBuscaArticulo.resources
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\CG-FacturasGY\obj\Debug\ApssaExactus.frmBuscaClienteV2.resources
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\CG-FacturasGY\obj\Debug\ApssaExactus.frmBusca_Articulo.resources
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\CG-FacturasGY\obj\Debug\ApssaExactus.frmCargaFacturaGYv2025.resources
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\CG-FacturasGY\obj\Debug\ApssaExactus.frm_FacturasSinCargos.resources
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\CG-FacturasGY\obj\Debug\ApssaExactus.frm_InventarioAuditoria.resources
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\CG-FacturasGY\obj\Debug\ApssaExactus.frm_ObtenerGRE.resources
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\CG-FacturasGY\obj\Debug\ApssaExactus.frm_PrivilegiosTesoreria_v2.resources
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\CG-FacturasGY\obj\Debug\ApssaExactus.frm_PrivilegiosTesoreria3.resources
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\CG-FacturasGY\obj\Debug\ApssaExactus.frm_PrivilegiosTesoreria.resources
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\CG-FacturasGY\obj\Debug\ApssaExactus.frm_PrivilegiosTesoreria2.resources
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\CG-FacturasGY\obj\Debug\ApssaExactus.frm_VisualizadorGRE.resources
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\CG-FacturasGY\obj\Debug\ApssaExactus.Properties.Resources.resources
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\CG-FacturasGY\obj\Debug\ApssaExactus.XtraForm1.resources
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\CG-FacturasGY\obj\Debug\RepApssaExactus-CG-FacturasGY.csproj.GenerateResource.Cache

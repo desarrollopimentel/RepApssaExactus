@@ -1,0 +1,16 @@
+X:\10\APSSA\LIBRERIA\Exactus.LIBVB\bin\Release\Exactus.LIBVB.dll
+X:\10\APSSA\LIBRERIA\Exactus.LIBVB\bin\Release\Exactus.LIBVB.pdb
+X:\10\APSSA\LIBRERIA\Exactus.LIBVB\bin\Release\Exactus.LIBVB.xml
+X:\10\APSSA\LIBRERIA\Exactus.LIBVB\obj\Release\Exactus.LIBVB.Resources.resources
+X:\10\APSSA\LIBRERIA\Exactus.LIBVB\obj\Release\Exactus.LIBVB.vbproj.GenerateResource.Cache
+X:\10\APSSA\LIBRERIA\Exactus.LIBVB\obj\Release\Exactus.LIBVB.dll
+X:\10\APSSA\LIBRERIA\Exactus.LIBVB\obj\Release\Exactus.LIBVB.xml
+X:\10\APSSA\LIBRERIA\Exactus.LIBVB\obj\Release\Exactus.LIBVB.pdb
+M:\APPSA_MX\APSSA_DEV\APSSA_VS2015_XA_TEST\LIBRERIA\Exactus.LIBVB\bin\Release\Exactus.LIBVB.dll
+M:\APPSA_MX\APSSA_DEV\APSSA_VS2015_XA_TEST\LIBRERIA\Exactus.LIBVB\bin\Release\Exactus.LIBVB.pdb
+M:\APPSA_MX\APSSA_DEV\APSSA_VS2015_XA_TEST\LIBRERIA\Exactus.LIBVB\bin\Release\Exactus.LIBVB.xml
+M:\APPSA_MX\APSSA_DEV\APSSA_VS2015_XA_TEST\LIBRERIA\Exactus.LIBVB\obj\Release\Exactus.LIBVB.Resources.resources
+M:\APPSA_MX\APSSA_DEV\APSSA_VS2015_XA_TEST\LIBRERIA\Exactus.LIBVB\obj\Release\Exactus.LIBVB.vbproj.GenerateResource.Cache
+M:\APPSA_MX\APSSA_DEV\APSSA_VS2015_XA_TEST\LIBRERIA\Exactus.LIBVB\obj\Release\Exactus.LIBVB.dll
+M:\APPSA_MX\APSSA_DEV\APSSA_VS2015_XA_TEST\LIBRERIA\Exactus.LIBVB\obj\Release\Exactus.LIBVB.xml
+M:\APPSA_MX\APSSA_DEV\APSSA_VS2015_XA_TEST\LIBRERIA\Exactus.LIBVB\obj\Release\Exactus.LIBVB.pdb

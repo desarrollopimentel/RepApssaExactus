@@ -1,0 +1,111 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace ApssaExactus
+{
+    public partial class frmLiquidacionReporteFiltros : Form
+    {
+
+        CargaLookUpBL objCargaLookUpBL = new CargaLookUpBL();
+
+        public frmLiquidacionReporteFiltros()
+        {
+            InitializeComponent();
+        }
+
+        private void frmLiquidacionReporteFiltros_Load(object sender, EventArgs e)
+        {
+
+            var fechaActual = DateTime.Today;
+            this.deFechaDesde.Text = fechaActual.ToString();
+            this.deFechaHasta.Text = fechaActual.ToString();
+
+            Cargar_Sucursales();
+            Cargar_Tarjetas();
+
+
+
+        }
+
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+
+            DateTime rep_dFechaDesde = Convert.ToDateTime(deFechaDesde.Text);               // {10/03/2025 00:00:00}
+            DateTime rep_dFechaHasta = Convert.ToDateTime(deFechaHasta.Text);   // {5/03/2025 00:00:00}
+            string rep_caja = cboCaja.SelectedValue.ToString();   // "0010"
+            string rep_tarjeta = cboTarjetas.Text;                //"VISANET"
+            
+            string rep_checkLocal = checkLocal.Text;
+            string rep_checkDolar = checkDolar.Text;
+            string rep_checkPendiente = checkPendiente.Text;
+            string rep_checkLiquidado = checkLiquidado.Text;
+
+            string rep_moneda = "L";
+            string rep_estado = "T";
+            string rep_mensaje = "XXXXxxxx";
+
+            frmLiquidacionReporte frmRpt = new frmLiquidacionReporte();
+            frmRpt._dFechaIni = rep_dFechaDesde;
+            frmRpt._dFechaFin = rep_dFechaHasta;
+            frmRpt._sucursal = rep_caja;
+            frmRpt._tarjeta = rep_tarjeta;
+            frmRpt._moneda = rep_moneda;
+            frmRpt._estado = rep_estado;
+            frmRpt._mensaje = rep_mensaje;
+            frmRpt.ShowDialog();
+
+            ////parametro que recibe de frmEstadoCuentaCliente
+            //public DateTime _dFechaIni { get; set; }
+            //public DateTime _dFechaFin { get; set; }
+            //public string _sucursal = string.Empty;
+            //public string _tarjeta = string.Empty;
+            //public string _moneda = string.Empty;
+            //public string _estado = string.Empty;
+            //public string _mensaje = string.Empty;
+
+    }
+
+
+
+
+        public void Cargar_Sucursales()
+        {
+            DataTable dtCaja = new DataTable();
+            dtCaja = objCargaLookUpBL.dtListarCajaBL(Global.vUserBaseDatos);
+            this.cboCaja.DataSource = dtCaja;
+            this.cboCaja.DisplayMember = "DESCRIPCION";
+            this.cboCaja.ValueMember = "CAJA";
+        }
+
+        public void Cargar_Tarjetas()
+        {
+            DataTable dtTarjetas = new DataTable();
+            dtTarjetas = objCargaLookUpBL.dtListarTarjetasBL(Global.vUserBaseDatos);
+            this.cboTarjetas.DataSource = dtTarjetas;
+            this.cboTarjetas.DisplayMember = "DESCRIPCION";
+            this.cboTarjetas.ValueMember = "TARJETA";
+        }
+
+
+
+
+
+
+
+
+
+    }
+}

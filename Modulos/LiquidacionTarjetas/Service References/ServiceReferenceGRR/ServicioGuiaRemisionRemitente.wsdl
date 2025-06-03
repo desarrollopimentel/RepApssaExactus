@@ -1,0 +1,1103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="RegistrarGRR">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ent_GuiaRemisionRemitente" type="tns:ene_GuiaRemisionRemitente" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ene_GuiaRemisionRemitente">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:en_AutenticacionGeneral">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="ent_RemitenteGRR" type="tns:en_RemitenteGRR" />
+              <s:element minOccurs="0" maxOccurs="1" name="ent_DestinatarioGRR" type="tns:en_DestinatarioGRR" />
+              <s:element minOccurs="0" maxOccurs="1" name="ent_ProveedorGRR" type="tns:en_ProveedorGRR" />
+              <s:element minOccurs="0" maxOccurs="1" name="ent_DatosGeneralesGRR" type="tns:en_DatosGeneralesGRR" />
+              <s:element minOccurs="0" maxOccurs="1" name="ent_InformacionAdicionalGRR" type="tns:en_InformacionAdicionalGRR" />
+              <s:element minOccurs="1" maxOccurs="1" name="at_ControlOtorgamiento" type="s:boolean" />
+              <s:element minOccurs="0" maxOccurs="1" name="ent_CompradorGRR" type="tns:en_CompradorGRR" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="en_AutenticacionGeneral">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ent_Autenticacion" type="tns:en_Autenticacion" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="en_Autenticacion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="at_Ruc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_Clave" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="en_RemitenteGRR">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="at_NumeroDocumentoIdentidad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_RazonSocial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_NombreComercial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_Telefono" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_CorreoContacto" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_SitioWeb" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_NumeroAutorizacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_CodigoAutorizacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ent_DireccionFiscal" type="tns:en_DireccionFiscalRemitente" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="en_DireccionFiscalRemitente">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="at_Ubigeo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_DireccionDetallada" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_Urbanizacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_Provincia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_Departamento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_Distrito" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_CodigoPais" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="en_DestinatarioGRR">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="at_TipoDocumentoIdentidad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_NumeroDocumentoIdentidad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_RazonSocial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ent_Correo" type="tns:en_Correo" />
+          <s:element minOccurs="0" maxOccurs="1" name="ent_DireccionFiscalDestinatario" type="tns:en_DireccionFiscalDestinatario" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="en_Correo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="at_CorreoPrincipal" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="aa_CorreoSecundario" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="en_DireccionFiscalDestinatario">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="at_Ubigeo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_DireccionDetallada" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_Urbanizacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_Provincia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_Departamento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_Distrito" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_CodigoPais" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="en_ProveedorGRR">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="at_TipoDocumentoIdentidad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_NumeroDocumentoIdentidad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_RazonSocial" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="en_DatosGeneralesGRR">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="at_FechaEmision" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_Serie" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="at_Numero" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_Observacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_FechaEnvio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_HoraEmision" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="l_ComprobanteAnteriorGRR" type="tns:ArrayOfEn_ComprobanteAnteriorGRR" />
+          <s:element minOccurs="0" maxOccurs="1" name="l_DocumentoRelacionadoGRR" type="tns:ArrayOfEn_DocumentoRelacionadoGRR" />
+          <s:element minOccurs="0" maxOccurs="1" name="ent_InformacionTrasladoGRR" type="tns:en_InformacionTrasladoGRR" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfEn_ComprobanteAnteriorGRR">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="en_ComprobanteAnteriorGRR" nillable="true" type="tns:en_ComprobanteAnteriorGRR" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="en_ComprobanteAnteriorGRR">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="at_Serie" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_Numero" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_TipoComprobante" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_NombreTipoComprobante" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_FechaEmision" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_Motivo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="at_TipoMotivo" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfEn_DocumentoRelacionadoGRR">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="en_DocumentoRelacionadoGRR" nillable="true" type="tns:en_DocumentoRelacionadoGRR" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="en_DocumentoRelacionadoGRR">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="at_NumeroComprobante" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_TipoComprobante" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_NombreComprobante" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_NumeroDocumentoIdentidad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_TipoDocumentoIdentidad" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="en_InformacionTrasladoGRR">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="at_CodigoMotivo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_DescripcionMotivo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="at_IndicadorMotivo" nillable="true" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="aa_IndicadorServicio" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="ent_InformacionPesoBrutoGRR" type="tns:en_InformacionPesoBrutoGRR" />
+          <s:element minOccurs="0" maxOccurs="1" name="l_InformacionTransporteGRR" type="tns:ArrayOfEn_InformacionTransporteGRR" />
+          <s:element minOccurs="0" maxOccurs="1" name="ent_PuntoLlegadaGRR" type="tns:en_PuntoLlegadaGRR" />
+          <s:element minOccurs="0" maxOccurs="1" name="ent_PuntoPartidaGRR" type="tns:en_PuntoPartidaGRR" />
+          <s:element minOccurs="0" maxOccurs="1" name="ent_ContenedorGRR" type="tns:en_ContenedorGRR" />
+          <s:element minOccurs="0" maxOccurs="1" name="l_ContenedorGRR" type="tns:ArrayOfEn_ContenedorGRR" />
+          <s:element minOccurs="0" maxOccurs="1" name="l_EmbarqueGRR" type="tns:ArrayOfEn_EmbarqueGRR" />
+          <s:element minOccurs="0" maxOccurs="1" name="l_DesembarqueGRR" type="tns:ArrayOfEn_DesembarqueGRR" />
+          <s:element minOccurs="0" maxOccurs="1" name="l_BienesGRR" type="tns:ArrayOfEn_BienesGRR" />
+          <s:element minOccurs="0" maxOccurs="1" name="ent_InformacionAdicionalTotales" type="tns:en_InformacionAdicionalTotales" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="en_InformacionPesoBrutoGRR">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="at_Peso" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_UnidadMedida" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="at_Cantidad" nillable="true" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_SustentoDiferencia" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="at_PesoSeleccion" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_UnidadMedidaSeleccion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfEn_InformacionTransporteGRR">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="en_InformacionTransporteGRR" nillable="true" type="tns:en_InformacionTransporteGRR" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="en_InformacionTransporteGRR">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="at_Modalidad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_FechaInicio" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ent_TransportePublicoGRR" type="tns:en_TransportePublicoGRR" />
+          <s:element minOccurs="0" maxOccurs="1" name="ent_TransportePrivadoGRR" type="tns:en_TransportePrivadoGRR" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="en_TransportePublicoGRR">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="at_TipoDocumentoIdentidad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_NumeroDocumentoIdentidad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_RazonSocial" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_NumeroMTC" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_NumeroAutorizacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_CodigoAutorizacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ent_VehiculoGRR" type="tns:en_VehiculoGRR" />
+          <s:element minOccurs="0" maxOccurs="1" name="l_VehiculoGRR" type="tns:ArrayOfEn_VehiculoGRR" />
+          <s:element minOccurs="0" maxOccurs="1" name="l_ConductorGRR" type="tns:ArrayOfEn_ConductorGRR" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="en_VehiculoGRR">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="aa_NumeroPlaca" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_Marca" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_Modelo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="aa_Inspeccion" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_TarjetaCirculacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_NumeroAutorizacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_CodigoAutorizacion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfEn_VehiculoGRR">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="en_VehiculoGRR" nillable="true" type="tns:en_VehiculoGRR" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfEn_ConductorGRR">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="en_ConductorGRR" nillable="true" type="tns:en_ConductorGRR" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="en_ConductorGRR">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="at_TipoDocumentoIdentidad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_NumeroDocumentoIdentidad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_Licencia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_Nombres" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_Apellidos" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="en_TransportePrivadoGRR">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ent_VehiculoGRR" type="tns:en_VehiculoGRR" />
+          <s:element minOccurs="0" maxOccurs="1" name="l_ConductorGRR" type="tns:ArrayOfEn_ConductorGRR" />
+          <s:element minOccurs="0" maxOccurs="1" name="l_VehiculoGRR" type="tns:ArrayOfEn_VehiculoGRR" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="en_PuntoLlegadaGRR">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="at_Ubigeo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_DireccionCompleta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_Urbanizacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_Provincia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_Departamento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_Distrito" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_NumeroDocumentoIdentidad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_CodigoEstablecimiento" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="at_LatitudGeografica" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="at_LongitudGeografica" nillable="true" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="en_PuntoPartidaGRR">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="at_Ubigeo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_DireccionCompleta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_Urbanizacion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_Provincia" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_Departamento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_Distrito" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_NumeroDocumentoIdentidad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_CodigoEstablecimiento" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="at_LatitudGeografica" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="at_LongitudGeografica" nillable="true" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="en_ContenedorGRR">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="at_Numero" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_Booking" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="aa_Precinto" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="aa_Seguro" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_PrecintoP" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfEn_ContenedorGRR">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="en_ContenedorGRR" nillable="true" type="tns:en_ContenedorGRR" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfEn_EmbarqueGRR">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="en_EmbarqueGRR" nillable="true" type="tns:en_EmbarqueGRR" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="en_EmbarqueGRR">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="at_Codigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_Descripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_TipoLocacion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfEn_DesembarqueGRR">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="en_DesembarqueGRR" nillable="true" type="tns:en_DesembarqueGRR" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="en_DesembarqueGRR">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="at_Codigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_Descripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_TipoLocacion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfEn_BienesGRR">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="en_BienesGRR" nillable="true" type="tns:en_BienesGRR" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="en_BienesGRR">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="at_Cantidad" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_UnidadMedida" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_Descripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="aa_DescripcionAdicional" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_Codigo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_Kardex" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="at_PesoNeto" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="at_PesoBruto" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_CodigoProductoSUNAT" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_CodigoGTIN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_CodigoAdicional" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_EstructuraGTIN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_SubpartidaNacional" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_NumeracionNormalizado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_IndicadorNormalizado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_NumeroSerieNormalizado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="l_CamposDinamicosGRR" type="tns:ArrayOfEn_CamposDinamicosGRR" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfEn_CamposDinamicosGRR">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="en_CamposDinamicosGRR" nillable="true" type="tns:en_CamposDinamicosGRR" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="en_CamposDinamicosGRR">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="at_Valor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_Concepto" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="en_InformacionAdicionalTotales">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="at_PesoNeto" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="at_PesoBruto" nillable="true" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="at_CantidadBobina" nillable="true" type="s:long" />
+          <s:element minOccurs="1" maxOccurs="1" name="at_CantidadBienes" nillable="true" type="s:long" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="en_InformacionAdicionalGRR">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="at_LogoRepresentacionImpresa" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="l_Grupo" type="tns:ArrayOfEn_GrupoGRR" />
+          <s:element minOccurs="0" maxOccurs="1" name="ent_Integracion" type="tns:en_Integracion" />
+          <s:element minOccurs="0" maxOccurs="1" name="l_CamposDinamicosSuperior" type="tns:ArrayOfEn_CamposDinamicosSuperior" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfEn_GrupoGRR">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="en_GrupoGRR" nillable="true" type="tns:en_GrupoGRR" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="en_GrupoGRR">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="at_Titulo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="l_Etiqueta" type="tns:ArrayOfEn_EtiquetaGRR" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfEn_EtiquetaGRR">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="en_EtiquetaGRR" nillable="true" type="tns:en_EtiquetaGRR" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="en_EtiquetaGRR">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="at_Etiqueta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_Valor" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="en_Integracion">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="at_TipoIntegracion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_NombreArchivo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_SistemaEmision" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfEn_CamposDinamicosSuperior">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="en_CamposDinamicosSuperior" nillable="true" type="tns:en_CamposDinamicosSuperior" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="en_CamposDinamicosSuperior">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="at_Valor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_Concepto" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="en_CompradorGRR">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="at_TipoDocumentoIdentidad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_NumeroDocumentoIdentidad" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_RazonSocial" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RegistrarGRRResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegistrarGRRResult" type="tns:ens_Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ens_Respuesta">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="at_NivelResultado" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_MensajeResultado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_CodigoHash" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_NombreXML" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="at_CodigoError" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConsultarEstadoGRR">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ent_ConsultarEstado" type="tns:ene_ConsultarEstado" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ene_ConsultarEstado">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:en_AutenticacionGeneral">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="at_NumeroDocumentoIdentidad" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="at_CantidadConsultar" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="ConsultarEstadoGRRResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarEstadoGRRResult" type="tns:ens_ConsultarEstadoGR" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ens_ConsultarEstadoGR">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="at_NivelResultado" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_MensajeResultado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="l_ResultadoEstadoComprobante" type="tns:ArrayOfEn_ResultadoEstadoComprobanteGR" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfEn_ResultadoEstadoComprobanteGR">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="en_ResultadoEstadoComprobanteGR" nillable="true" type="tns:en_ResultadoEstadoComprobanteGR" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="en_ResultadoEstadoComprobanteGR">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="at_Serie" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="at_Numero" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ent_EstadoOtorgado" type="tns:en_EstadoOtorgado" />
+          <s:element minOccurs="0" maxOccurs="1" name="ent_EstadoLeido" type="tns:en_EstadoLeido" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="en_EstadoOtorgado">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="at_FechaOtorgado" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="en_EstadoLeido">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="at_FechaLeido" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConfirmarEstadoGRR">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ent_ConfirmarEstado" type="tns:ene_ConfirmarEstado" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ene_ConfirmarEstado">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:en_AutenticacionGeneral">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="at_NumeroDocumentoIdentidad" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="l_Comprobante" type="tns:ArrayOfEn_ComprobanteConfirmarEstado" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfEn_ComprobanteConfirmarEstado">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="en_ComprobanteConfirmarEstado" nillable="true" type="tns:en_ComprobanteConfirmarEstado" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="en_ComprobanteConfirmarEstado">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="at_Serie" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="at_Numero" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConfirmarEstadoGRRResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmarEstadoGRRResult" type="tns:ens_ConfirmarEstado" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ens_ConfirmarEstado">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="at_NivelResultado" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_MensajeResultado" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConsultarRespuestaGRR">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ent_ConsultarRespuesta" type="tns:ene_ConsultarRespuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ene_ConsultarRespuesta">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:en_AutenticacionGeneral">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="at_NumeroDocumentoIdentidad" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="at_CantidadConsultar" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="ConsultarRespuestaGRRResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarRespuestaGRRResult" type="tns:ens_ConsultarRespuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ens_ConsultarRespuesta">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="at_NivelResultado" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_MensajeResultado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="l_ResultadoRespuestaComprobante" type="tns:ArrayOfEn_ResultadoRespuestaComprobante" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfEn_ResultadoRespuestaComprobante">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="en_ResultadoRespuestaComprobante" nillable="true" type="tns:en_ResultadoRespuestaComprobante" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="en_ResultadoRespuestaComprobante">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="at_Serie" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="at_Numero" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="ent_RespuestaComprobante" type="tns:en_RespuestaComprobante" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="en_RespuestaComprobante">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="at_TipoRespuesta" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_Descripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_FechaRespuesta" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="at_CodigoRespuesta" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_Mensaje" type="tns:ArrayOfString" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConfirmarRespuestaGRR">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ent_ConfirmarRespuesta" type="tns:ene_ConfirmarRespuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ene_ConfirmarRespuesta">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:en_AutenticacionGeneral">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="at_NumeroDocumentoIdentidad" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="l_Comprobante" type="tns:ArrayOfEn_ComprobanteConfirmarRespuesta" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfEn_ComprobanteConfirmarRespuesta">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="en_ComprobanteConfirmarRespuesta" nillable="true" type="tns:en_ComprobanteConfirmarRespuesta" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="en_ComprobanteConfirmarRespuesta">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="at_Serie" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="at_Numero" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="at_CodigoRespuesta" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConfirmarRespuestaGRRResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmarRespuestaGRRResult" type="tns:ens_ConfirmarRespuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ens_ConfirmarRespuesta">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="at_NivelResultado" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_MensajeResultado" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConsultarXMLGRR">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ent_ConsultarXML" type="tns:ene_ConsultarXML" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ene_ConsultarXML">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:en_AutenticacionGeneral">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="at_NumeroDocumentoIdentidad" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ent_ComprobanteConsultarXML" type="tns:en_ComprobanteConsultarXML" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="en_ComprobanteConsultarXML">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="at_Serie" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="at_Numero" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="at_NumeroRespuesta" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConsultarXMLGRRResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarXMLGRRResult" type="tns:ens_ConsultarXML" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ens_ConsultarXML">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="at_NivelResultado" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_MensajeResultado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ent_ResultadoXML" type="tns:en_ResultadoConsultarXML" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="en_ResultadoConsultarXML">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="at_XML" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_NombreXML" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_FechaXML" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="OtorgarGRR">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ent_OtorgarComprobante" type="tns:ene_OtorgarComprobante" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ene_OtorgarComprobante">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:en_AutenticacionGeneral">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="at_NumeroDocumentoIdentidad" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="l_ComprobanteOtorgar" type="tns:ArrayOfEn_ComprobanteOtorgarComprobante" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="ArrayOfEn_ComprobanteOtorgarComprobante">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="en_ComprobanteOtorgarComprobante" nillable="true" type="tns:en_ComprobanteOtorgarComprobante" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="en_ComprobanteOtorgarComprobante">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="at_Serie" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="at_Numero" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="OtorgarGRRResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OtorgarGRRResult" type="tns:ens_OtorgarComprobante" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ens_OtorgarComprobante">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="at_NivelResultado" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_MensajeResultado" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConsultaIndividualGRR">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ent_ConsultarComprobanteIndividual" type="tns:ene_ConsultarComprobanteIndividual" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ene_ConsultarComprobanteIndividual">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:en_AutenticacionGeneral">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="at_NumeroDocumentoIdentidad" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="at_Serie" type="s:string" />
+              <s:element minOccurs="1" maxOccurs="1" name="at_Numero" type="s:int" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:element name="ConsultaIndividualGRRResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultaIndividualGRRResult" type="tns:ens_ConsultarComprobanteIndividual" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ens_ConsultarComprobanteIndividual">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="at_NivelResultado" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_MensajeResultado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ent_InformacionComprobante" type="tns:en_InformacionComprobante" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="en_InformacionComprobante">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="at_FechaGeneracion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_FechaTransmision" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_FechaOtorgamiento" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_FechaReversion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_FechaLeido" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_CodigoHash" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="l_respuestas" type="tns:ArrayOfEn_Respuestas" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfEn_Respuestas">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="en_Respuestas" nillable="true" type="tns:en_Respuestas" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="en_Respuestas">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="at_NroRespuesta" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_CodigoRespuesta" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_Descripcion" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_FechaSunat" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConsultarRI_GRR">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ent_ConsultarRI" type="tns:ene_ConsultarRI" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ene_ConsultarRI">
+        <s:complexContent mixed="false">
+          <s:extension base="tns:en_AutenticacionGeneral">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="1" name="at_NumeroDocumentoIdentidad" type="s:string" />
+              <s:element minOccurs="0" maxOccurs="1" name="ent_Comprobante" type="tns:en_ComprobanteConsultarRI" />
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
+      </s:complexType>
+      <s:complexType name="en_ComprobanteConsultarRI">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="at_Serie" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="at_Numero" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ConsultarRI_GRRResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConsultarRI_GRRResult" type="tns:ens_ResultadoRI" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ens_ResultadoRI">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="at_NivelResultado" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_MensajeResultado" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ent_Resultado" type="tns:en_ResultadoConsultarRI" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="en_ResultadoConsultarRI">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="at_ArchivoRI" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_NombreRI" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="at_FechaGenerado" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="RegistrarGRR20">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ent_GuiaRemisionRemitente" type="tns:ene_GuiaRemisionRemitente" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegistrarGRR20Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegistrarGRR20Result" type="tns:ens_Respuesta" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="RegistrarGRRSoapIn">
+    <wsdl:part name="parameters" element="tns:RegistrarGRR" />
+  </wsdl:message>
+  <wsdl:message name="RegistrarGRRSoapOut">
+    <wsdl:part name="parameters" element="tns:RegistrarGRRResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarEstadoGRRSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarEstadoGRR" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarEstadoGRRSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarEstadoGRRResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmarEstadoGRRSoapIn">
+    <wsdl:part name="parameters" element="tns:ConfirmarEstadoGRR" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmarEstadoGRRSoapOut">
+    <wsdl:part name="parameters" element="tns:ConfirmarEstadoGRRResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarRespuestaGRRSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarRespuestaGRR" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarRespuestaGRRSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarRespuestaGRRResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmarRespuestaGRRSoapIn">
+    <wsdl:part name="parameters" element="tns:ConfirmarRespuestaGRR" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmarRespuestaGRRSoapOut">
+    <wsdl:part name="parameters" element="tns:ConfirmarRespuestaGRRResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarXMLGRRSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarXMLGRR" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarXMLGRRSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarXMLGRRResponse" />
+  </wsdl:message>
+  <wsdl:message name="OtorgarGRRSoapIn">
+    <wsdl:part name="parameters" element="tns:OtorgarGRR" />
+  </wsdl:message>
+  <wsdl:message name="OtorgarGRRSoapOut">
+    <wsdl:part name="parameters" element="tns:OtorgarGRRResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaIndividualGRRSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultaIndividualGRR" />
+  </wsdl:message>
+  <wsdl:message name="ConsultaIndividualGRRSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultaIndividualGRRResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarRI_GRRSoapIn">
+    <wsdl:part name="parameters" element="tns:ConsultarRI_GRR" />
+  </wsdl:message>
+  <wsdl:message name="ConsultarRI_GRRSoapOut">
+    <wsdl:part name="parameters" element="tns:ConsultarRI_GRRResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegistrarGRR20SoapIn">
+    <wsdl:part name="parameters" element="tns:RegistrarGRR20" />
+  </wsdl:message>
+  <wsdl:message name="RegistrarGRR20SoapOut">
+    <wsdl:part name="parameters" element="tns:RegistrarGRR20Response" />
+  </wsdl:message>
+  <wsdl:portType name="ServicioGuiaRemisionRemitente">
+    <wsdl:operation name="RegistrarGRR">
+      <wsdl:input message="tns:RegistrarGRRSoapIn" />
+      <wsdl:output message="tns:RegistrarGRRSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarEstadoGRR">
+      <wsdl:input message="tns:ConsultarEstadoGRRSoapIn" />
+      <wsdl:output message="tns:ConsultarEstadoGRRSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmarEstadoGRR">
+      <wsdl:input message="tns:ConfirmarEstadoGRRSoapIn" />
+      <wsdl:output message="tns:ConfirmarEstadoGRRSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarRespuestaGRR">
+      <wsdl:input message="tns:ConsultarRespuestaGRRSoapIn" />
+      <wsdl:output message="tns:ConsultarRespuestaGRRSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmarRespuestaGRR">
+      <wsdl:input message="tns:ConfirmarRespuestaGRRSoapIn" />
+      <wsdl:output message="tns:ConfirmarRespuestaGRRSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarXMLGRR">
+      <wsdl:input message="tns:ConsultarXMLGRRSoapIn" />
+      <wsdl:output message="tns:ConsultarXMLGRRSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OtorgarGRR">
+      <wsdl:input message="tns:OtorgarGRRSoapIn" />
+      <wsdl:output message="tns:OtorgarGRRSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaIndividualGRR">
+      <wsdl:input message="tns:ConsultaIndividualGRRSoapIn" />
+      <wsdl:output message="tns:ConsultaIndividualGRRSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarRI_GRR">
+      <wsdl:input message="tns:ConsultarRI_GRRSoapIn" />
+      <wsdl:output message="tns:ConsultarRI_GRRSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarGRR20">
+      <wsdl:input message="tns:RegistrarGRR20SoapIn" />
+      <wsdl:output message="tns:RegistrarGRR20SoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServicioGuiaRemisionRemitente" type="tns:ServicioGuiaRemisionRemitente">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RegistrarGRR">
+      <soap:operation soapAction="http://tempuri.org/RegistrarGRR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarEstadoGRR">
+      <soap:operation soapAction="http://tempuri.org/ConsultarEstadoGRR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmarEstadoGRR">
+      <soap:operation soapAction="http://tempuri.org/ConfirmarEstadoGRR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarRespuestaGRR">
+      <soap:operation soapAction="http://tempuri.org/ConsultarRespuestaGRR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmarRespuestaGRR">
+      <soap:operation soapAction="http://tempuri.org/ConfirmarRespuestaGRR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarXMLGRR">
+      <soap:operation soapAction="http://tempuri.org/ConsultarXMLGRR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OtorgarGRR">
+      <soap:operation soapAction="http://tempuri.org/OtorgarGRR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaIndividualGRR">
+      <soap:operation soapAction="http://tempuri.org/ConsultaIndividualGRR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarRI_GRR">
+      <soap:operation soapAction="http://tempuri.org/ConsultarRI_GRR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarGRR20">
+      <soap:operation soapAction="http://tempuri.org/RegistrarGRR20" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServicioGuiaRemisionRemitente1" type="tns:ServicioGuiaRemisionRemitente">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="RegistrarGRR">
+      <soap12:operation soapAction="http://tempuri.org/RegistrarGRR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarEstadoGRR">
+      <soap12:operation soapAction="http://tempuri.org/ConsultarEstadoGRR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmarEstadoGRR">
+      <soap12:operation soapAction="http://tempuri.org/ConfirmarEstadoGRR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarRespuestaGRR">
+      <soap12:operation soapAction="http://tempuri.org/ConsultarRespuestaGRR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmarRespuestaGRR">
+      <soap12:operation soapAction="http://tempuri.org/ConfirmarRespuestaGRR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarXMLGRR">
+      <soap12:operation soapAction="http://tempuri.org/ConsultarXMLGRR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OtorgarGRR">
+      <soap12:operation soapAction="http://tempuri.org/OtorgarGRR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultaIndividualGRR">
+      <soap12:operation soapAction="http://tempuri.org/ConsultaIndividualGRR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConsultarRI_GRR">
+      <soap12:operation soapAction="http://tempuri.org/ConsultarRI_GRR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RegistrarGRR20">
+      <soap12:operation soapAction="http://tempuri.org/RegistrarGRR20" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ServicioGuiaRemisionRemitente">
+    <wsdl:port name="ServicioGuiaRemisionRemitente" binding="tns:ServicioGuiaRemisionRemitente">
+      <soap:address location="http://192.168.2.15/WS_GuiaRemisionRemitente/ServicioGuiaRemisionRemitente.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServicioGuiaRemisionRemitente1" binding="tns:ServicioGuiaRemisionRemitente1">
+      <soap12:address location="http://192.168.2.15/WS_GuiaRemisionRemitente/ServicioGuiaRemisionRemitente.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,52 @@
+C:\Apssa\RepApssaCC\Libreria\Exactus.LIBVB\bin\Debug\ApssaCC.LIBVB.dll
+C:\Apssa\RepApssaCC\Libreria\Exactus.LIBVB\bin\Debug\ApssaCC.LIBVB.pdb
+C:\Apssa\RepApssaCC\Libreria\Exactus.LIBVB\bin\Debug\ApssaCC.LIBVB.xml
+C:\Apssa\RepApssaCC\Libreria\Exactus.LIBVB\obj\Debug\ApssaCC.LIBVB.Resources.resources
+C:\Apssa\RepApssaCC\Libreria\Exactus.LIBVB\obj\Debug\ApssaCC.LIBVB.vbproj.GenerateResource.Cache
+C:\Apssa\RepApssaCC\Libreria\Exactus.LIBVB\obj\Debug\ApssaCC.LIBVB.dll
+C:\Apssa\RepApssaCC\Libreria\Exactus.LIBVB\obj\Debug\ApssaCC.LIBVB.xml
+C:\Apssa\RepApssaCC\Libreria\Exactus.LIBVB\obj\Debug\ApssaCC.LIBVB.pdb
+D:\DevApssa\RepApssaCC\Libreria\Exactus.LIBVB\bin\Debug\ApssaCC.LIBVB.dll
+D:\DevApssa\RepApssaCC\Libreria\Exactus.LIBVB\bin\Debug\ApssaCC.LIBVB.pdb
+D:\DevApssa\RepApssaCC\Libreria\Exactus.LIBVB\bin\Debug\ApssaCC.LIBVB.xml
+D:\DevApssa\RepApssaCC\Libreria\Exactus.LIBVB\obj\Debug\ApssaCC.LIBVB.vbprojResolveAssemblyReference.cache
+D:\DevApssa\RepApssaCC\Libreria\Exactus.LIBVB\obj\Debug\ApssaCC.LIBVB.Resources.resources
+D:\DevApssa\RepApssaCC\Libreria\Exactus.LIBVB\obj\Debug\ApssaCC.LIBVB.vbproj.GenerateResource.Cache
+D:\DevApssa\RepApssaCC\Libreria\Exactus.LIBVB\obj\Debug\ApssaCC.LIBVB.dll
+D:\DevApssa\RepApssaCC\Libreria\Exactus.LIBVB\obj\Debug\ApssaCC.LIBVB.xml
+D:\DevApssa\RepApssaCC\Libreria\Exactus.LIBVB\obj\Debug\ApssaCC.LIBVB.pdb
+D:\APSSA\NET\Max\RepApssaCC\Libreria\Exactus.LIBVB\bin\Debug\ApssaCC.LIBVB.dll
+D:\APSSA\NET\Max\RepApssaCC\Libreria\Exactus.LIBVB\bin\Debug\ApssaCC.LIBVB.pdb
+D:\APSSA\NET\Max\RepApssaCC\Libreria\Exactus.LIBVB\bin\Debug\ApssaCC.LIBVB.xml
+D:\APSSA\NET\Max\RepApssaCC\Libreria\Exactus.LIBVB\obj\Debug\ApssaCC.LIBVB.Resources.resources
+D:\APSSA\NET\Max\RepApssaCC\Libreria\Exactus.LIBVB\obj\Debug\ApssaCC.LIBVB.vbproj.GenerateResource.Cache
+D:\APSSA\NET\Max\RepApssaCC\Libreria\Exactus.LIBVB\obj\Debug\ApssaCC.LIBVB.dll
+D:\APSSA\NET\Max\RepApssaCC\Libreria\Exactus.LIBVB\obj\Debug\ApssaCC.LIBVB.xml
+D:\APSSA\NET\Max\RepApssaCC\Libreria\Exactus.LIBVB\obj\Debug\ApssaCC.LIBVB.pdb
+C:\Users\MCABANILLASS\Documents\Visual Studio 2015\Projects\RepApssaCC\Libreria\Exactus.LIBVB\bin\Debug\ApssaCC.LIBVB.dll
+C:\Users\MCABANILLASS\Documents\Visual Studio 2015\Projects\RepApssaCC\Libreria\Exactus.LIBVB\bin\Debug\ApssaCC.LIBVB.pdb
+C:\Users\MCABANILLASS\Documents\Visual Studio 2015\Projects\RepApssaCC\Libreria\Exactus.LIBVB\bin\Debug\ApssaCC.LIBVB.xml
+C:\Users\MCABANILLASS\Documents\Visual Studio 2015\Projects\RepApssaCC\Libreria\Exactus.LIBVB\obj\Debug\ApssaCC.LIBVB.vbprojResolveAssemblyReference.cache
+C:\Users\MCABANILLASS\Documents\Visual Studio 2015\Projects\RepApssaCC\Libreria\Exactus.LIBVB\obj\Debug\ApssaCC.LIBVB.Resources.resources
+C:\Users\MCABANILLASS\Documents\Visual Studio 2015\Projects\RepApssaCC\Libreria\Exactus.LIBVB\obj\Debug\ApssaCC.LIBVB.vbproj.GenerateResource.Cache
+C:\Users\MCABANILLASS\Documents\Visual Studio 2015\Projects\RepApssaCC\Libreria\Exactus.LIBVB\obj\Debug\ApssaCC.LIBVB.dll
+C:\Users\MCABANILLASS\Documents\Visual Studio 2015\Projects\RepApssaCC\Libreria\Exactus.LIBVB\obj\Debug\ApssaCC.LIBVB.xml
+C:\Users\MCABANILLASS\Documents\Visual Studio 2015\Projects\RepApssaCC\Libreria\Exactus.LIBVB\obj\Debug\ApssaCC.LIBVB.pdb
+C:\Users\MCABANILLASS\Documents\Visual Studio 2015\Projects\RepApssaExactusCC\Libreria\Exactus.LIBVB\bin\Debug\ApssaCC.LIBVB.dll
+C:\Users\MCABANILLASS\Documents\Visual Studio 2015\Projects\RepApssaExactusCC\Libreria\Exactus.LIBVB\bin\Debug\ApssaCC.LIBVB.pdb
+C:\Users\MCABANILLASS\Documents\Visual Studio 2015\Projects\RepApssaExactusCC\Libreria\Exactus.LIBVB\bin\Debug\ApssaCC.LIBVB.xml
+C:\Users\MCABANILLASS\Documents\Visual Studio 2015\Projects\RepApssaExactusCC\Libreria\Exactus.LIBVB\obj\Debug\ApssaCC.LIBVB.vbprojResolveAssemblyReference.cache
+C:\Users\MCABANILLASS\Documents\Visual Studio 2015\Projects\RepApssaExactusCC\Libreria\Exactus.LIBVB\obj\Debug\ApssaCC.LIBVB.Resources.resources
+C:\Users\MCABANILLASS\Documents\Visual Studio 2015\Projects\RepApssaExactusCC\Libreria\Exactus.LIBVB\obj\Debug\ApssaCC.LIBVB.vbproj.GenerateResource.Cache
+C:\Users\MCABANILLASS\Documents\Visual Studio 2015\Projects\RepApssaExactusCC\Libreria\Exactus.LIBVB\obj\Debug\ApssaCC.LIBVB.dll
+C:\Users\MCABANILLASS\Documents\Visual Studio 2015\Projects\RepApssaExactusCC\Libreria\Exactus.LIBVB\obj\Debug\ApssaCC.LIBVB.xml
+C:\Users\MCABANILLASS\Documents\Visual Studio 2015\Projects\RepApssaExactusCC\Libreria\Exactus.LIBVB\obj\Debug\ApssaCC.LIBVB.pdb
+C:\Users\MCABANILLASS\Documents\Visual Studio 2015\Projects\RepApssaExactusArticulosConsulta\Libreria\Exactus.LIBVB\bin\Debug\ApssaCC.LIBVB.dll
+C:\Users\MCABANILLASS\Documents\Visual Studio 2015\Projects\RepApssaExactusArticulosConsulta\Libreria\Exactus.LIBVB\bin\Debug\ApssaCC.LIBVB.pdb
+C:\Users\MCABANILLASS\Documents\Visual Studio 2015\Projects\RepApssaExactusArticulosConsulta\Libreria\Exactus.LIBVB\bin\Debug\ApssaCC.LIBVB.xml
+C:\Users\MCABANILLASS\Documents\Visual Studio 2015\Projects\RepApssaExactusArticulosConsulta\Libreria\Exactus.LIBVB\obj\Debug\ApssaCC.LIBVB.vbprojResolveAssemblyReference.cache
+C:\Users\MCABANILLASS\Documents\Visual Studio 2015\Projects\RepApssaExactusArticulosConsulta\Libreria\Exactus.LIBVB\obj\Debug\ApssaCC.LIBVB.Resources.resources
+C:\Users\MCABANILLASS\Documents\Visual Studio 2015\Projects\RepApssaExactusArticulosConsulta\Libreria\Exactus.LIBVB\obj\Debug\ApssaCC.LIBVB.vbproj.GenerateResource.Cache
+C:\Users\MCABANILLASS\Documents\Visual Studio 2015\Projects\RepApssaExactusArticulosConsulta\Libreria\Exactus.LIBVB\obj\Debug\ApssaCC.LIBVB.dll
+C:\Users\MCABANILLASS\Documents\Visual Studio 2015\Projects\RepApssaExactusArticulosConsulta\Libreria\Exactus.LIBVB\obj\Debug\ApssaCC.LIBVB.xml
+C:\Users\MCABANILLASS\Documents\Visual Studio 2015\Projects\RepApssaExactusArticulosConsulta\Libreria\Exactus.LIBVB\obj\Debug\ApssaCC.LIBVB.pdb

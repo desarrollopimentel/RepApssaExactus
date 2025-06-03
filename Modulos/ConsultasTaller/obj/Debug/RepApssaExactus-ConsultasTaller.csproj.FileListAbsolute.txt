@@ -1,0 +1,11 @@
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\ConsultasTaller\obj\Debug\RepApssaExactus-ConsultasTaller.csprojResolveAssemblyReference.cache
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\ConsultasTaller\obj\Debug\RepApssaExactus-ConsultasTaller.csproj.RepApssaExactus-ConsultasTaller.exe.config
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\ConsultasTaller\obj\Debug\ApssaExactus.frmBuscaArticulo.resources
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\ConsultasTaller\obj\Debug\ApssaExactus.frmBuscaClienteV2.resources
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\ConsultasTaller\obj\Debug\ApssaExactus.frmBusca_Articulo.resources
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\ConsultasTaller\obj\Debug\ApssaExactus.frmTaller_Consultas.resources
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\ConsultasTaller\obj\Debug\ApssaExactus.frmTransferenciasPendientes.resources
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\ConsultasTaller\obj\Debug\ApssaExactus.Properties.Resources.resources
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\ConsultasTaller\obj\Debug\ApssaExactus.XtraForm1.resources
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\ConsultasTaller\obj\Debug\RepApssaExactus-ConsultasTaller.csproj.GenerateResource.Cache
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\ConsultasTaller\obj\Debug\RepApssaExactus-ConsultasTaller.exe.licenses

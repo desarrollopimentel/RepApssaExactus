@@ -1,0 +1,13 @@
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\PrivilegiosTesoreria\obj\Debug\RepApssaExactus-PrivilegiosTesoreria.csprojResolveAssemblyReference.cache
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\PrivilegiosTesoreria\obj\Debug\RepApssaExactus-PrivilegiosTesoreria.csproj.RepApssaExactus-PrivilegiosTesoreria.exe.config
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\PrivilegiosTesoreria\obj\Debug\ApssaExactus.frmBuscaArticulo.resources
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\PrivilegiosTesoreria\obj\Debug\ApssaExactus.frmBuscaClienteV2.resources
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\PrivilegiosTesoreria\obj\Debug\ApssaExactus.frmBusca_Articulo.resources
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\PrivilegiosTesoreria\obj\Debug\ApssaExactus.frm_PrivilegiosTesoreria_v2.resources
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\PrivilegiosTesoreria\obj\Debug\ApssaExactus.frm_PrivilegiosTesoreria3.resources
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\PrivilegiosTesoreria\obj\Debug\ApssaExactus.frm_PrivilegiosTesoreria.resources
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\PrivilegiosTesoreria\obj\Debug\ApssaExactus.frm_PrivilegiosTesoreria2.resources
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\PrivilegiosTesoreria\obj\Debug\ApssaExactus.Properties.Resources.resources
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\PrivilegiosTesoreria\obj\Debug\ApssaExactus.XtraForm1.resources
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\PrivilegiosTesoreria\obj\Debug\RepApssaExactus-PrivilegiosTesoreria.csproj.GenerateResource.Cache
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\PrivilegiosTesoreria\obj\Debug\RepApssaExactus-PrivilegiosTesoreria.exe.licenses

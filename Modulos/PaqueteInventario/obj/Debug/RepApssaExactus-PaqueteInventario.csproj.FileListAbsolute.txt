@@ -1,0 +1,10 @@
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\PaqueteInventario\obj\Debug\RepApssaExactus-PaqueteInventario.csprojResolveAssemblyReference.cache
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\PaqueteInventario\obj\Debug\RepApssaExactus-PaqueteInventario.csproj.RepApssaExactus-PaqueteInventario.exe.config
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\PaqueteInventario\obj\Debug\ApssaExactus.frmBuscaArticulo.resources
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\PaqueteInventario\obj\Debug\ApssaExactus.frmBuscaClienteV2.resources
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\PaqueteInventario\obj\Debug\ApssaExactus.frmBusca_Articulo.resources
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\PaqueteInventario\obj\Debug\ApssaExactus.frm_PrivilegiosPaquetesCI.resources
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\PaqueteInventario\obj\Debug\ApssaExactus.frm_PrivilegiosTesoreria_v2.resources
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\PaqueteInventario\obj\Debug\ApssaExactus.Properties.Resources.resources
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\PaqueteInventario\obj\Debug\ApssaExactus.XtraForm1.resources
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\PaqueteInventario\obj\Debug\RepApssaExactus-PaqueteInventario.csproj.GenerateResource.Cache
