@@ -125,6 +125,10 @@ namespace ApssaExactus
         public string AsientoSeleccionado = "";
         public string TabActivo = "";
 
+        public Boolean GenerarOperacionAutomatico = false;
+        public Decimal NumeroOperacionAutomatico = 0;
+        
+
         public frmLiquidacionTarjeta(string _base, string _user)
         {
             InitializeComponent();
@@ -637,6 +641,624 @@ namespace ApssaExactus
 
         #endregion
 
+        #region PARAMETROS_LIQUIDACION
+
+        private void btnParametrosGrabar_Click(object sender, EventArgs e)
+        {
+
+            //string _tipo_asiento_desc = cboTipoAsiento.Text;
+            //string _tipo_asiento = txtTipoAsiento.Text;
+            //string _paquete_desc = cboPaquete.Text;
+            //string _paquete = txtPaquete.Text;
+            //string _cta_bco_desc = cboCtaBancos.Text;
+            //string _cta_bco = txtCtaBancos.Text;
+            //string _tipo_desc = cboTipo.Text;
+            //string _tipo = txtTipo.Text;
+            //string _subtipo_desc = cboSubTipo.Text;
+            //string _subtipo = txtSubTipo.Text;
+
+            string save_operacion = "SAVE-PARAMETROS";
+            string save_tipo_asiento = txtTipoAsiento.Text;
+            string save_paquete = txtPaquete.Text;
+            string save_cuenta_banco = txtCtaBancos.Text;
+            string save_tipo = txtTipo.Text;
+            string save_subtipo = txtSubTipo.Text;
+
+            //BEGIN - TRY
+            try
+            {
+                //PROCESO GRABA
+                DialogResult dialogResult = MessageBox.Show("Liquidacion de Tarjetas "
+                                                        + "\n"
+                                                        + "\nEsta seguro de guardar la informacion?", "Liquidacion de Tarjetas", MessageBoxButtons.YesNo);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+
+                    using (WaitDialogForm waitDialog = new WaitDialogForm("Procesando Información....", "Espere por favor.."))
+                    {
+
+                        ContabilidadBL.dtGestionaParametrosTarjetas_BL(save_operacion, save_tipo_asiento, save_paquete, save_cuenta_banco, save_tipo, save_subtipo, Global.vUserBaseDatos);
+
+                        CargaInicialParametros();
+
+                    }
+
+                    //
+                    MessageBox.Show("Se guardo correctamente.", "Liquidacion de Tarjetas ");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            //END - TRY
+
+        }
+
+        private void btnParametrosCancelar_Click(object sender, EventArgs e)
+        {
+            CargaInicialParametros();
+        }
+
+
+        public void CargaInicialParametros()
+        {
+            CargaDatosParametros("GET-PARAMETROS");
+
+            txtTipoAsiento.Text = param_liq.tipo_asiento;
+            txtPaquete.Text = param_liq.paquete;
+            txtCtaBancos.Text = param_liq.cuenta_banco;
+            txtTipo.Text = param_liq.tipo;
+            txtSubTipo.Text = param_liq.subtipo;
+
+            Cargar_cboSubTipo(param_liq.tipo);
+
+            cboTipoAsiento.Text = param_liq.tipo_asiento_desc;   // "Liquidación de Tarjetas de Crédito";
+            cboPaquete.Text = param_liq.paquete_desc;            // "Control Bancario";
+            cboCtaBancos.Text = param_liq.cuenta_banco_desc;     // "BCO CONTIN.CTA 011-0384-0100006803 HICLA";
+            cboTipo.Text = param_liq.tipo_desc;                  //"Depósito";
+            cboSubTipo.Text = param_liq.subtipo_desc;            //"Liquidación De Tarjeta De Crédito"; 
+
+            //
+            cboCtaBancosLiq.Text = param_liq.cuenta_banco_desc;     // "BCO CONTIN.CTA 011-0384-0100006803 HICLA";
+            txtCtaBancosLiq.Text = param_liq.cuenta_banco;
+
+            _ctabco_select = param_liq.cuenta_banco;
+            _moneda_ctabco_select = ContabilidadBL.ObtenerMonedaCuentaBanco_BL(param_liq.cuenta_banco, Global.vUserBaseDatos);
+            lblmoneda_ctabco_select.Text = _moneda_ctabco_select;
+
+            //cboTipoAsiento.Text = "Liquidación de Tarjetas de Crédito";   // "LQ";             //    Liquidación de Tarjetas de Crédito    //param_liq.tipo_asiento;
+            //cboPaquete.Text = "Control Bancario";       // "CB";                 //    Control Bancario      //param_liq.paquete;
+            //cboCtaBancos.Text = "BCO CONTIN.CTA 011-0384-0100006803 HICLA";     // "384-0100006803";   //	BCO CONTIN.CTA 011-0384-0100006803 HICLA    //param_liq.cuenta_banco;
+            //cboTipo.Text = "Depósito";      // "DEP";  //	Depósito    //param_liq.tipo;
+            ////cboSubTipo.Text = "Liquidación De Tarjeta De Crédito";        //"52".ToString() ;   //Liquidación De Tarjeta De Crédito   //param_liq.subtipo;
+            //Cargar_cboSubTipo("DEP");
+
+        }
+        private void btnAsignar_Click(object sender, EventArgs e)
+        {
+            //cboTipoAsiento.Text = "Liquidación de Tarjetas de Crédito";   // "LQ";             //    Liquidación de Tarjetas de Crédito    //param_liq.tipo_asiento;
+            //cboPaquete.Text = "Control Bancario";       // "CB";                 //    Control Bancario      //param_liq.paquete;
+            //cboCtaBancos.Text = "BCO CONTIN.CTA 011-0384-0100006803 HICLA";     // "384-0100006803";   //	BCO CONTIN.CTA 011-0384-0100006803 HICLA    //param_liq.cuenta_banco;
+            //cboTipo.Text = "Depósito";      // "DEP";  //	Depósito    //param_liq.tipo;
+            ////cboSubTipo.Text = "Liquidación De Tarjeta De Crédito";        //"52".ToString() ;   //Liquidación De Tarjeta De Crédito   //param_liq.subtipo;
+            //cboSubTipo.SelectedValue = 52;
+
+            CargarNumeroOperacion();
+
+        }
+
+        private void btnParametrosActualizar_Click(object sender, EventArgs e)
+        {
+            CargaDatosParametros("GET-PARAMETROS");
+
+            //cboTipoAsiento.Text = param_liq.tipo_asiento;
+            txtTipoAsiento.Text = param_liq.tipo_asiento;
+
+            //cboPaquete.Text = param_liq.paquete;
+            txtPaquete.Text = param_liq.paquete;
+
+            //cboCtaBancos.Text = param_liq.cuenta_banco;
+            txtCtaBancos.Text = param_liq.cuenta_banco;
+
+            //cboTipo.Text = param_liq.tipo;
+            txtTipo.Text = param_liq.tipo;
+
+            //cboSubTipo.Text = param_liq.subtipo;
+            txtSubTipo.Text = param_liq.subtipo;
+        }
+
+        public void CargaDatosParametros(string _operacion)
+        {
+            if (param_liq == null)
+                param_liq = new ParametrosLiquidacion();
+
+            //-- 'NUM-OPERACION', 'GET-PARAMETROS', 'SAVE-PARAMETROS', 'TIPO-ASIENTO' , 'PAQUETE','CUENTA-BANCO','TIPO','SUBTIPO'
+            //ContabilidadDL.dtGestionaParametrosTarjetas_BL(_operacion, _tipo_asiento, _paquete, _cuenta_banco, _tipo, _subtipo, db);
+
+            par_operacion = _operacion;
+            par_tipo_asiento = null;
+            par_paquete = null;
+            par_cuenta_banco = null;
+            par_tipo = null;
+            par_subtipo = null;
+
+            DataTable dtParam = new DataTable();
+            dtParam = ContabilidadBL.dtGestionaParametrosTarjetas_BL(par_operacion, par_tipo_asiento, par_paquete, par_cuenta_banco, par_tipo, par_subtipo, Global.vUserBaseDatos);
+
+            DataTableReader param = dtParam.CreateDataReader();
+
+            while (param.Read())
+            {
+                param_liq.tipo_asiento = param[0].ToString();
+                param_liq.paquete = param[1].ToString();
+                param_liq.cuenta_banco = param[2].ToString();
+                param_liq.tipo = param[3].ToString();
+                param_liq.subtipo = param[4].ToString();
+
+                param_liq.tipo_asiento_desc = param[5].ToString();
+                param_liq.paquete_desc = param[6].ToString();
+                param_liq.cuenta_banco_desc = param[7].ToString();
+                param_liq.tipo_desc = param[8].ToString();
+                param_liq.subtipo_desc = param[9].ToString();
+
+            }
+
+        }
+
+        private void cboTipoAsiento_SelectedValueChanged(object sender, EventArgs e)
+        {
+            txtTipoAsiento.Text = cboTipoAsiento.SelectedValue.ToString();
+        }
+
+        private void cboPaquete_SelectedValueChanged(object sender, EventArgs e)
+        {
+            txtPaquete.Text = cboPaquete.SelectedValue.ToString();
+        }
+
+        private void cboCtaBancos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtCtaBancos.Text = cboCtaBancos.SelectedValue.ToString();
+        }
+
+        private void cboTipo_SelectedValueChanged(object sender, EventArgs e)
+        {
+            txtTipo.Text = cboTipo.SelectedValue.ToString();
+        }
+
+        private void cboSubTipo_SelectedValueChanged(object sender, EventArgs e)
+        {
+            txtSubTipo.Text = cboSubTipo.SelectedValue.ToString();
+        }
+
+        public void Cargar_cboTipoAsiento()
+        {
+            DataTable dtTipoAsiento = new DataTable();
+            dtTipoAsiento = ContabilidadBL.dtGestionaParametrosTarjetas_BL("TIPO-ASIENTO", null, null, null, null, null, Global.vUserBaseDatos);
+            this.cboTipoAsiento.DataSource = dtTipoAsiento;
+            this.cboTipoAsiento.DisplayMember = "DESCRIPCION";
+            this.cboTipoAsiento.ValueMember = "TIPO_ASIENTO";
+        }
+
+        public void Cargar_cboPaquete()
+        {
+            DataTable dtTipoAsiento = new DataTable();
+            dtTipoAsiento = ContabilidadBL.dtGestionaParametrosTarjetas_BL("PAQUETE", null, null, null, null, null, Global.vUserBaseDatos);
+            this.cboPaquete.DataSource = dtTipoAsiento;
+            this.cboPaquete.DisplayMember = "DESCRIPCION";
+            this.cboPaquete.ValueMember = "PAQUETE";
+        }
+
+        public void Cargar_cboCtaBancos()
+        {
+            DataTable dtTipoAsiento = new DataTable();
+            dtTipoAsiento = ContabilidadBL.dtGestionaParametrosTarjetas_BL("CUENTA-BANCO", null, null, null, null, null, Global.vUserBaseDatos);
+            this.cboCtaBancos.DataSource = dtTipoAsiento;
+            this.cboCtaBancos.DisplayMember = "NOMBRE";
+            this.cboCtaBancos.ValueMember = "CUENTA_BANCO";
+        }
+
+
+
+        public void Cargar_cboTipo()
+        {
+            DataTable dtTipoAsiento = new DataTable();
+            dtTipoAsiento = ContabilidadBL.dtGestionaParametrosTarjetas_BL("TIPO", null, null, null, null, null, Global.vUserBaseDatos);
+            this.cboTipo.DataSource = dtTipoAsiento;
+            this.cboTipo.DisplayMember = "DESCRIPCION";
+            this.cboTipo.ValueMember = "TIPO";
+        }
+
+        public void Cargar_cboSubTipo(string _tipo_selec)
+        {
+            DataTable dtTipoAsiento = new DataTable();
+            dtTipoAsiento = ContabilidadBL.dtGestionaParametrosTarjetas_BL("SUBTIPO", null, null, null, _tipo_selec, null, Global.vUserBaseDatos);
+            this.cboSubTipo.DataSource = dtTipoAsiento;
+            this.cboSubTipo.DisplayMember = "DESCRIPCION";
+            this.cboSubTipo.ValueMember = "SUBTIPO";
+        }
+
+        #endregion
+
+
+        #region REPORTE_LIQUIDADOS
+
+        private void cboOrigen_SelectedValueChanged(object sender, EventArgs e)
+        {
+            //"Liquidacion" , "Documentos"
+            string _tab_rep = cboOrigen.Text;
+
+            if (_tab_rep == "Liquidacion")
+            {
+                xtraTabPageMovBancos.PageVisible = true;
+                xtraTabPageFacturaCancela.PageVisible = false;
+                TabActivo = "Liquidacion";
+                txtTabActivo.Text = "Liquidacion";
+                txtAsientoTabLiquidacion.Visible = true;
+                txtAsientoTabDocumento.Visible = false;
+            }
+            else
+            {
+                xtraTabPageMovBancos.PageVisible = false;
+                xtraTabPageFacturaCancela.PageVisible = true;
+                TabActivo = "Documentos";
+                txtTabActivo.Text = "Documentos";
+                txtAsientoTabLiquidacion.Visible = false;
+                txtAsientoTabDocumento.Visible = true;
+            }
+
+        }
+
+        public void Carga_lookUp_Caja()
+        {
+            DataTable dtCaja = new DataTable();
+            dtCaja = objCargaLookUpBL.dtListarCajaBL(Global.vUserBaseDatos);    // objCargaLookUpBL.dtListarCuentaBancoBL(Global.vUserBaseDatos);
+            lookUpCaja.Properties.DataSource = dtCaja;
+            lookUpCaja.Properties.DisplayMember = "DESCRIPCION";
+            lookUpCaja.Properties.ValueMember = "CAJA";
+            lookUpCaja.EditValue = null;
+        }
+
+        private void btnActualizarLiquidados_Click(object sender, EventArgs e)
+        {
+            DateTime dFechaDesde = Convert.ToDateTime(deFechaLiqIni.Text);
+            DateTime dFechaHasta = Convert.ToDateTime(deFechaLiqFin.Text);
+            string _caja_liq_selec = cboCajaLiquidados.SelectedValue.ToString();   // "0010"
+            string _origen = cboOrigen.Text;    // "Liquidacion" , "Documentos"
+
+            string _cajas_lookUp = this.lookUpCaja.EditValue.ToString();    //"0002, 0003, 0004, 0005, 0006, 0007, 0008, 0009, 0010, 0011, 0012, 0014, 0015, 0016, 0017"
+
+            //LimpiarGridViewLiquidados();
+
+            ////ObtenerAbonosLiquidados(dFechaDesde, dFechaHasta, _caja_liq_selec, _origen);
+
+            if (_origen == "Liquidacion")
+            {
+                ObtenerAbonosLiquidadosMovBancos(dFechaDesde, dFechaHasta, _cajas_lookUp, _origen);
+            }
+            else
+            {
+                ObtenerAbonosLiquidadosFacturaCancela(dFechaDesde, dFechaHasta, _cajas_lookUp, _origen);
+            }
+
+            //ReinciargvAbonos();
+
+        }
+
+
+        public void ObtenerAbonosLiquidadosFacturaCancela(DateTime fecha_desde, DateTime fecha_hasta, string sucursal, string origen)
+        {
+            using (WaitDialogForm waitDialog = new WaitDialogForm("Obteniendo Informacion de los abonos Liquidados ....", "Espere por favor.."))
+            {
+                DataTable dtFacturaCancela = new DataTable();
+                //////dtAbonos = ContabilidadBL.dtObtieneTarjetasListado_BL("PENDIENTE", fecha_al, fecha_deposito, sucursal, tarjeta, moneda, tipo_cambio, fecha_al, fecha_al, Global.vUserBaseDatos);
+                //dtLiquidados = ContabilidadBL.dtObtieneTarjetasListado_BL("LIQUIDADO", null, null, null, null, null, null, fecha_desde, fecha_hasta, Global.vUserBaseDatos);
+                dtFacturaCancela = ContabilidadBL.dtObtieneTarjetasListado_BL("LIQUIDADO", fecha_desde, fecha_hasta, sucursal, "NULL", "X", 0, fecha_desde, fecha_hasta, origen, Global.vUserBaseDatos);
+                gcFacturaCancela.DataSource = dtFacturaCancela;
+            }
+
+            ConfiguraGrillaLiquidadosFacturaCancela();
+        }
+
+
+        public void ConfiguraGrillaLiquidadosFacturaCancela()
+        {
+            gvFacturaCancela.OptionsView.ColumnAutoWidth = false;
+            gvFacturaCancela.BestFitColumns();
+            System.Drawing.Font fnt = new System.Drawing.Font(gvFacturaCancela.Appearance.Row.Font.Name, 7);
+            gvFacturaCancela.Appearance.HeaderPanel.Font = fnt;
+            gvFacturaCancela.Appearance.Row.Font = fnt;
+            gvFacturaCancela.Appearance.Row.Options.UseFont = true;
+            gvFacturaCancela.OptionsView.ShowGroupPanel = false;
+            gvFacturaCancela.OptionsView.ShowIndicator = false;
+            gvFacturaCancela.OptionsBehavior.Editable = true;  //false;
+            gvFacturaCancela.OptionsSelection.EnableAppearanceFocusedCell = false;
+
+            //
+            gvFacturaCancela.Columns["NOMBRE"].Width = 150;
+
+            //FORMATO
+            gvFacturaCancela.Columns["LIQUIDADO"].DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            gvFacturaCancela.Columns["LIQUIDADO"].DisplayFormat.FormatString = "##,###,###,##0.00";
+            gvFacturaCancela.Columns["TC_LIQ"].DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            gvFacturaCancela.Columns["TC_LIQ"].DisplayFormat.FormatString = "##,###,###,##0.0000";
+            gvFacturaCancela.Columns["LOCAL"].DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            gvFacturaCancela.Columns["LOCAL"].DisplayFormat.FormatString = "##,###,###,##0.00";
+            gvFacturaCancela.Columns["DOLAR"].DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            gvFacturaCancela.Columns["DOLAR"].DisplayFormat.FormatString = "##,###,###,##0.00";
+            //gvLiquidados.Columns["TC"].DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            //gvLiquidados.Columns["TC"].DisplayFormat.FormatString = "##,###,###,##0.0000";
+
+        }
+        //----------------------
+
+        public void ObtenerAbonosLiquidadosMovBancos(DateTime fecha_desde, DateTime fecha_hasta, string sucursal, string origen)
+        {
+            using (WaitDialogForm waitDialog = new WaitDialogForm("Obteniendo Informacion de los abonos Liquidados ....", "Espere por favor.."))
+            {
+                DataTable dtMovBancos = new DataTable();
+                //////dtAbonos = ContabilidadBL.dtObtieneTarjetasListado_BL("PENDIENTE", fecha_al, fecha_deposito, sucursal, tarjeta, moneda, tipo_cambio, fecha_al, fecha_al, Global.vUserBaseDatos);
+                //dtLiquidados = ContabilidadBL.dtObtieneTarjetasListado_BL("LIQUIDADO", null, null, null, null, null, null, fecha_desde, fecha_hasta, Global.vUserBaseDatos);
+                dtMovBancos = ContabilidadBL.dtObtieneTarjetasListado_BL("LIQUIDADO", fecha_desde, fecha_hasta, sucursal, "NULL", "X", 0, fecha_desde, fecha_hasta, origen, Global.vUserBaseDatos);
+                gcMovBancos.DataSource = dtMovBancos;
+            }
+
+            ConfiguraGrillaLiquidadosMovBancos();
+        }
+
+
+        public void ConfiguraGrillaLiquidadosMovBancos()
+        {
+            gvMovBancos.OptionsView.ColumnAutoWidth = false;
+            gvMovBancos.BestFitColumns();
+            System.Drawing.Font fnt = new System.Drawing.Font(gvMovBancos.Appearance.Row.Font.Name, 7);
+            gvMovBancos.Appearance.HeaderPanel.Font = fnt;
+            gvMovBancos.Appearance.Row.Font = fnt;
+            gvMovBancos.Appearance.Row.Options.UseFont = true;
+            gvMovBancos.OptionsView.ShowGroupPanel = false;
+            gvMovBancos.OptionsView.ShowIndicator = false;
+            gvMovBancos.OptionsBehavior.Editable = true;  //false;
+            gvMovBancos.OptionsSelection.EnableAppearanceFocusedCell = false;
+
+            //
+            gvMovBancos.Columns["NOMBRE"].Width = 150;
+
+            //FORMATO
+            gvMovBancos.Columns["LIQUIDADO"].DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            gvMovBancos.Columns["LIQUIDADO"].DisplayFormat.FormatString = "##,###,###,##0.00";
+            gvMovBancos.Columns["TC_LIQ"].DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            gvMovBancos.Columns["TC_LIQ"].DisplayFormat.FormatString = "##,###,###,##0.0000";
+            gvMovBancos.Columns["LOCAL"].DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            gvMovBancos.Columns["LOCAL"].DisplayFormat.FormatString = "##,###,###,##0.00";
+            gvMovBancos.Columns["DOLAR"].DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            gvMovBancos.Columns["DOLAR"].DisplayFormat.FormatString = "##,###,###,##0.00";
+            //gvLiquidados.Columns["TC"].DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            //gvLiquidados.Columns["TC"].DisplayFormat.FormatString = "##,###,###,##0.0000";
+
+        }
+
+
+
+        public void Cargar_SucursalLiquidados()
+        {
+            DataTable dtCajaLiquidados = new DataTable();
+            dtCajaLiquidados = objCargaLookUpBL.dtListarCajaBL(Global.vUserBaseDatos);
+            this.cboCajaLiquidados.DataSource = dtCajaLiquidados;
+            this.cboCajaLiquidados.DisplayMember = "DESCRIPCION";
+            this.cboCajaLiquidados.ValueMember = "CAJA";
+        }
+
+        private void cboCajaLiquidados_SelectedValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        private void btnExportarLiquidado_Click(object sender, EventArgs e)
+        {
+            if (gvMovBancos.RowCount <= 0)
+            {
+                MessageBox.Show("No existe Informacion a Exportar.", "Tarjetas de Credito - Liquidados");
+                return;
+            }
+            else
+            {
+                gcMovBancos.ShowPrintPreview();
+            }
+        }
+
+        private void btnImprimirLiquidado_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+
+        #endregion
+
+
+        #region FUNCIONES_VARIOS
+        public void Cargar_Sucursales()
+        {
+            DataTable dtCaja = new DataTable();
+            dtCaja = objCargaLookUpBL.dtListarCajaBL(Global.vUserBaseDatos);
+            this.cboCaja.DataSource = dtCaja;
+            this.cboCaja.DisplayMember = "DESCRIPCION";
+            this.cboCaja.ValueMember = "CAJA";
+        }
+
+        public void Cargar_Tarjetas()
+        {
+            DataTable dtTarjetas = new DataTable();
+            dtTarjetas = objCargaLookUpBL.dtListarTarjetasBL(Global.vUserBaseDatos);
+            this.cboTarjetas.DataSource = dtTarjetas;
+            this.cboTarjetas.DisplayMember = "DESCRIPCION";
+            this.cboTarjetas.ValueMember = "TARJETA";
+        }
+
+        public void Cargar_CuentaBancos()
+        {
+            DataTable dt_cbhist = new DataTable();
+            dt_cbhist = objCargaLookUpBL.dtListarCuentaBancoBL(Global.vUserBaseDatos);
+            this.cboCtaBancos.DataSource = dt_cbhist;
+            this.cboCtaBancos.DisplayMember = "NOMBRE";
+            this.cboCtaBancos.ValueMember = "CUENTA_BANCO";
+        }
+
+        #endregion
+
+
+        #region RUTINAS_VARIOS
+        public void ConfiguraGrilla(DevExpress.XtraGrid.Views.Grid.GridView gv)
+        {
+            gv.OptionsView.ShowGroupPanel = false;
+            gv.OptionsView.ShowIndicator = false;
+            gv.OptionsBehavior.Editable = false;
+            gv.OptionsSelection.EnableAppearanceFocusedCell = false;
+            gv.OptionsView.ColumnAutoWidth = false;
+            gv.BestFitColumns();
+            gv.Appearance.Row.Font = new System.Drawing.Font(gv.Appearance.Row.Font, FontStyle.Bold);
+            gv.Appearance.Row.Options.UseFont = true;
+
+            System.Drawing.Font fnt = new System.Drawing.Font(gv.Appearance.Row.Font.Name, 7);
+            gv.Appearance.HeaderPanel.Font = fnt;
+            gv.Appearance.Row.Font = fnt;
+        }
+
+        private void xtraTabControl1_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e)
+        {
+            if (xtraTabControl1.SelectedTabPage.Text == "Pendientes")
+            {
+                cTabXls = "Pendientes";
+                //MessageBox.Show("Pendientes....");  
+            }
+            else if (xtraTabControl1.SelectedTabPage.Text == "Liquidados")
+            {
+                cTabXls = "Liquidados";
+                //MessageBox.Show("Liquidados....");
+            }
+            else if (xtraTabControl1.SelectedTabPage.Text == "Parametros")
+            {
+                cTabXls = "Parametros";
+                //MessageBox.Show("Parametros....");
+            }
+
+        }
+        private void xtraTabControl1_Click(object sender, EventArgs e)
+        {
+            switch (xtraTabControl1.SelectedTabPage.Text)
+            {
+                case "Pendientes":
+                    cTabXls = "Pendientes";
+                    break;
+                case "Liquidados":
+                    cTabXls = "Liquidados";
+                    break;
+                case "Parametros":
+                    cTabXls = "Parametros";
+                    break;
+                default:
+                    cTabXls = "Pendientes";
+                    break;
+            }
+        }
+
+
+
+
+
+        #endregion
+
+
+
+        private void gvMovBancos_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
+        {
+            AsientoSeleccionado = Convert.ToString(gvMovBancos.GetRowCellValue(gvMovBancos.FocusedRowHandle, "ASIENTO"));
+
+            txtAsientoTabLiquidacion.Text = AsientoSeleccionado;
+        }
+
+        private void gvFacturaCancela_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
+        {
+            AsientoSeleccionado = Convert.ToString(gvFacturaCancela.GetRowCellValue(gvFacturaCancela.FocusedRowHandle, "ASIENTO"));
+
+            txtAsientoTabDocumento.Text = AsientoSeleccionado;
+        }
+
+        private void btnAsiento_Click(object sender, EventArgs e)
+        {
+            AsientoSeleccionado = "";
+
+            if (TabActivo == "Liquidacion")
+            {
+                if (gvMovBancos.RowCount <= 0)
+                {
+                    MessageBox.Show("No existe Informacion.", "Tarjetas de Credito - Liquidados");
+                    return;
+                }
+
+                AsientoSeleccionado = txtAsientoTabLiquidacion.Text;
+            }
+            else
+            {
+                if (gvFacturaCancela.RowCount <= 0)
+                {
+                    MessageBox.Show("No existe Informacion.", "Tarjetas de Credito - Liquidados");
+                    return;
+                }
+
+                AsientoSeleccionado = txtAsientoTabDocumento.Text;
+
+            }
+
+
+            if (AsientoSeleccionado == "")
+            {
+                MessageBox.Show("No existe Informacion.", "Tarjetas de Credito - Liquidados");
+                return;
+            }
+
+
+            frmLiquidacionAsiento FormAsiento = new frmLiquidacionAsiento();
+
+            FormAsiento._asiento = AsientoSeleccionado;
+            //FormAsiento._descripcion_aplicacion = varAplicacionDescripcion;
+            //FormAsiento._tipo = TipoOperacionCajaChica;
+
+            FormAsiento.ShowDialog();
+            if (FormAsiento.DialogResult == DialogResult.OK)
+            {
+
+            }
+            else
+            {
+
+            }
+
+
+        }
+
+        private void btnReporte_Click(object sender, EventArgs e)
+        {
+            frmLiquidacionReporteFiltros FormRpt = new frmLiquidacionReporteFiltros();
+
+            FormRpt.ShowDialog();
+            if (FormRpt.DialogResult == DialogResult.OK)
+            {
+
+            }
+            else
+            {
+
+            }
+
+        }
+
+
 
 
         #region PROCESO_LIQUIDACION
@@ -966,26 +1588,11 @@ namespace ApssaExactus
                 return;
             }
 
-            if (Convert.ToDecimal(txtTotalComision.Text) <= 0)
-            {
-                MessageBox.Show("El valor de la comision debe ser mayor a cero.", "Liquidacion de Tarjetas");
-                return;
-            }
-
-            //string _moneda_select = cboMoneda.Text;       //"Soles"
-
-            //switch (_moneda_select)
-            //{
-            //    case "Soles":
-            //        var_moneda = "L";
-            //        break;
-            //    case "Dolares":
-            //        var_moneda = "D";
-            //        break;
-            //    default:
-            //        // code block
-            //        break;
-            //}
+            ////if (Convert.ToDecimal(txtTotalComision.Text) <= 0)
+            ////{
+            ////    MessageBox.Show("El valor de la comision debe ser mayor a cero.", "Liquidacion de Tarjetas");
+            ////    return;
+            ////}
 
             var_moneda = _moneda_selec;
             va_fecha_al = Convert.ToDateTime(deFechaAl.Text);
@@ -1004,9 +1611,26 @@ namespace ApssaExactus
                 MessageBox.Show("No existe Informacion a Procesar.", "Carga Excel " + varAplicacionDescripcion + "  --> ERP Exactus");
                 return;
             }
-            else
+
+
+            if (var_tarjeta=="YAPE")
             {
-                ProcesarLiquidacion();
+
+                MessageBox.Show("Procesando Abonos con YAPE...............", "Liquidacion de YAPE");
+                ProcesarLiquidacionYape();
+
+            } else
+            {
+
+                if (Convert.ToDecimal(txtTotalComision.Text) <= 0)
+                {
+                    MessageBox.Show("El valor de la comision debe ser mayor a cero.", "Liquidacion de Tarjetas");
+                    return;
+                }
+
+                MessageBox.Show("Procesando Abonos con Tarjetas...........", "Liquidacion de Tarjetas");
+                ProcesarLiquidacionTarjetas();
+
             }
 
             ////HabilitaFiltros(true);
@@ -1015,7 +1639,7 @@ namespace ApssaExactus
 
         }
 
-        private void ProcesarLiquidacion()
+        private void ProcesarLiquidacionTarjetas()
         {
 
             // Obtener los índices de las filas seleccionadas
@@ -1029,18 +1653,18 @@ namespace ApssaExactus
             }
 
 
-            //BEGIN - TRY
+            // PROCESAR ABONOS TARJETAS
             try
             {
                 //PROCESO GRABA
-                DialogResult dialogResult = MessageBox.Show("Carga Excel " + varAplicacionDescripcion + " --> ERP Exactus."
+                DialogResult dialogResult = MessageBox.Show("Liquidacion de Abonos con Tarjeta"
                                                         + "\n"
-                                                        + "\nEsta seguro de Procesar la informacion?", "Carga Excel " + varAplicacionDescripcion + "  --> ERP Exactus", MessageBoxButtons.YesNo);
+                                                        + "\nEsta seguro de Procesar la informacion?", "Liquidacion de Tarjetas", MessageBoxButtons.YesNo);
 
                 if (dialogResult == DialogResult.Yes)
                 {
 
-                    using (WaitDialogForm waitDialog = new WaitDialogForm("Procesando Información....Carga Excel " + varAplicacionDescripcion + " --> ERP Exactus", "Espere por favor.."))
+                    using (WaitDialogForm waitDialog = new WaitDialogForm("Procesando Información.........Liquidacion  de Abonos con Tarjetas", "Espere por favor.."))
                     {
 
                         varUSUARIO = Global.vUserUsuario;
@@ -1227,58 +1851,289 @@ namespace ApssaExactus
 
         }
 
- 
-        #endregion
 
 
-
-
-
-        #region PARAMETROS_LIQUIDACION
-
-        private void btnParametrosGrabar_Click(object sender, EventArgs e)
+        private void ProcesarLiquidacionYape()
         {
+            GenerarOperacionAutomatico = false;
 
-            //string _tipo_asiento_desc = cboTipoAsiento.Text;
-            //string _tipo_asiento = txtTipoAsiento.Text;
-            //string _paquete_desc = cboPaquete.Text;
-            //string _paquete = txtPaquete.Text;
-            //string _cta_bco_desc = cboCtaBancos.Text;
-            //string _cta_bco = txtCtaBancos.Text;
-            //string _tipo_desc = cboTipo.Text;
-            //string _tipo = txtTipo.Text;
-            //string _subtipo_desc = cboSubTipo.Text;
-            //string _subtipo = txtSubTipo.Text;
+            // Obtener los índices de las filas seleccionadas
+            int[] selectedRows = gvAbonos.GetSelectedRows();
 
-            string save_operacion = "SAVE-PARAMETROS";
-            string save_tipo_asiento = txtTipoAsiento.Text;
-            string save_paquete = txtPaquete.Text;
-            string save_cuenta_banco = txtCtaBancos.Text;
-            string save_tipo = txtTipo.Text;
-            string save_subtipo = txtSubTipo.Text;
+            // Verificar si hay filas seleccionadas
+            if (selectedRows.Length == 0)
+            {
+                MessageBox.Show("Liquidacion de Abonos con YAPE.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
 
-            //BEGIN - TRY
+            
+            //VALIDA SI SELECCIONO MAS DE 1
+
+            if (selectedRows.Length > 1)
+            {
+                //////MessageBox.Show("Liquidacion de Abonos con YAPE.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ////MessageBox.Show("Ha seleccionado " + selectedRows.Length + " Abonos", "Liquidacion de Abonos con YAPE.");
+                ////return;
+
+                try
+                {
+                    //PROCESO GRABA
+                    DialogResult dialogResult = MessageBox.Show("Liquidacion de Abonos con YAPE."
+                                                            + "\n"
+                                                            + "\nHa seleccionado " + selectedRows.Length + " Abonos, Por lo que el Numero de Operacion sera asignada automaticamente"
+                                                            + "\nEsta seguro de Procesar la informacion?", "Liquidacion de Abonos con YAPE.", MessageBoxButtons.YesNo);
+
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        GenerarOperacionAutomatico = true;
+                        MessageBox.Show("Se asignara el Numero de Operacion automaticamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+            }
+
+
+            if ((selectedRows.Length > 1) && (GenerarOperacionAutomatico == false) )
+            {
+                MessageBox.Show("((selectedRows.Length > 1) && (GenerarOperacionAutomatico == false) )", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+
+
+
+
+
+            //PROCESAR ABONOS YAPE
             try
             {
                 //PROCESO GRABA
-                DialogResult dialogResult = MessageBox.Show("Liquidacion de Tarjetas "
+                DialogResult dialogResult = MessageBox.Show("Liquidacion de Abonos con YAPE."
                                                         + "\n"
-                                                        + "\nEsta seguro de guardar la informacion?", "Liquidacion de Tarjetas", MessageBoxButtons.YesNo);
+                                                        + "\nEsta seguro de Procesar la informacion?", "Liquidacion de Abonos con YAPE.", MessageBoxButtons.YesNo);
 
                 if (dialogResult == DialogResult.Yes)
                 {
 
-                    using (WaitDialogForm waitDialog = new WaitDialogForm("Procesando Información....", "Espere por favor.."))
+                    using (WaitDialogForm waitDialog = new WaitDialogForm("Procesando Información............Liquidacion de Abonos con YAPE.", "Espere por favor.."))
                     {
 
-                        ContabilidadBL.dtGestionaParametrosTarjetas_BL(save_operacion, save_tipo_asiento, save_paquete, save_cuenta_banco, save_tipo, save_subtipo, Global.vUserBaseDatos);
+                        varUSUARIO = Global.vUserUsuario;
+                        varFECHA_PROCESO = DateTime.Now;
 
-                        CargaInicialParametros();
+                        //varFECHA_HORA = null;
+                        varNUM_DOCUMENTO = "";
+                        varNOMBRE = "";
+                        varMONEDA = "";
+                        varMONTO_LOCAL = 0;
+                        varMONTO_DOLAR = 0;
+                        varTIPO_CAMBIO = 0;
+                        varMONTO_LIQUIDAR = 0;
+                        varTIPO_DOCUMENTO = "";
+                        varFACTURA = "";
+                        varNUMERO_PAGO = "";
+                        varSELECC_LIQ = "";
+                        varCAJA = "";
+                        varCAJA_DESCRIPCION = "";
+                        varTIPO_TARJETA = "";
 
+                        acum_abono = 0;
+                        acum_comision = 0;
+                        acum_neto = 0;
+
+                        var_asiento_generado = "";
+                        var_resultado_liquidacion = "";
+
+                        var_ASIENTO_LIQUIDACION = "";
+
+                        // BEGIN - Iniciar la conexión y la transacción
+                        string connectionString = ConexionDC.ConectarBD(Global.vUserBaseDatos);
+
+                        using (SqlConnection conn = new SqlConnection(connectionString))
+                        {
+                            conn.Open();
+                            using (SqlTransaction transaction = conn.BeginTransaction())
+                            {
+                                try
+                                {
+                                    // BEGIN - Procesar cada línea
+                                    foreach (int rowHandle in selectedRows)
+                                    {
+                                        if (rowHandle >= 0) // Verificar que el índice sea válido
+                                        {
+
+                                            acum_abono = 0; // inicializar para cada linea
+
+                                            varFECHA_HORA = Convert.ToDateTime(gvAbonos.GetRowCellValue(rowHandle, "FECHA_HORA").ToString());
+                                            varNUM_DOCUMENTO = gvAbonos.GetRowCellValue(rowHandle, "NUM_DOCUMENTO").ToString();
+                                            varNOMBRE = gvAbonos.GetRowCellValue(rowHandle, "NOMBRE").ToString();
+                                            varMONEDA = gvAbonos.GetRowCellValue(rowHandle, "MONEDA").ToString();
+                                            varMONTO_LOCAL = Convert.ToDecimal(gvAbonos.GetRowCellValue(rowHandle, "MONTO_LOCAL"));
+                                            varMONTO_DOLAR = Convert.ToDecimal(gvAbonos.GetRowCellValue(rowHandle, "MONTO_DOLAR"));
+                                            varTIPO_CAMBIO = Convert.ToDecimal(gvAbonos.GetRowCellValue(rowHandle, "TIPO_CAMBIO"));
+                                            varMONTO_LIQUIDAR = Convert.ToDecimal(gvAbonos.GetRowCellValue(rowHandle, "MONTO_LIQUIDAR"));
+                                            varTIPO_DOCUMENTO = gvAbonos.GetRowCellValue(rowHandle, "TIPO_DOCUMENTO").ToString();
+                                            varFACTURA = gvAbonos.GetRowCellValue(rowHandle, "FACTURA").ToString();
+                                            varNUMERO_PAGO = gvAbonos.GetRowCellValue(rowHandle, "NUMERO_PAGO").ToString();
+                                            varCAJA = gvAbonos.GetRowCellValue(rowHandle, "CAJA").ToString();
+                                            varCAJA_DESCRIPCION = gvAbonos.GetRowCellValue(rowHandle, "SUCURSAL").ToString();
+                                            varTIPO_TARJETA = gvAbonos.GetRowCellValue(rowHandle, "TIPO_TARJETA").ToString();
+
+                                            acum_abono = acum_abono + varMONTO_LIQUIDAR; // en soles o dolares 
+
+                                            // DETERMINA NUMERO DE OPERACION  
+                                            NumeroOperacionAutomatico = 0;
+
+                                            if (GenerarOperacionAutomatico == false)
+                                            {
+                                                //////var_num_operacion = Convert.ToDecimal(txtNroOperacion.Text);
+                                                NumeroOperacionAutomatico = Convert.ToDecimal(txtNroOperacion.Text);
+                                            }
+                                            else
+                                            {
+                                                NumeroOperacionAutomatico = ObtenerNumeroOperacionAutomatico();   // genera correlativo de NumeroOperacionAutomatico
+                                            }
+
+
+                                            if (NumeroOperacionAutomatico == 0)
+                                            {
+                                                MessageBox.Show("Error al generar Numero de Operacion, Numero: " + NumeroOperacionAutomatico.ToString(), "Liquidacion de Abonos con YAPE.");
+                                                return;
+                                            }
+
+                                            // REGISTRA ABONO COMO LIQUIDADO
+                                            ContabilidadBL.dtLiquidacionTajetasDocumento_TRANSAC_BL("LIQUIDAR", varTIPO_DOCUMENTO, varFACTURA, varMONTO_LIQUIDAR, varTIPO_CAMBIO,
+                                                                                                    Convert.ToInt16(varNUMERO_PAGO), varCAJA, NumeroOperacionAutomatico, Global.vUserBaseDatos, transaction);
+
+                                            // GENERA ASIENTO DE LIQUIDACION
+                                            //Actualizo Acumulados por cada linea
+                                            acum_comision = Convert.ToDecimal(txtTotalComision.Text);
+                                            acum_neto = (acum_abono - acum_comision);
+
+                                            var_ASIENTO_LIQUIDACION = ContabilidadBL.dtLiquidarTarjetas_TRANSAC_ASIENTO_BL("LIQUIDAR",
+                                                                                                va_fecha_al,   ////_fecha_al, 
+                                                                                                NumeroOperacionAutomatico,      ////var_num_operacion,   ////_num_operacion, 
+                                                                                                var_caja,    ////_caja, 
+                                                                                                var_tarjeta, ////_tarjeta,
+                                                                                                var_fecha_deposito,   ////_fecha_deposito, 
+                                                                                                var_tipo_cambio,   ////_tipo_cambio, 
+                                                                                                var_moneda,  ////_moneda,
+                                                                                                acum_abono,                 ////_liq_monto, 
+                                                                                                acum_comision,              ////_liq_comis, 
+                                                                                                acum_neto,                  ////_liq_neto,
+                                                                                                param_liq.tipo_asiento,     ////_tipo_asiento, 
+                                                                                                param_liq.paquete,          ////_paquete, 
+                                                                                                _ctabco_select,             ///// param_liq.cuenta_banco,     ////_cuenta_banco, 
+                                                                                                param_liq.tipo,             ////_tipo, 
+                                                                                                param_liq.subtipo,          ////_subtipo,
+                                                                                                Global.vUserUsuario, Global.vUserBaseDatos, transaction); ////_usuario, db);
+
+
+                                            // MUESTRA ASIENTO GENERADO
+                                            if ((var_ASIENTO_LIQUIDACION != "") && var_ASIENTO_LIQUIDACION.Length > 0)
+                                            {
+                                                //////InicializarLiquidacion();   NOO
+                                                //
+                                                MessageBox.Show("Proceso Finalizado. Se genero el asiento " + var_ASIENTO_LIQUIDACION, "Liquidacion de Abonos con YAPE.");
+
+                                                frmLiquidacionAsiento FormAsiento = new frmLiquidacionAsiento();
+
+                                                //FormAsiento._asiento = var_asiento_generado;
+                                                FormAsiento._asiento = var_ASIENTO_LIQUIDACION;
+
+                                                FormAsiento.ShowDialog();
+                                                if (FormAsiento.DialogResult == DialogResult.OK)
+                                                {
+
+                                                }
+                                                else
+                                                {
+
+                                                }
+                                            }
+
+
+
+                                        }
+                                    }
+                                    // END - Procesar cada línea
+
+                                    ////////Actualizo Acumulados
+                                    //////acum_comision = Convert.ToDecimal(txtTotalComision.Text);
+                                    //////acum_neto = (acum_abono - acum_comision);
+
+                                    //////var_ASIENTO_LIQUIDACION = ContabilidadBL.dtLiquidarTarjetas_TRANSAC_ASIENTO_BL("LIQUIDAR",
+                                    //////                                                    va_fecha_al,   ////_fecha_al, 
+                                    //////                                                    var_num_operacion,   ////_num_operacion, 
+                                    //////                                                    var_caja,    ////_caja, 
+                                    //////                                                    var_tarjeta, ////_tarjeta,
+                                    //////                                                    var_fecha_deposito,   ////_fecha_deposito, 
+                                    //////                                                    var_tipo_cambio,   ////_tipo_cambio, 
+                                    //////                                                    var_moneda,  ////_moneda,
+                                    //////                                                    acum_abono,                 ////_liq_monto, 
+                                    //////                                                    acum_comision,              ////_liq_comis, 
+                                    //////                                                    acum_neto,                  ////_liq_neto,
+                                    //////                                                    param_liq.tipo_asiento,     ////_tipo_asiento, 
+                                    //////                                                    param_liq.paquete,          ////_paquete, 
+                                    //////                                                    _ctabco_select,             ///// param_liq.cuenta_banco,     ////_cuenta_banco, 
+                                    //////                                                    param_liq.tipo,             ////_tipo, 
+                                    //////                                                    param_liq.subtipo,          ////_subtipo,
+                                    //////                                                    Global.vUserUsuario, Global.vUserBaseDatos, transaction); ////_usuario, db);
+
+                                    var_resultado_liquidacion = "OK";
+
+                                    // Confirmar la transacción si todo sale bien
+                                    transaction.Commit();
+                                }
+                                catch (Exception ex)
+                                {
+                                    var_resultado_liquidacion = "XX";
+                                    // Revertir la transacción si ocurre un error
+                                    transaction.Rollback();
+                                    throw new Exception("Error al procesar las líneas o el lote: " + ex.Message);
+                                }
+                            }
+                        }
+                        // FIN - Iniciar la conexión y la transacción
                     }
 
-                    //
-                    MessageBox.Show("Se guardo correctamente.", "Liquidacion de Tarjetas ");
+                    InicializarLiquidacion();
+
+
+                    ////////if (var_resultado_liquidacion == "XX")
+                    ////////{
+                    ////////    MessageBox.Show("Proceso NO Finalizado. ", "Liquidacion de Tarjetas ");
+                    ////////}
+
+
+                    ////////if (var_resultado_liquidacion == "OK")
+                    ////////{
+                    ////////    //var_asiento_generado = ContabilidadBL.ObtenerAsientoGenerado_BL(var_num_operacion, Global.vUserBaseDatos);
+                    ////////    //if ((var_asiento_generado != "") && var_asiento_generado.Length > 0)
+                    ////////    if ((var_ASIENTO_LIQUIDACION != "") && var_ASIENTO_LIQUIDACION.Length > 0)
+                    ////////    {
+                    ////////        InicializarLiquidacion();
+                    ////////        //
+                    ////////        MessageBox.Show("Proceso Finalizado. Se genero el asiento " + var_ASIENTO_LIQUIDACION, "Liquidacion de Tarjetas ");
+                    ////////        frmLiquidacionAsiento FormAsiento = new frmLiquidacionAsiento();
+                    ////////        //FormAsiento._asiento = var_asiento_generado;
+                    ////////        FormAsiento._asiento = var_ASIENTO_LIQUIDACION;
+                    ////////        FormAsiento.ShowDialog();
+                    ////////        if (FormAsiento.DialogResult == DialogResult.OK)
+                    ////////        {
+                    ////////        }
+                    ////////        else
+                    ////////        {
+                    ////////        }
+                    ////////    }
+                    ////////}
+
                 }
 
             }
@@ -1288,476 +2143,25 @@ namespace ApssaExactus
             }
             //END - TRY
 
+
         }
 
-        private void btnParametrosCancelar_Click(object sender, EventArgs e)
+        private Decimal ObtenerNumeroOperacionAutomatico()
         {
-            CargaInicialParametros();
+            Decimal _numero_operacion = 0;
+
+            string _var_cta_bco = txtCtaBancosLiq.Text;     // de lo que el usuario elija al liquidar
+            string _var_tipo = txtTipo.Text;
+
+            _numero_operacion = ContabilidadBL.ObtenerNumeroOperacion_BL(_var_cta_bco, _var_tipo, Global.vUserBaseDatos);
+
+            return _numero_operacion;
         }
-
-
-        public void CargaInicialParametros()
-        {
-            CargaDatosParametros("GET-PARAMETROS");
-
-            txtTipoAsiento.Text = param_liq.tipo_asiento;
-            txtPaquete.Text = param_liq.paquete;
-            txtCtaBancos.Text = param_liq.cuenta_banco;
-            txtTipo.Text = param_liq.tipo;
-            txtSubTipo.Text = param_liq.subtipo;
-
-            Cargar_cboSubTipo(param_liq.tipo);
-
-            cboTipoAsiento.Text = param_liq.tipo_asiento_desc;   // "Liquidación de Tarjetas de Crédito";
-            cboPaquete.Text = param_liq.paquete_desc;            // "Control Bancario";
-            cboCtaBancos.Text = param_liq.cuenta_banco_desc;     // "BCO CONTIN.CTA 011-0384-0100006803 HICLA";
-            cboTipo.Text = param_liq.tipo_desc;                  //"Depósito";
-            cboSubTipo.Text = param_liq.subtipo_desc;            //"Liquidación De Tarjeta De Crédito"; 
-
-            //
-            cboCtaBancosLiq.Text = param_liq.cuenta_banco_desc;     // "BCO CONTIN.CTA 011-0384-0100006803 HICLA";
-            txtCtaBancosLiq.Text = param_liq.cuenta_banco;
-
-            _ctabco_select = param_liq.cuenta_banco;
-            _moneda_ctabco_select = ContabilidadBL.ObtenerMonedaCuentaBanco_BL(param_liq.cuenta_banco, Global.vUserBaseDatos);
-            lblmoneda_ctabco_select.Text = _moneda_ctabco_select;
-
-            //cboTipoAsiento.Text = "Liquidación de Tarjetas de Crédito";   // "LQ";             //    Liquidación de Tarjetas de Crédito    //param_liq.tipo_asiento;
-            //cboPaquete.Text = "Control Bancario";       // "CB";                 //    Control Bancario      //param_liq.paquete;
-            //cboCtaBancos.Text = "BCO CONTIN.CTA 011-0384-0100006803 HICLA";     // "384-0100006803";   //	BCO CONTIN.CTA 011-0384-0100006803 HICLA    //param_liq.cuenta_banco;
-            //cboTipo.Text = "Depósito";      // "DEP";  //	Depósito    //param_liq.tipo;
-            ////cboSubTipo.Text = "Liquidación De Tarjeta De Crédito";        //"52".ToString() ;   //Liquidación De Tarjeta De Crédito   //param_liq.subtipo;
-            //Cargar_cboSubTipo("DEP");
-
-        }
-        private void btnAsignar_Click(object sender, EventArgs e)
-        {
-            //cboTipoAsiento.Text = "Liquidación de Tarjetas de Crédito";   // "LQ";             //    Liquidación de Tarjetas de Crédito    //param_liq.tipo_asiento;
-            //cboPaquete.Text = "Control Bancario";       // "CB";                 //    Control Bancario      //param_liq.paquete;
-            //cboCtaBancos.Text = "BCO CONTIN.CTA 011-0384-0100006803 HICLA";     // "384-0100006803";   //	BCO CONTIN.CTA 011-0384-0100006803 HICLA    //param_liq.cuenta_banco;
-            //cboTipo.Text = "Depósito";      // "DEP";  //	Depósito    //param_liq.tipo;
-            ////cboSubTipo.Text = "Liquidación De Tarjeta De Crédito";        //"52".ToString() ;   //Liquidación De Tarjeta De Crédito   //param_liq.subtipo;
-            //cboSubTipo.SelectedValue = 52;
-
-            CargarNumeroOperacion();
-
-        }
-
-        private void btnParametrosActualizar_Click(object sender, EventArgs e)
-        {
-            CargaDatosParametros("GET-PARAMETROS");
-
-            //cboTipoAsiento.Text = param_liq.tipo_asiento;
-            txtTipoAsiento.Text = param_liq.tipo_asiento;
-
-            //cboPaquete.Text = param_liq.paquete;
-            txtPaquete.Text = param_liq.paquete;
-
-            //cboCtaBancos.Text = param_liq.cuenta_banco;
-            txtCtaBancos.Text = param_liq.cuenta_banco;
-
-            //cboTipo.Text = param_liq.tipo;
-            txtTipo.Text = param_liq.tipo;
-
-            //cboSubTipo.Text = param_liq.subtipo;
-            txtSubTipo.Text = param_liq.subtipo;
-        }
-
-        public void CargaDatosParametros(string _operacion)
-        {
-            if (param_liq == null)
-                param_liq = new ParametrosLiquidacion();
-
-            //-- 'NUM-OPERACION', 'GET-PARAMETROS', 'SAVE-PARAMETROS', 'TIPO-ASIENTO' , 'PAQUETE','CUENTA-BANCO','TIPO','SUBTIPO'
-            //ContabilidadDL.dtGestionaParametrosTarjetas_BL(_operacion, _tipo_asiento, _paquete, _cuenta_banco, _tipo, _subtipo, db);
-
-            par_operacion = _operacion;
-            par_tipo_asiento = null;
-            par_paquete = null;
-            par_cuenta_banco = null;
-            par_tipo = null;
-            par_subtipo = null;
-
-            DataTable dtParam = new DataTable();
-            dtParam = ContabilidadBL.dtGestionaParametrosTarjetas_BL(par_operacion, par_tipo_asiento, par_paquete, par_cuenta_banco, par_tipo, par_subtipo, Global.vUserBaseDatos);
-
-            DataTableReader param = dtParam.CreateDataReader();
-
-            while (param.Read())
-            {
-                param_liq.tipo_asiento = param[0].ToString();
-                param_liq.paquete = param[1].ToString();
-                param_liq.cuenta_banco = param[2].ToString();
-                param_liq.tipo = param[3].ToString();
-                param_liq.subtipo = param[4].ToString();
-
-                param_liq.tipo_asiento_desc = param[5].ToString();
-                param_liq.paquete_desc = param[6].ToString();
-                param_liq.cuenta_banco_desc = param[7].ToString();
-                param_liq.tipo_desc = param[8].ToString();
-                param_liq.subtipo_desc = param[9].ToString();
-
-            }
-
-        }
-
-        private void cboTipoAsiento_SelectedValueChanged(object sender, EventArgs e)
-        {
-            txtTipoAsiento.Text = cboTipoAsiento.SelectedValue.ToString();
-        }
-
-        private void cboPaquete_SelectedValueChanged(object sender, EventArgs e)
-        {
-            txtPaquete.Text = cboPaquete.SelectedValue.ToString();
-        }
-
-        private void cboCtaBancos_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            txtCtaBancos.Text = cboCtaBancos.SelectedValue.ToString();
-        }
-
-        private void cboTipo_SelectedValueChanged(object sender, EventArgs e)
-        {
-            txtTipo.Text = cboTipo.SelectedValue.ToString();
-        }
-
-        private void cboSubTipo_SelectedValueChanged(object sender, EventArgs e)
-        {
-            txtSubTipo.Text = cboSubTipo.SelectedValue.ToString();
-        }
-
-        public void Cargar_cboTipoAsiento()
-        {
-            DataTable dtTipoAsiento = new DataTable();
-            dtTipoAsiento = ContabilidadBL.dtGestionaParametrosTarjetas_BL("TIPO-ASIENTO", null, null, null, null, null, Global.vUserBaseDatos);
-            this.cboTipoAsiento.DataSource = dtTipoAsiento;
-            this.cboTipoAsiento.DisplayMember = "DESCRIPCION";
-            this.cboTipoAsiento.ValueMember = "TIPO_ASIENTO";
-        }
-
-        public void Cargar_cboPaquete()
-        {
-            DataTable dtTipoAsiento = new DataTable();
-            dtTipoAsiento = ContabilidadBL.dtGestionaParametrosTarjetas_BL("PAQUETE", null, null, null, null, null, Global.vUserBaseDatos);
-            this.cboPaquete.DataSource = dtTipoAsiento;
-            this.cboPaquete.DisplayMember = "DESCRIPCION";
-            this.cboPaquete.ValueMember = "PAQUETE";
-        }
-
-        public void Cargar_cboCtaBancos()
-        {
-            DataTable dtTipoAsiento = new DataTable();
-            dtTipoAsiento = ContabilidadBL.dtGestionaParametrosTarjetas_BL("CUENTA-BANCO", null, null, null, null, null, Global.vUserBaseDatos);
-            this.cboCtaBancos.DataSource = dtTipoAsiento;
-            this.cboCtaBancos.DisplayMember = "NOMBRE";
-            this.cboCtaBancos.ValueMember = "CUENTA_BANCO";
-        }
-
-
-
-        public void Cargar_cboTipo()
-        {
-            DataTable dtTipoAsiento = new DataTable();
-            dtTipoAsiento = ContabilidadBL.dtGestionaParametrosTarjetas_BL("TIPO", null, null, null, null, null, Global.vUserBaseDatos);
-            this.cboTipo.DataSource = dtTipoAsiento;
-            this.cboTipo.DisplayMember = "DESCRIPCION";
-            this.cboTipo.ValueMember = "TIPO";
-        }
-
-        public void Cargar_cboSubTipo(string _tipo_selec)
-        {
-            DataTable dtTipoAsiento = new DataTable();
-            dtTipoAsiento = ContabilidadBL.dtGestionaParametrosTarjetas_BL("SUBTIPO", null, null, null, _tipo_selec, null, Global.vUserBaseDatos);
-            this.cboSubTipo.DataSource = dtTipoAsiento;
-            this.cboSubTipo.DisplayMember = "DESCRIPCION";
-            this.cboSubTipo.ValueMember = "SUBTIPO";
-        }
-
-        #endregion
-
-
-        #region REPORTE_LIQUIDADOS
-
-        private void cboOrigen_SelectedValueChanged(object sender, EventArgs e)
-        {
-            //"Liquidacion" , "Documentos"
-            string _tab_rep = cboOrigen.Text;
-
-            if (_tab_rep == "Liquidacion")
-            {
-                xtraTabPageMovBancos.PageVisible = true;
-                xtraTabPageFacturaCancela.PageVisible = false;
-                TabActivo = "Liquidacion";
-                txtTabActivo.Text = "Liquidacion";
-                txtAsientoTabLiquidacion.Visible = true;
-                txtAsientoTabDocumento.Visible = false;
-            }
-            else
-            {
-                xtraTabPageMovBancos.PageVisible = false;
-                xtraTabPageFacturaCancela.PageVisible = true;
-                TabActivo = "Documentos";
-                txtTabActivo.Text = "Documentos";
-                txtAsientoTabLiquidacion.Visible = false; 
-                txtAsientoTabDocumento.Visible = true;
-            }
-
-        }
-
-        public void Carga_lookUp_Caja()
-        {
-            DataTable dtCaja = new DataTable();
-            dtCaja = objCargaLookUpBL.dtListarCajaBL(Global.vUserBaseDatos);    // objCargaLookUpBL.dtListarCuentaBancoBL(Global.vUserBaseDatos);
-            lookUpCaja.Properties.DataSource = dtCaja;
-            lookUpCaja.Properties.DisplayMember = "DESCRIPCION";
-            lookUpCaja.Properties.ValueMember = "CAJA";
-            lookUpCaja.EditValue = null;
-        }
-
-        private void btnActualizarLiquidados_Click(object sender, EventArgs e)
-        {
-            DateTime dFechaDesde = Convert.ToDateTime(deFechaLiqIni.Text);
-            DateTime dFechaHasta = Convert.ToDateTime(deFechaLiqFin.Text);
-            string _caja_liq_selec = cboCajaLiquidados.SelectedValue.ToString();   // "0010"
-            string _origen = cboOrigen.Text;    // "Liquidacion" , "Documentos"
-
-            string _cajas_lookUp = this.lookUpCaja.EditValue.ToString();    //"0002, 0003, 0004, 0005, 0006, 0007, 0008, 0009, 0010, 0011, 0012, 0014, 0015, 0016, 0017"
-
-            //LimpiarGridViewLiquidados();
-
-            ////ObtenerAbonosLiquidados(dFechaDesde, dFechaHasta, _caja_liq_selec, _origen);
-
-            if (_origen == "Liquidacion")
-            {
-                ObtenerAbonosLiquidadosMovBancos(dFechaDesde, dFechaHasta, _cajas_lookUp, _origen);
-            } else
-            {
-                ObtenerAbonosLiquidadosFacturaCancela(dFechaDesde, dFechaHasta, _cajas_lookUp, _origen);
-            }
-            
-            //ReinciargvAbonos();
-
-        }
-
-
-        public void ObtenerAbonosLiquidadosFacturaCancela(DateTime fecha_desde, DateTime fecha_hasta, string sucursal, string origen)
-        {
-            using (WaitDialogForm waitDialog = new WaitDialogForm("Obteniendo Informacion de los abonos Liquidados ....", "Espere por favor.."))
-            {
-                DataTable dtFacturaCancela = new DataTable();
-                //////dtAbonos = ContabilidadBL.dtObtieneTarjetasListado_BL("PENDIENTE", fecha_al, fecha_deposito, sucursal, tarjeta, moneda, tipo_cambio, fecha_al, fecha_al, Global.vUserBaseDatos);
-                //dtLiquidados = ContabilidadBL.dtObtieneTarjetasListado_BL("LIQUIDADO", null, null, null, null, null, null, fecha_desde, fecha_hasta, Global.vUserBaseDatos);
-                dtFacturaCancela = ContabilidadBL.dtObtieneTarjetasListado_BL("LIQUIDADO", fecha_desde, fecha_hasta, sucursal, "NULL", "X", 0, fecha_desde, fecha_hasta, origen, Global.vUserBaseDatos);
-                gcFacturaCancela.DataSource = dtFacturaCancela;
-            }
-
-            ConfiguraGrillaLiquidadosFacturaCancela();
-        }
-
-
-        public void ConfiguraGrillaLiquidadosFacturaCancela()
-        {
-            gvFacturaCancela.OptionsView.ColumnAutoWidth = false;
-            gvFacturaCancela.BestFitColumns();
-            System.Drawing.Font fnt = new System.Drawing.Font(gvFacturaCancela.Appearance.Row.Font.Name, 7);
-            gvFacturaCancela.Appearance.HeaderPanel.Font = fnt;
-            gvFacturaCancela.Appearance.Row.Font = fnt;
-            gvFacturaCancela.Appearance.Row.Options.UseFont = true;
-            gvFacturaCancela.OptionsView.ShowGroupPanel = false;
-            gvFacturaCancela.OptionsView.ShowIndicator = false;
-            gvFacturaCancela.OptionsBehavior.Editable = true;  //false;
-            gvFacturaCancela.OptionsSelection.EnableAppearanceFocusedCell = false;
-
-            //
-            gvFacturaCancela.Columns["NOMBRE"].Width = 150;
-
-            //FORMATO
-            gvFacturaCancela.Columns["LIQUIDADO"].DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            gvFacturaCancela.Columns["LIQUIDADO"].DisplayFormat.FormatString = "##,###,###,##0.00";
-            gvFacturaCancela.Columns["TC_LIQ"].DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            gvFacturaCancela.Columns["TC_LIQ"].DisplayFormat.FormatString = "##,###,###,##0.0000";
-            gvFacturaCancela.Columns["LOCAL"].DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            gvFacturaCancela.Columns["LOCAL"].DisplayFormat.FormatString = "##,###,###,##0.00";
-            gvFacturaCancela.Columns["DOLAR"].DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            gvFacturaCancela.Columns["DOLAR"].DisplayFormat.FormatString = "##,###,###,##0.00";
-            //gvLiquidados.Columns["TC"].DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            //gvLiquidados.Columns["TC"].DisplayFormat.FormatString = "##,###,###,##0.0000";
-
-        }
-        //----------------------
-
-        public void ObtenerAbonosLiquidadosMovBancos(DateTime fecha_desde, DateTime fecha_hasta, string sucursal, string origen)
-        {
-            using (WaitDialogForm waitDialog = new WaitDialogForm("Obteniendo Informacion de los abonos Liquidados ....", "Espere por favor.."))
-            {
-                DataTable dtMovBancos = new DataTable();
-                //////dtAbonos = ContabilidadBL.dtObtieneTarjetasListado_BL("PENDIENTE", fecha_al, fecha_deposito, sucursal, tarjeta, moneda, tipo_cambio, fecha_al, fecha_al, Global.vUserBaseDatos);
-                //dtLiquidados = ContabilidadBL.dtObtieneTarjetasListado_BL("LIQUIDADO", null, null, null, null, null, null, fecha_desde, fecha_hasta, Global.vUserBaseDatos);
-                dtMovBancos = ContabilidadBL.dtObtieneTarjetasListado_BL("LIQUIDADO", fecha_desde, fecha_hasta, sucursal, "NULL", "X", 0, fecha_desde, fecha_hasta, origen,Global.vUserBaseDatos);
-                gcMovBancos.DataSource = dtMovBancos;
-            }
-
-            ConfiguraGrillaLiquidadosMovBancos();
-        }
-
-
-        public void ConfiguraGrillaLiquidadosMovBancos()
-        {
-            gvMovBancos.OptionsView.ColumnAutoWidth = false;
-            gvMovBancos.BestFitColumns();
-            System.Drawing.Font fnt = new System.Drawing.Font(gvMovBancos.Appearance.Row.Font.Name, 7);
-            gvMovBancos.Appearance.HeaderPanel.Font = fnt;
-            gvMovBancos.Appearance.Row.Font = fnt;
-            gvMovBancos.Appearance.Row.Options.UseFont = true;
-            gvMovBancos.OptionsView.ShowGroupPanel = false;
-            gvMovBancos.OptionsView.ShowIndicator = false;
-            gvMovBancos.OptionsBehavior.Editable = true;  //false;
-            gvMovBancos.OptionsSelection.EnableAppearanceFocusedCell = false;
-
-            //
-            gvMovBancos.Columns["NOMBRE"].Width = 150;
-
-            //FORMATO
-            gvMovBancos.Columns["LIQUIDADO"].DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            gvMovBancos.Columns["LIQUIDADO"].DisplayFormat.FormatString = "##,###,###,##0.00";
-            gvMovBancos.Columns["TC_LIQ"].DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            gvMovBancos.Columns["TC_LIQ"].DisplayFormat.FormatString = "##,###,###,##0.0000";
-            gvMovBancos.Columns["LOCAL"].DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            gvMovBancos.Columns["LOCAL"].DisplayFormat.FormatString = "##,###,###,##0.00";
-            gvMovBancos.Columns["DOLAR"].DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            gvMovBancos.Columns["DOLAR"].DisplayFormat.FormatString = "##,###,###,##0.00";
-            //gvLiquidados.Columns["TC"].DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            //gvLiquidados.Columns["TC"].DisplayFormat.FormatString = "##,###,###,##0.0000";
-
-        }
-
-
-
-        public void Cargar_SucursalLiquidados()
-        {
-            DataTable dtCajaLiquidados = new DataTable();
-            dtCajaLiquidados = objCargaLookUpBL.dtListarCajaBL(Global.vUserBaseDatos);
-            this.cboCajaLiquidados.DataSource = dtCajaLiquidados;
-            this.cboCajaLiquidados.DisplayMember = "DESCRIPCION";
-            this.cboCajaLiquidados.ValueMember = "CAJA";
-        }
-
-        private void cboCajaLiquidados_SelectedValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-        private void btnExportarLiquidado_Click(object sender, EventArgs e)
-        {
-            if (gvMovBancos.RowCount <= 0)
-            {
-                MessageBox.Show("No existe Informacion a Exportar.", "Tarjetas de Credito - Liquidados");
-                return;
-            }
-            else
-            {
-                gcMovBancos.ShowPrintPreview();
-            }
-        }
-
-        private void btnImprimirLiquidado_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
 
 
         #endregion
 
 
-        #region FUNCIONES_VARIOS
-        public void Cargar_Sucursales()
-        {
-            DataTable dtCaja = new DataTable();
-            dtCaja = objCargaLookUpBL.dtListarCajaBL(Global.vUserBaseDatos);
-            this.cboCaja.DataSource = dtCaja;
-            this.cboCaja.DisplayMember = "DESCRIPCION";
-            this.cboCaja.ValueMember = "CAJA";
-        }
-
-        public void Cargar_Tarjetas()
-        {
-            DataTable dtTarjetas = new DataTable();
-            dtTarjetas = objCargaLookUpBL.dtListarTarjetasBL(Global.vUserBaseDatos);
-            this.cboTarjetas.DataSource = dtTarjetas;
-            this.cboTarjetas.DisplayMember = "DESCRIPCION";
-            this.cboTarjetas.ValueMember = "TARJETA";
-        }
-
-        public void Cargar_CuentaBancos()
-        {
-            DataTable dt_cbhist = new DataTable();
-            dt_cbhist = objCargaLookUpBL.dtListarCuentaBancoBL(Global.vUserBaseDatos);
-            this.cboCtaBancos.DataSource = dt_cbhist;
-            this.cboCtaBancos.DisplayMember = "NOMBRE";
-            this.cboCtaBancos.ValueMember = "CUENTA_BANCO";
-        }
-
-        #endregion
-
-
-        #region RUTINAS_VARIOS
-        public void ConfiguraGrilla(DevExpress.XtraGrid.Views.Grid.GridView gv)
-        {
-            gv.OptionsView.ShowGroupPanel = false;
-            gv.OptionsView.ShowIndicator = false;
-            gv.OptionsBehavior.Editable = false;
-            gv.OptionsSelection.EnableAppearanceFocusedCell = false;
-            gv.OptionsView.ColumnAutoWidth = false;
-            gv.BestFitColumns();
-            gv.Appearance.Row.Font = new System.Drawing.Font(gv.Appearance.Row.Font, FontStyle.Bold);
-            gv.Appearance.Row.Options.UseFont = true;
-
-            System.Drawing.Font fnt = new System.Drawing.Font(gv.Appearance.Row.Font.Name, 7);
-            gv.Appearance.HeaderPanel.Font = fnt;
-            gv.Appearance.Row.Font = fnt;
-        }
-
-        private void xtraTabControl1_SelectedPageChanged(object sender, DevExpress.XtraTab.TabPageChangedEventArgs e)
-        {
-            if (xtraTabControl1.SelectedTabPage.Text == "Pendientes")
-            {
-                cTabXls = "Pendientes";
-                //MessageBox.Show("Pendientes....");  
-            }
-            else if (xtraTabControl1.SelectedTabPage.Text == "Liquidados")
-            {
-                cTabXls = "Liquidados";
-                //MessageBox.Show("Liquidados....");
-            }
-            else if (xtraTabControl1.SelectedTabPage.Text == "Parametros")
-            {
-                cTabXls = "Parametros";
-                //MessageBox.Show("Parametros....");
-            }
-
-        }
-        private void xtraTabControl1_Click(object sender, EventArgs e)
-        {
-            switch (xtraTabControl1.SelectedTabPage.Text)
-            {
-                case "Pendientes":
-                    cTabXls = "Pendientes";
-                    break;
-                case "Liquidados":
-                    cTabXls = "Liquidados";
-                    break;
-                case "Parametros":
-                    cTabXls = "Parametros";
-                    break;
-                default:
-                    cTabXls = "Pendientes";
-                    break;
-            }
-        }
 
 
 
@@ -1765,96 +2169,6 @@ namespace ApssaExactus
 
 
 
-
-
-
-
-
-        #endregion
-
-
-        private void gvMovBancos_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
-        {
-            AsientoSeleccionado = Convert.ToString(gvMovBancos.GetRowCellValue(gvMovBancos.FocusedRowHandle, "ASIENTO"));
-
-            txtAsientoTabLiquidacion.Text = AsientoSeleccionado;
-        }
-
-        private void gvFacturaCancela_FocusedRowChanged(object sender, FocusedRowChangedEventArgs e)
-        {
-            AsientoSeleccionado = Convert.ToString(gvFacturaCancela.GetRowCellValue(gvFacturaCancela.FocusedRowHandle, "ASIENTO"));
-
-            txtAsientoTabDocumento.Text = AsientoSeleccionado;
-        }
-
-        private void btnAsiento_Click(object sender, EventArgs e)
-        {
-            AsientoSeleccionado = "";
-
-            if (TabActivo == "Liquidacion")
-            {
-                if (gvMovBancos.RowCount <= 0)
-                {
-                    MessageBox.Show("No existe Informacion.", "Tarjetas de Credito - Liquidados");
-                    return;
-                }
-
-                AsientoSeleccionado = txtAsientoTabLiquidacion.Text;
-            }
-            else
-            {
-                if (gvFacturaCancela.RowCount <= 0)
-                {
-                    MessageBox.Show("No existe Informacion.", "Tarjetas de Credito - Liquidados");
-                    return;
-                }
-
-                AsientoSeleccionado = txtAsientoTabDocumento.Text;
-
-            }
-
-
-            if (AsientoSeleccionado == "")
-            {
-                MessageBox.Show("No existe Informacion.", "Tarjetas de Credito - Liquidados");
-                return;
-            }
-
-
-            frmLiquidacionAsiento FormAsiento = new frmLiquidacionAsiento();
-
-            FormAsiento._asiento = AsientoSeleccionado;
-            //FormAsiento._descripcion_aplicacion = varAplicacionDescripcion;
-            //FormAsiento._tipo = TipoOperacionCajaChica;
-
-            FormAsiento.ShowDialog();
-            if (FormAsiento.DialogResult == DialogResult.OK)
-            {
-
-            }
-            else
-            {
-
-            }
-
-
-        }
-
-        private void btnReporte_Click(object sender, EventArgs e)
-        {
-            frmLiquidacionReporteFiltros FormRpt = new frmLiquidacionReporteFiltros();
-
-            FormRpt.ShowDialog();
-            if (FormRpt.DialogResult == DialogResult.OK)
-            {
-
-            }
-            else
-            {
-
-            }
-
-        }
 
 
 

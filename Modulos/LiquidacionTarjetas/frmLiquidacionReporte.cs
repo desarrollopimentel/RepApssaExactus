@@ -19,13 +19,16 @@ namespace ApssaExactus
     public partial class frmLiquidacionReporte : DevExpress.XtraEditors.XtraForm
     {
         //parametro que recibe de frmEstadoCuentaCliente
-        public DateTime _dFechaIni { get; set; }
-        public DateTime _dFechaFin { get; set; }
-
+        //public DateTime _dFechaIni { get; set; }
+        //public DateTime _dFechaFin { get; set; }
+        public string _fecha_desde = string.Empty;
+        public string _fecha_hasta = string.Empty;
         public string _sucursal = string.Empty;
         public string _tarjeta = string.Empty;
-        public string _moneda = string.Empty;
-        public string _estado = string.Empty;
+        public string _local = string.Empty;
+        public string _dolar = string.Empty;
+        public string _pendiente = string.Empty;
+        public string _liquidado = string.Empty;
         public string _mensaje = string.Empty;
 
         //parametros generales
@@ -73,12 +76,14 @@ namespace ApssaExactus
         {
             // TODO: esta línea de código carga datos en la tabla 'PIMENTELDataSet1.SP_APSSA_LIQUIDAR_TARJETAS_REPORTE' Puede moverla o quitarla según sea necesario.
             //this.SP_APSSA_LIQUIDAR_TARJETAS_REPORTETableAdapter.Fill(this.PIMENTELDataSet1.SP_APSSA_LIQUIDAR_TARJETAS_REPORTE);
-            dpFechaIni.Text = _dFechaIni.ToString();
-            dpFechaFin.Text = _dFechaFin.ToString();
-            txtSucursal.Text = _sucursal;
-            txtTarjeta.Text = _tarjeta;
-            txtMoneda.Text = _moneda;
-            txtEstado.Text = _estado;
+            txtFechaDesde.Text = _fecha_desde;   //_dFechaIni.ToString();
+            txtFechaHasta.Text = _fecha_hasta;   //_dFechaFin.ToString();
+            txtCaja.Text = _sucursal;
+            txtTarjetas.Text = _tarjeta;
+            txtLocal.Text = _local;
+            txtDolar.Text = _dolar;
+            txtPendiente.Text = _pendiente;
+            txtLiquidado.Text = _liquidado;
 
             MuestraReporte();   //
             
@@ -93,12 +98,12 @@ namespace ApssaExactus
 
         public void MuestraReporte()
         {
-            dFechaIni = Convert.ToDateTime(this.dpFechaIni.Text);
-            dFechaFin = Convert.ToDateTime(this.dpFechaFin.Text);
-            sucursal = txtSucursal.Text;
-            tarjeta = txtTarjeta.Text;
-            moneda = txtMoneda.Text;
-            estado = txtEstado.Text;
+            dFechaIni = Convert.ToDateTime(this.txtFechaDesde.Text);
+            dFechaFin = Convert.ToDateTime(this.txtFechaHasta.Text);
+            sucursal = txtCaja.Text;
+            tarjeta = txtTarjetas.Text;
+            moneda = txtLocal.Text;
+            estado = txtDolar.Text;
             mensaje = _mensaje;
 
             varTitulo1 = "ALFREDO PIMENTEL SEVILLA S.A";
@@ -107,8 +112,8 @@ namespace ApssaExactus
             parameters[0] = new ReportParameter("parTitulo1", varTitulo1);
             parameters[1] = new ReportParameter("parTitulo2", varTitulo2);
             parameters[2] = new ReportParameter("parFechaReporte", DateTime.Today.ToString());
-            parameters[3] = new ReportParameter("parFechaDesde", dpFechaIni.Text);
-            parameters[4] = new ReportParameter("parFechaHasta", dpFechaFin.Text);
+            parameters[3] = new ReportParameter("parFechaDesde", txtFechaDesde.Text);
+            parameters[4] = new ReportParameter("parFechaHasta", txtFechaHasta.Text);
             parameters[5] = new ReportParameter("parMensaje1", _mensaje);
             reportViewer1.LocalReport.SetParameters(parameters);
 

@@ -1,6 +1,8 @@
 D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\LiquidacionTarjetas\bin\Debug\ApssaExactus-LiquidacionTarjetas.exe.config
 D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\LiquidacionTarjetas\bin\Debug\ApssaExactus-LiquidacionTarjetas.exe
 D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\LiquidacionTarjetas\bin\Debug\ApssaExactus-LiquidacionTarjetas.pdb
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\LiquidacionTarjetas\bin\Debug\ApssaExactus.LIBCS.dll
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\LiquidacionTarjetas\bin\Debug\ApssaExactus.LIBVB.dll
 D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\LiquidacionTarjetas\bin\Debug\CrystalDecisions.CrystalReports.Design.dll
 D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\LiquidacionTarjetas\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
 D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\LiquidacionTarjetas\bin\Debug\CrystalDecisions.Data.AdoDotNetInterop.dll
@@ -45,6 +47,9 @@ D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\LiquidacionTarjetas\bin\D
 D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\LiquidacionTarjetas\bin\Debug\stdole.dll
 D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\LiquidacionTarjetas\bin\Debug\DevExpress.Office.v16.1.Core.dll
 D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\LiquidacionTarjetas\bin\Debug\DevExpress.Pdf.v16.1.Drawing.dll
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\LiquidacionTarjetas\bin\Debug\ApssaExactus.LIBCS.pdb
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\LiquidacionTarjetas\bin\Debug\ApssaExactus.LIBVB.pdb
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\LiquidacionTarjetas\bin\Debug\ApssaExactus.LIBVB.xml
 D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\LiquidacionTarjetas\bin\Debug\DevExpress.Data.v16.1.xml
 D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\LiquidacionTarjetas\bin\Debug\DevExpress.Printing.v16.1.Core.xml
 D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\LiquidacionTarjetas\bin\Debug\DevExpress.Sparkline.v16.1.Core.xml
@@ -139,6 +144,7 @@ D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\LiquidacionTarjetas\obj\D
 D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\LiquidacionTarjetas\obj\Debug\ApssaExactus.Properties.Resources.resources
 D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\LiquidacionTarjetas\obj\Debug\ApssaExactus.XtraForm1.resources
 D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\LiquidacionTarjetas\obj\Debug\ApssaExactus-LiquidacionTarjetas.csproj.GenerateResource.Cache
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\LiquidacionTarjetas\obj\Debug\ApssaExactus-LiquidacionTarjetas.exe.licenses
 D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\LiquidacionTarjetas\obj\Debug\RdlCompile.cache
 D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\LiquidacionTarjetas\obj\Debug\RdlCompile.compiled
 D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\LiquidacionTarjetas\obj\Debug\ApssaExactus-LiquidacionTarjetas.exe

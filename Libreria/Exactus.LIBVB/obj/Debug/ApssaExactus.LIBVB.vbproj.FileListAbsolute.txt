@@ -35,7 +35,6 @@ C:\Users\MCABANILLASS\Documents\Visual Studio 2015\Projects\APSSA\RepApssaExactu
 D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Libreria\Exactus.LIBVB\bin\Debug\ApssaExactus.LIBVB.dll
 D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Libreria\Exactus.LIBVB\bin\Debug\ApssaExactus.LIBVB.pdb
 D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Libreria\Exactus.LIBVB\bin\Debug\ApssaExactus.LIBVB.xml
-D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Libreria\Exactus.LIBVB\obj\Debug\ApssaExactus.LIBVB.vbprojResolveAssemblyReference.cache
 D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Libreria\Exactus.LIBVB\obj\Debug\ApssaExactus.LIBVB.Resources.resources
 D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Libreria\Exactus.LIBVB\obj\Debug\ApssaExactus.LIBVB.vbproj.GenerateResource.Cache
 D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Libreria\Exactus.LIBVB\obj\Debug\ApssaExactus.LIBVB.dll

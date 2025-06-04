@@ -1072,7 +1072,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>PIMENTELDataSet</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\mcabanillass\Documents\Visual Studio 2015\Projects\RepApssaExactus-LiquidacionTarjetas-20250327\RepApssaExactus-LiquidacionTarjetas\PIMENTELDataSet.xsd</rd:SchemaPath>
+        <rd:SchemaPath>D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\LiquidacionTarjetas\PIMENTELDataSet.xsd</rd:SchemaPath>
         <rd:TableName>SP_APSSA_LIQUIDAR_TARJETAS_REPORTE</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>

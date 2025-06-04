@@ -215,11 +215,11 @@
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Libreria\Exactus.LIBCS\ApssaExactus.LIBCS.csproj">
+    <ProjectReference Include="..\..\Libreria\Exactus.LIBCS\ApssaExactus.LIBCS.csproj">
       <Project>{668955ac-aa6a-4117-b723-6d358bae45c7}</Project>
       <Name>ApssaExactus.LIBCS</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Libreria\Exactus.LIBVB\ApssaExactus.LIBVB.vbproj">
+    <ProjectReference Include="..\..\Libreria\Exactus.LIBVB\ApssaExactus.LIBVB.vbproj">
       <Project>{849ebae4-843b-4324-862a-3df42274d501}</Project>
       <Name>ApssaExactus.LIBVB</Name>
     </ProjectReference>

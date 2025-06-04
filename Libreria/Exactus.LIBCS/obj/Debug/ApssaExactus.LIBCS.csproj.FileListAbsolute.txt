@@ -418,6 +418,5 @@ D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Libreria\Exactus.LIBCS\bin\Debug\
 D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Libreria\Exactus.LIBCS\bin\Debug\es\DevExpress.Office.v16.1.Core.resources.dll
 D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Libreria\Exactus.LIBCS\bin\Debug\ja\DevExpress.Office.v16.1.Core.resources.dll
 D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Libreria\Exactus.LIBCS\bin\Debug\ru\DevExpress.Office.v16.1.Core.resources.dll
-D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Libreria\Exactus.LIBCS\obj\Debug\ApssaExactus.LIBCS.csprojResolveAssemblyReference.cache
 D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Libreria\Exactus.LIBCS\obj\Debug\ApssaExactus.LIBCS.dll
 D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Libreria\Exactus.LIBCS\obj\Debug\ApssaExactus.LIBCS.pdb

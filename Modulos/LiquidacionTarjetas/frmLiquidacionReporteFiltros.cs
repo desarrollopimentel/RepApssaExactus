@@ -47,23 +47,50 @@ namespace ApssaExactus
             DateTime rep_dFechaHasta = Convert.ToDateTime(deFechaHasta.Text);   // {5/03/2025 00:00:00}
             string rep_caja = cboCaja.SelectedValue.ToString();   // "0010"
             string rep_tarjeta = cboTarjetas.Text;                //"VISANET"
-            
-            string rep_checkLocal = checkLocal.Text;
-            string rep_checkDolar = checkDolar.Text;
-            string rep_checkPendiente = checkPendiente.Text;
-            string rep_checkLiquidado = checkLiquidado.Text;
 
             string rep_moneda = "L";
             string rep_estado = "T";
             string rep_mensaje = "XXXXxxxx";
 
+            string rep_checkLocal = "N";         // checkLocal.Text;
+            string rep_checkDolar = "N";         // checkDolar.Text;
+            string rep_checkPendiente = "N";     // checkPendiente.Text;
+            string rep_checkLiquidado = "N";     // checkLiquidado.Text;
+
+            if (checkLocal.Checked == true){
+                rep_checkLocal = "S";
+            } else{
+                rep_checkLocal = "N";  }
+
+            if (checkDolar.Checked == true){
+                rep_checkDolar = "S";
+            }
+            else {
+                rep_checkDolar = "N"; }
+
+            if (checkPendiente.Checked == true) {
+                rep_checkPendiente = "S";
+            }
+            else
+            {
+                rep_checkPendiente = "N"; }
+
+            if (checkLiquidado.Checked == true){
+                rep_checkLiquidado = "S";
+            }
+            else{
+                rep_checkLiquidado = "N"; }
+
+
             frmLiquidacionReporte frmRpt = new frmLiquidacionReporte();
-            frmRpt._dFechaIni = rep_dFechaDesde;
-            frmRpt._dFechaFin = rep_dFechaHasta;
+            frmRpt._fecha_desde = rep_dFechaDesde.ToString();
+            frmRpt._fecha_hasta = rep_dFechaHasta.ToString();
             frmRpt._sucursal = rep_caja;
             frmRpt._tarjeta = rep_tarjeta;
-            frmRpt._moneda = rep_moneda;
-            frmRpt._estado = rep_estado;
+            frmRpt._local = rep_checkLocal;
+            frmRpt._dolar = rep_checkDolar;
+            frmRpt._pendiente = rep_checkPendiente;
+            frmRpt._liquidado = rep_checkLiquidado;
             frmRpt._mensaje = rep_mensaje;
             frmRpt.ShowDialog();
 

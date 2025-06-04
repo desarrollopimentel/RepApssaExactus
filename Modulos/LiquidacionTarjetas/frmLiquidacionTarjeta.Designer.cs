@@ -296,7 +296,6 @@
             // 
             // btnReporte
             // 
-            this.btnReporte.Enabled = false;
             this.btnReporte.Image = ((System.Drawing.Image)(resources.GetObject("btnReporte.Image")));
             this.btnReporte.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
             this.btnReporte.Location = new System.Drawing.Point(833, 65);
