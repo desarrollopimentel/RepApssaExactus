@@ -956,6 +956,7 @@ namespace ApssaExactus
                 //////dtAbonos = ContabilidadBL.dtObtieneTarjetasListado_BL("PENDIENTE", fecha_al, fecha_deposito, sucursal, tarjeta, moneda, tipo_cambio, fecha_al, fecha_al, Global.vUserBaseDatos);
                 //dtLiquidados = ContabilidadBL.dtObtieneTarjetasListado_BL("LIQUIDADO", null, null, null, null, null, null, fecha_desde, fecha_hasta, Global.vUserBaseDatos);
                 dtFacturaCancela = ContabilidadBL.dtObtieneTarjetasListado_BL("LIQUIDADO", fecha_desde, fecha_hasta, sucursal, "NULL", "X", 0, fecha_desde, fecha_hasta, origen, Global.vUserBaseDatos);
+                
                 gcFacturaCancela.DataSource = dtFacturaCancela;
             }
 

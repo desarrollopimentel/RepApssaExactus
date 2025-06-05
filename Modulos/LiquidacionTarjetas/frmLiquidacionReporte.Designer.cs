@@ -57,13 +57,12 @@
             this.reportViewer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            reportDataSource1.Name = "dsPimentel";
             reportDataSource1.Value = null;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "ApssaExactus.RptLiquidacionTarjetas.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(3, 38);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(826, 489);
+            this.reportViewer1.Size = new System.Drawing.Size(962, 559);
             this.reportViewer1.TabIndex = 0;
             // 
             // txtTarjetas
@@ -99,7 +98,7 @@
             // btnConsultar
             // 
             this.btnConsultar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnConsultar.Location = new System.Drawing.Point(762, 9);
+            this.btnConsultar.Location = new System.Drawing.Point(898, 9);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(60, 23);
             this.btnConsultar.TabIndex = 68;
@@ -160,7 +159,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(834, 532);
+            this.ClientSize = new System.Drawing.Size(970, 602);
             this.Controls.Add(this.txtFechaHasta);
             this.Controls.Add(this.txtFechaDesde);
             this.Controls.Add(this.txtLiquidado);

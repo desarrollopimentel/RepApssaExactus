@@ -118,12 +118,6 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAplicacionesGY.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmAplicacionesGY.Designer.cs">
-      <DependentUpon>frmAplicacionesGY.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmLiquidacionReporte.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,23 +130,11 @@
     <Compile Include="frmLiquidacionAsiento.Designer.cs">
       <DependentUpon>frmLiquidacionAsiento.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDiferenciaCajas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmDiferenciaCajas.Designer.cs">
-      <DependentUpon>frmDiferenciaCajas.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmLiquidacionReporteFiltros.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmLiquidacionReporteFiltros.Designer.cs">
       <DependentUpon>frmLiquidacionReporteFiltros.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmOrdenCompraCarga.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmOrdenCompraCarga.Designer.cs">
-      <DependentUpon>frmOrdenCompraCarga.cs</DependentUpon>
     </Compile>
     <Compile Include="LogisticaBE.cs" />
     <Compile Include="frmLiquidacionTarjeta.cs">
@@ -176,11 +158,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service References\ServiceReferenceGRR\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
     <Compile Include="SqlHelper.cs" />
     <Compile Include="TesoreriaBE.cs" />
     <Compile Include="TesoreriaBL.cs" />
@@ -198,23 +175,14 @@
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAplicacionesGY.resx">
-      <DependentUpon>frmAplicacionesGY.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmLiquidacionReporte.resx">
       <DependentUpon>frmLiquidacionReporte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLiquidacionAsiento.resx">
       <DependentUpon>frmLiquidacionAsiento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDiferenciaCajas.resx">
-      <DependentUpon>frmDiferenciaCajas.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmLiquidacionReporteFiltros.resx">
       <DependentUpon>frmLiquidacionReporteFiltros.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmOrdenCompraCarga.resx">
-      <DependentUpon>frmOrdenCompraCarga.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLiquidacionTarjeta.resx">
       <DependentUpon>frmLiquidacionTarjeta.cs</DependentUpon>
@@ -230,8 +198,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="RptCargoEntregaRendir.rdlc" />
-    <EmbeddedResource Include="RptCargoFondoFijo.rdlc" />
     <EmbeddedResource Include="RptLiquidacionTarjetas.rdlc" />
     <EmbeddedResource Include="XtraForm1.resx">
       <DependentUpon>XtraForm1.cs</DependentUpon>
@@ -268,61 +234,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Service References\ServiceReferenceGRR\ApssaExactus.ServiceReferenceGRR.ConfirmarEstadoGRRResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ServiceReferenceGRR\ApssaExactus.ServiceReferenceGRR.ConfirmarRespuestaGRRResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ServiceReferenceGRR\ApssaExactus.ServiceReferenceGRR.ConsultaIndividualGRRResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ServiceReferenceGRR\ApssaExactus.ServiceReferenceGRR.ConsultarEstadoGRRResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ServiceReferenceGRR\ApssaExactus.ServiceReferenceGRR.ConsultarRespuestaGRRResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ServiceReferenceGRR\ApssaExactus.ServiceReferenceGRR.ConsultarRI_GRRResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ServiceReferenceGRR\ApssaExactus.ServiceReferenceGRR.ConsultarXMLGRRResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ServiceReferenceGRR\ApssaExactus.ServiceReferenceGRR.ens_ConfirmarEstado.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ServiceReferenceGRR\ApssaExactus.ServiceReferenceGRR.ens_ConfirmarRespuesta.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ServiceReferenceGRR\ApssaExactus.ServiceReferenceGRR.ens_ConsultarEstadoGR.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ServiceReferenceGRR\ApssaExactus.ServiceReferenceGRR.ens_ConsultarRespuesta.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ServiceReferenceGRR\ApssaExactus.ServiceReferenceGRR.ens_ConsultarXML.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ServiceReferenceGRR\ApssaExactus.ServiceReferenceGRR.ens_OtorgarComprobante.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ServiceReferenceGRR\ApssaExactus.ServiceReferenceGRR.ens_Respuesta.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ServiceReferenceGRR\ApssaExactus.ServiceReferenceGRR.ens_ResultadoRI.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ServiceReferenceGRR\ApssaExactus.ServiceReferenceGRR.OtorgarGRRResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ServiceReferenceGRR\ApssaExactus.ServiceReferenceGRR.RegistrarGRR20Response.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ServiceReferenceGRR\ApssaExactus.ServiceReferenceGRR.RegistrarGRRResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\ServiceReferenceGRR\ServicioGuiaRemisionRemitente.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -342,19 +253,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="favicon.ico" />
-    <None Include="Service References\ServiceReferenceGRR\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <None Include="Service References\ServiceReferenceGRR\configuration.svcinfo" />
-    <None Include="Service References\ServiceReferenceGRR\configuration91.svcinfo" />
-    <None Include="Service References\ServiceReferenceGRR\ServicioGuiaRemisionRemitente.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Service References\ServiceReferenceGRR\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

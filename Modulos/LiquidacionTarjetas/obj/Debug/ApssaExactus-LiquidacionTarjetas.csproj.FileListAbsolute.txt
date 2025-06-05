@@ -134,12 +134,9 @@ D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\LiquidacionTarjetas\obj\D
 D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\LiquidacionTarjetas\obj\Debug\ApssaExactus-LiquidacionTarjetas.csproj.ApssaExactus-LiquidacionTarjetas.exe.config
 D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\LiquidacionTarjetas\obj\Debug\ApssaExactus.Form1.resources
 D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\LiquidacionTarjetas\obj\Debug\ApssaExactus.Form2.resources
-D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\LiquidacionTarjetas\obj\Debug\ApssaExactus.frmAplicacionesGY.resources
 D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\LiquidacionTarjetas\obj\Debug\ApssaExactus.frmLiquidacionReporte.resources
 D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\LiquidacionTarjetas\obj\Debug\ApssaExactus.frmLiquidacionAsiento.resources
-D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\LiquidacionTarjetas\obj\Debug\ApssaExactus.frmDiferenciaCajas.resources
 D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\LiquidacionTarjetas\obj\Debug\ApssaExactus.frmLiquidacionReporteFiltros.resources
-D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\LiquidacionTarjetas\obj\Debug\ApssaExactus.frmOrdenCompraCarga.resources
 D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\LiquidacionTarjetas\obj\Debug\ApssaExactus.frmLiquidacionTarjeta.resources
 D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\LiquidacionTarjetas\obj\Debug\ApssaExactus.Properties.Resources.resources
 D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\LiquidacionTarjetas\obj\Debug\ApssaExactus.XtraForm1.resources

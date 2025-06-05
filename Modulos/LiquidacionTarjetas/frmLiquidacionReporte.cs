@@ -39,8 +39,12 @@ namespace ApssaExactus
         private DateTime dFechaIni { get; set; }
         private DateTime dFechaFin { get; set; }
         private string sucursal = string.Empty;
+        private string sucursal_nombre = string.Empty;
         private string tarjeta = string.Empty;
-        public string moneda = string.Empty;
+        public string moneda_local = string.Empty;
+        public string moneda_dolar = string.Empty;
+        public string pendientes = string.Empty;
+        public string liquidados = string.Empty;
         public string estado = string.Empty;
         public string mensaje = string.Empty;
 
@@ -102,102 +106,56 @@ namespace ApssaExactus
             dFechaFin = Convert.ToDateTime(this.txtFechaHasta.Text);
             sucursal = txtCaja.Text;
             tarjeta = txtTarjetas.Text;
-            moneda = txtLocal.Text;
-            estado = txtDolar.Text;
+            moneda_local = txtLocal.Text;
+            moneda_dolar = txtDolar.Text;
+            pendientes = txtPendiente.Text;
+            liquidados = txtLiquidado.Text;
+            sucursal_nombre = txtCaja.Text;
             mensaje = _mensaje;
+
+            estado = "Pendiente, Liquidado";
 
             varTitulo1 = "ALFREDO PIMENTEL SEVILLA S.A";
             varTitulo2 = "AV. ANGAMOS OESTE 1795 - SURQUILLO";
-            ReportParameter[] parameters = new ReportParameter[6];
+            ReportParameter[] parameters = new ReportParameter[9];
             parameters[0] = new ReportParameter("parTitulo1", varTitulo1);
             parameters[1] = new ReportParameter("parTitulo2", varTitulo2);
             parameters[2] = new ReportParameter("parFechaReporte", DateTime.Today.ToString());
             parameters[3] = new ReportParameter("parFechaDesde", txtFechaDesde.Text);
             parameters[4] = new ReportParameter("parFechaHasta", txtFechaHasta.Text);
             parameters[5] = new ReportParameter("parMensaje1", _mensaje);
+
+            parameters[6] = new ReportParameter("parSucursal", sucursal_nombre);
+            parameters[7] = new ReportParameter("parTarjeta", tarjeta);
+            parameters[8] = new ReportParameter("parEstado", estado);
             reportViewer1.LocalReport.SetParameters(parameters);
 
             //limpia los datasource
             reportViewer1.LocalReport.DataSources.Clear();
 
-            //CargaSaldoDocumentosCliente(contribuyente, cliente, dFechaIni, dFechaFin, Global.vUserBaseDatos);
-            //CargaSaldoCliente(cliente, Global.vUserBaseDatos);
-            //CargaInformacionCliente(cliente, Global.vUserBaseDatos);
-            //CargaLetrasEstadoCliente(cliente, dFechaFin, Global.vUserBaseDatos);
-
             //Liquidaciontarjetas
             ReportDataSource rds1 = new ReportDataSource();
-            rds1.Name = "LiquidacionTarjetas";
+            rds1.Name = "dsPimentel"; // "LiquidacionTarjetas";
             //ContabilidadDL.dtObtenerReporteLiquidacionTarjetas_DL(_fecha_ini, _fecha_fin, _sucursal, _tarjeta, _moneda, _estado, db);
-            rds1.Value = CargaLiquidacionTarjetas(dFechaIni, dFechaFin, sucursal, tarjeta, moneda, estado);
+            rds1.Value = CargaLiquidacionTarjetas(dFechaIni, dFechaFin, sucursal, tarjeta, moneda_local, moneda_dolar, pendientes, liquidados);
             reportViewer1.LocalReport.DataSources.Add(rds1);
-
-            ////SaldoDocumentosCliente
-            //ReportDataSource rds1 = new ReportDataSource();
-            //rds1.Name = "SaldoDocumentosCliente";
-            //rds1.Value = CargaSaldoDocumentosCliente(contribuyente, cliente, dFechaIni, dFechaFin, Global.vUserBaseDatos);
-            //reportViewer1.LocalReport.DataSources.Add(rds1);
-
-            ////InformacionCliente
-            //ReportDataSource rds2 = new ReportDataSource();
-            //rds2.Name = "InformacionCliente";
-            //rds2.Value = CargaInformacionCliente(cliente, Global.vUserBaseDatos);
-            //reportViewer1.LocalReport.DataSources.Add(rds2);
-
-            ////LetrasEstadoCliente
-            //ReportDataSource rds3 = new ReportDataSource();
-            //rds3.Name = "LetrasEstadoCliente";
-            //rds3.Value = CargaLetrasEstadoCliente(cliente, dFechaFin, Global.vUserBaseDatos);
-            //reportViewer1.LocalReport.DataSources.Add(rds3);
 
             reportViewer1.LocalReport.Refresh();
             reportViewer1.RefreshReport();
         }
 
 
-        public DataTable CargaLiquidacionTarjetas(DateTime dFecIni, DateTime dFecFin, string sucursal, string tarjeta, string moneda, string estado)
+        public DataTable CargaLiquidacionTarjetas(DateTime _dFecIni, DateTime _dFecFin, string _sucursal, string _tarjeta, string _moneda_local, string _moneda_dolar, string _pendientes, string _liquidados)
         {
             //EstadoCuentaBL objEstadoCuentaBL = new EstadoCuentaBL();
             DataTable dtTarjetas = new DataTable();
             //dtObtenerReporteLiquidacionTarjetas_BL(string _operacion, string _asiento, Decimal _numero_operacion, string db)
             //ContabilidadDL.dtObtenerReporteLiquidacionTarjetas_DL(_fecha_ini, _fecha_fin, _sucursal, _tarjeta, _moneda, _estado, db);
-            dtTarjetas = ContabilidadBL.dtObtenerReporteLiquidacionTarjetas_BL(dFecIni, dFecFin, sucursal, tarjeta, moneda, estado, Global.vUserBaseDatos);
+            //dtTarjetas = ContabilidadBL.dtObtenerReporteLiquidacionTarjetas_BL(dFecIni, dFecFin, sucursal, tarjeta, moneda, estado, Global.vUserBaseDatos);
+            //return ContabilidadDL.dtObtenerReporteLiquidacionTarjetas_DL(_fecha_ini, _fecha_fin, _sucursal, _tarjeta, _local, _dolar, _pendiente, _liquidado, db);
+            dtTarjetas = ContabilidadBL.dtObtenerReporteLiquidacionTarjetas_BL(_dFecIni, _dFecFin, _sucursal, _tarjeta, _moneda_local, _moneda_dolar, _pendientes, _liquidados, Global.vUserBaseDatos);
             return dtTarjetas;
         }
-
-        ////public DataTable CargaSaldoDocumentosCliente(string contrib, string client, DateTime dFecIni, DateTime dFecFin, string baseusuario)
-        ////{
-        ////    //EstadoCuentaBL objEstadoCuentaBL = new EstadoCuentaBL();
-        ////    DataTable dtSaldoDocumentosCliente = new DataTable();
-        ////    //dtSaldoDocumentosCliente = objEstadoCuentaBL.dtSaldoDocumentosClienteBL(contrib, client, dFecIni, dFecFin, baseusuario);
-        ////    return dtSaldoDocumentosCliente;
-        ////}
-
-
-        ////public DataTable CargaInformacionCliente(string cli, string baseuser)
-        ////{
-        ////    //EstadoCuentaBL objEstadoCuentaBL = new EstadoCuentaBL();
-        ////    DataTable dtInformacionCliente = new DataTable();
-        ////    //dtInformacionCliente = objEstadoCuentaBL.dtInformacionClienteBL(cli, baseuser);
-        ////    return dtInformacionCliente;
-        ////}
-
-
-        ////public DataTable CargaSaldoCliente(string cli, string baseuser)
-        ////{
-        ////    //EstadoCuentaBL objEstadoCuentaBL = new EstadoCuentaBL();
-        ////    DataTable dtSaldoCliente = new DataTable();
-        ////    //dtSaldoCliente = objEstadoCuentaBL.dtSaldoClienteBL(cli, baseuser);
-        ////    return dtSaldoCliente;
-        ////}
-
-        ////public DataTable CargaLetrasEstadoCliente(string client, DateTime dFecFin, string baseusuario)
-        ////{
-        ////    //EstadoCuentaBL objEstadoCuentaBL = new EstadoCuentaBL();
-        ////    DataTable dtLetrasEstadoCliente = new DataTable();
-        ////    //dtLetrasEstadoCliente = objEstadoCuentaBL.dtLetrasEstadoClienteBL(client, dFecFin, baseusuario);
-        ////    return dtLetrasEstadoCliente;
-        ////}
 
 
     }

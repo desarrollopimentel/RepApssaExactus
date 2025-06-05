@@ -87,15 +87,16 @@ namespace ApssaExactus
     public class ContabilidadDL
     {
 
-        //ALTER PROCEDURE[PIMENTEL].[SP_APSSA_LIQUIDAR_TARJETAS_REPORTE]
-        //(@FECHA_DESDE DATETIME,
-        // @FECHA_HASTA DATETIME,
-        // @SUCURSAL VARCHAR(100),		    -- "0010"  CODIGO CAJA		-- multiple para LIQUIDADOS "0002, 0003, 0004, 0005, 0006, 0007, 0008, 0009, 0010, 0011, 0012, 0014, 0015, 0016, 0017"
-        // @TARJETA VARCHAR(50),				-- "VISANET"
-        // @MONEDA VARCHAR(1) = NULL,			-- 'L', 'D' , 'A'  (Local, Dolar, Ambos
-        // @ESTADO VARCHAR(1) = NULL          -- 'P', 'L', 'T'  (Pendiente, Liquidado, Todos)
-        //)
-        public static DataTable dtObtenerReporteLiquidacionTarjetas_DL(DateTime _fecha_ini, DateTime _fecha_fin, string _sucursal, string _tarjeta, string _moneda, string _estado, string db)
+        ////ALTER PROCEDURE[PIMENTEL].[SP_APSSA_LIQUIDAR_TARJETAS_REPORTE]
+        ////(@FECHA_DESDE DATETIME,
+        //// @FECHA_HASTA DATETIME,
+        //// @SUCURSAL VARCHAR(100),		    -- "0010"  CODIGO CAJA		-- multiple para LIQUIDADOS "0002, 0003, 0004, 0005, 0006, 0007, 0008, 0009, 0010, 0011, 0012, 0014, 0015, 0016, 0017"
+        //// @TARJETA VARCHAR(50),				-- "VISANET"
+        //// @MONEDA_LOCAL VARCHAR(1) = NULL,	-- 'S','N'
+        //// @MONEDA_DOLAR VARCHAR(1) = NULL,	-- 'S','N'
+        //// @PENDIENTES VARCHAR(1) = NULL,		-- 'S','N'
+        //// @LIQUIDADOS VARCHAR(1) = NULL		-- 'S','N'
+        public static DataTable dtObtenerReporteLiquidacionTarjetas_DL(DateTime _fecha_ini, DateTime _fecha_fin, string _sucursal, string _tarjeta, string _local, string _dolar, string _pendiente, string _liquidado, string db)
         {
             string strSql = "PIMENTEL.SP_APSSA_LIQUIDAR_TARJETAS_REPORTE";
 
@@ -104,8 +105,10 @@ namespace ApssaExactus
             arParams.Add(new SqlParameter("@FECHA_HASTA", _fecha_fin));
             arParams.Add(new SqlParameter("@SUCURSAL", _sucursal));
             arParams.Add(new SqlParameter("@TARJETA", _tarjeta));
-            arParams.Add(new SqlParameter("@MONEDA", _moneda));
-            arParams.Add(new SqlParameter("@ESTADO", _estado));
+            arParams.Add(new SqlParameter("@MONEDA_LOCAL", _local));
+            arParams.Add(new SqlParameter("@MONEDA_DOLAR", _dolar));
+            arParams.Add(new SqlParameter("@PENDIENTES", _pendiente));
+            arParams.Add(new SqlParameter("@LIQUIDADOS", _liquidado));
 
             return SqlHelper.ExecuteDataset(ConexionDC.ConectarBD(db), CommandType.StoredProcedure, strSql, arParams.ToArray()).Tables[0];
         }

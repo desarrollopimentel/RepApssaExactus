@@ -32,9 +32,9 @@ namespace ApssaExactus
     public class ContabilidadBL
     {
 
-        public static DataTable dtObtenerReporteLiquidacionTarjetas_BL(DateTime _fecha_ini, DateTime _fecha_fin, string _sucursal, string _tarjeta, string _moneda, string _estado, string db)
+        public static DataTable dtObtenerReporteLiquidacionTarjetas_BL(DateTime _fecha_ini, DateTime _fecha_fin, string _sucursal, string _tarjeta, string _local, string _dolar, string _pendiente, string _liquidado, string db)
         {
-            return ContabilidadDL.dtObtenerReporteLiquidacionTarjetas_DL(_fecha_ini, _fecha_fin, _sucursal, _tarjeta, _moneda, _estado, db);
+            return ContabilidadDL.dtObtenerReporteLiquidacionTarjetas_DL(_fecha_ini, _fecha_fin, _sucursal, _tarjeta, _local, _dolar, _pendiente, _liquidado, db);
         }
 
         //    public static DataTable dtObtenerAsientoLiquidacion_BL(string _operacion, string _asiento, Decimal _numero_operacion, string db)
