@@ -40,3 +40,4 @@ D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Libreria\Exactus.LIBVB\obj\Debug\
 D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Libreria\Exactus.LIBVB\obj\Debug\ApssaExactus.LIBVB.dll
 D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Libreria\Exactus.LIBVB\obj\Debug\ApssaExactus.LIBVB.xml
 D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Libreria\Exactus.LIBVB\obj\Debug\ApssaExactus.LIBVB.pdb
+D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Libreria\Exactus.LIBVB\obj\Debug\ApssaExactus.LIBVB.vbprojResolveAssemblyReference.cache

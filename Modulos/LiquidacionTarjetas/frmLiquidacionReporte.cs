@@ -139,7 +139,7 @@ namespace ApssaExactus
             //ContabilidadDL.dtObtenerReporteLiquidacionTarjetas_DL(_fecha_ini, _fecha_fin, _sucursal, _tarjeta, _moneda, _estado, db);
             rds1.Value = CargaLiquidacionTarjetas(dFechaIni, dFechaFin, sucursal, tarjeta, moneda_local, moneda_dolar, pendientes, liquidados);
             reportViewer1.LocalReport.DataSources.Add(rds1);
-
+            
             reportViewer1.LocalReport.Refresh();
             reportViewer1.RefreshReport();
         }
