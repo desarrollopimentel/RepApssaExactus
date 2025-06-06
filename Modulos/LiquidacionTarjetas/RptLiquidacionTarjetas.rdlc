@@ -428,14 +428,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="CLIENTES">
+                    <Textbox Name="CLIENTE">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!CLIENTES.Value</Value>
+                              <Value>=Fields!CLIENTE.Value</Value>
                               <Style>
                                 <FontSize>6pt</FontSize>
                               </Style>
@@ -444,7 +444,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>CLIENTES</rd:DefaultName>
+                      <rd:DefaultName>CLIENTE</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -456,6 +456,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -1173,8 +1174,8 @@
           <DataField>FECHA</DataField>
           <rd:TypeName>System.DateTime</rd:TypeName>
         </Field>
-        <Field Name="CLIENTES">
-          <DataField>CLIENTES</DataField>
+        <Field Name="CLIENTE">
+          <DataField>CLIENTE</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="NOMBRE">
@@ -1183,7 +1184,7 @@
         </Field>
         <Field Name="NUMERO">
           <DataField>NUMERO</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+          <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
         <Field Name="MONEDA">
           <DataField>MONEDA</DataField>
@@ -1205,18 +1206,22 @@
           <DataField>DOCUMENTO</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="ASIENTO">
-          <DataField>ASIENTO</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
         <Field Name="ESTADO_LIQ">
           <DataField>ESTADO_LIQ</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="TIPO_TARJETA">
+          <DataField>TIPO_TARJETA</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="ASIENTO">
+          <DataField>ASIENTO</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>PIMENTELDataSet</rd:DataSetName>
-        <rd:SchemaPath>D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\LiquidacionTarjetas\PIMENTELDataSet.xsd</rd:SchemaPath>
+        <rd:DataSetName>dsTarjetas</rd:DataSetName>
+        <rd:SchemaPath>D:\aGitHub\MCABANILLASS\VS2015\RepApssaExactus\Modulos\LiquidacionTarjetas\dsTarjetas.xsd</rd:SchemaPath>
         <rd:TableName>SP_APSSA_LIQUIDAR_TARJETAS_REPORTE</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>

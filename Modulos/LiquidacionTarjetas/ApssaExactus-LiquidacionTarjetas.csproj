@@ -106,6 +106,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Creditos_Reportes.xsd</DependentUpon>
     </Compile>
+    <Compile Include="dsTarjetas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsTarjetas.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -212,6 +217,17 @@
     </None>
     <None Include="Creditos_Reportes.xss">
       <DependentUpon>Creditos_Reportes.xsd</DependentUpon>
+    </None>
+    <None Include="dsTarjetas.xsc">
+      <DependentUpon>dsTarjetas.xsd</DependentUpon>
+    </None>
+    <None Include="dsTarjetas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsTarjetas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsTarjetas.xss">
+      <DependentUpon>dsTarjetas.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="PIMENTELDataSet.xsc">

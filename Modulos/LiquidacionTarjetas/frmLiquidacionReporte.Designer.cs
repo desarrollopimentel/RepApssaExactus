@@ -42,6 +42,10 @@
             this.txtPendiente = new DevExpress.XtraEditors.TextEdit();
             this.txtFechaDesde = new DevExpress.XtraEditors.TextEdit();
             this.txtFechaHasta = new DevExpress.XtraEditors.TextEdit();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.txtTarjetas.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCaja.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtLocal.Properties)).BeginInit();
@@ -69,8 +73,11 @@
             // 
             // txtTarjetas
             // 
+            this.txtTarjetas.Enabled = false;
             this.txtTarjetas.Location = new System.Drawing.Point(416, 12);
             this.txtTarjetas.Name = "txtTarjetas";
+            this.txtTarjetas.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtTarjetas.Properties.Appearance.Options.UseFont = true;
             this.txtTarjetas.Size = new System.Drawing.Size(137, 20);
             this.txtTarjetas.TabIndex = 74;
             // 
@@ -92,8 +99,11 @@
             // 
             // txtCaja
             // 
+            this.txtCaja.Enabled = false;
             this.txtCaja.Location = new System.Drawing.Point(289, 12);
             this.txtCaja.Name = "txtCaja";
+            this.txtCaja.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtCaja.Properties.Appearance.Options.UseFont = true;
             this.txtCaja.Size = new System.Drawing.Size(77, 20);
             this.txtCaja.TabIndex = 69;
             // 
@@ -117,51 +127,105 @@
             // 
             // txtLocal
             // 
-            this.txtLocal.Location = new System.Drawing.Point(559, 12);
+            this.txtLocal.Enabled = false;
+            this.txtLocal.Location = new System.Drawing.Point(613, 13);
             this.txtLocal.Name = "txtLocal";
-            this.txtLocal.Size = new System.Drawing.Size(39, 20);
+            this.txtLocal.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtLocal.Properties.Appearance.Options.UseFont = true;
+            this.txtLocal.Size = new System.Drawing.Size(20, 20);
             this.txtLocal.TabIndex = 76;
             // 
             // txtDolar
             // 
-            this.txtDolar.Location = new System.Drawing.Point(604, 12);
+            this.txtDolar.Enabled = false;
+            this.txtDolar.Location = new System.Drawing.Point(674, 13);
             this.txtDolar.Name = "txtDolar";
-            this.txtDolar.Size = new System.Drawing.Size(34, 20);
+            this.txtDolar.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtDolar.Properties.Appearance.Options.UseFont = true;
+            this.txtDolar.Size = new System.Drawing.Size(20, 20);
             this.txtDolar.TabIndex = 77;
             // 
             // txtLiquidado
             // 
-            this.txtLiquidado.Location = new System.Drawing.Point(697, 12);
+            this.txtLiquidado.Enabled = false;
+            this.txtLiquidado.Location = new System.Drawing.Point(844, 13);
             this.txtLiquidado.Name = "txtLiquidado";
-            this.txtLiquidado.Size = new System.Drawing.Size(34, 20);
+            this.txtLiquidado.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtLiquidado.Properties.Appearance.Options.UseFont = true;
+            this.txtLiquidado.Size = new System.Drawing.Size(20, 20);
             this.txtLiquidado.TabIndex = 79;
             // 
             // txtPendiente
             // 
-            this.txtPendiente.Location = new System.Drawing.Point(652, 12);
+            this.txtPendiente.Enabled = false;
+            this.txtPendiente.Location = new System.Drawing.Point(763, 13);
             this.txtPendiente.Name = "txtPendiente";
-            this.txtPendiente.Size = new System.Drawing.Size(39, 20);
+            this.txtPendiente.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtPendiente.Properties.Appearance.Options.UseFont = true;
+            this.txtPendiente.Size = new System.Drawing.Size(20, 20);
             this.txtPendiente.TabIndex = 78;
             // 
             // txtFechaDesde
             // 
+            this.txtFechaDesde.Enabled = false;
             this.txtFechaDesde.Location = new System.Drawing.Point(62, 12);
             this.txtFechaDesde.Name = "txtFechaDesde";
+            this.txtFechaDesde.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtFechaDesde.Properties.Appearance.Options.UseFont = true;
             this.txtFechaDesde.Size = new System.Drawing.Size(77, 20);
             this.txtFechaDesde.TabIndex = 80;
             // 
             // txtFechaHasta
             // 
+            this.txtFechaHasta.Enabled = false;
             this.txtFechaHasta.Location = new System.Drawing.Point(145, 12);
             this.txtFechaHasta.Name = "txtFechaHasta";
+            this.txtFechaHasta.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtFechaHasta.Properties.Appearance.Options.UseFont = true;
             this.txtFechaHasta.Size = new System.Drawing.Size(77, 20);
             this.txtFechaHasta.TabIndex = 81;
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Location = new System.Drawing.Point(585, 19);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(25, 13);
+            this.labelControl2.TabIndex = 82;
+            this.labelControl2.Text = "Soles";
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Location = new System.Drawing.Point(791, 19);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(50, 13);
+            this.labelControl4.TabIndex = 83;
+            this.labelControl4.Text = "Liquidados";
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Location = new System.Drawing.Point(708, 19);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(53, 13);
+            this.labelControl5.TabIndex = 84;
+            this.labelControl5.Text = "Pendientes";
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Location = new System.Drawing.Point(648, 19);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(25, 13);
+            this.labelControl6.TabIndex = 85;
+            this.labelControl6.Text = "Dolar";
             // 
             // frmLiquidacionReporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(970, 602);
+            this.Controls.Add(this.labelControl6);
+            this.Controls.Add(this.labelControl5);
+            this.Controls.Add(this.labelControl4);
+            this.Controls.Add(this.labelControl2);
             this.Controls.Add(this.txtFechaHasta);
             this.Controls.Add(this.txtFechaDesde);
             this.Controls.Add(this.txtLiquidado);
@@ -207,5 +271,9 @@
         private DevExpress.XtraEditors.TextEdit txtPendiente;
         private DevExpress.XtraEditors.TextEdit txtFechaDesde;
         private DevExpress.XtraEditors.TextEdit txtFechaHasta;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
     }
 }
