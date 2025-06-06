@@ -6,34 +6,34 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.03434cm</Width>
+              <Width>1.59809cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.80326cm</Width>
+              <Width>1.51222cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>5.90431cm</Width>
+              <Width>3.98052cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.12958cm</Width>
+              <Width>1.57396cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.49458cm</Width>
+              <Width>1.21708cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.40833cm</Width>
+              <Width>1.87854cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.23604cm</Width>
+              <Width>1.75979cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.12417cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.34125cm</Width>
+              <Width>2.12958cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.83854cm</Width>
+              <Width>1.67979cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -51,7 +51,7 @@
                             <TextRun>
                               <Value>FECHA</Value>
                               <Style>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -84,9 +84,9 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>CLIENTES</Value>
+                              <Value>CLIENTE</Value>
                               <Style>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -119,7 +119,7 @@
                             <TextRun>
                               <Value>NOMBRE</Value>
                               <Style>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -152,7 +152,7 @@
                             <TextRun>
                               <Value>NUMERO</Value>
                               <Style>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -187,7 +187,7 @@
                             <TextRun>
                               <Value>MONEDA</Value>
                               <Style>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -222,7 +222,7 @@
                             <TextRun>
                               <Value>SOLES</Value>
                               <Style>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -257,7 +257,7 @@
                             <TextRun>
                               <Value>DOLAR</Value>
                               <Style>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -292,7 +292,7 @@
                             <TextRun>
                               <Value>TIPO</Value>
                               <Style>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -327,7 +327,7 @@
                             <TextRun>
                               <Value>DOCUMENTO</Value>
                               <Style>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -362,7 +362,7 @@
                             <TextRun>
                               <Value>ASIENTO</Value>
                               <Style>
-                                <FontSize>8pt</FontSize>
+                                <FontSize>7pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -389,7 +389,7 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.46579cm</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
@@ -402,7 +402,7 @@
                             <TextRun>
                               <Value>=Fields!FECHA.Value</Value>
                               <Style>
-                                <FontSize>7pt</FontSize>
+                                <FontSize>6pt</FontSize>
                                 <Format>d</Format>
                               </Style>
                             </TextRun>
@@ -437,7 +437,7 @@
                             <TextRun>
                               <Value>=Fields!CLIENTES.Value</Value>
                               <Style>
-                                <FontSize>7pt</FontSize>
+                                <FontSize>6pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -469,7 +469,7 @@
                             <TextRun>
                               <Value>=Fields!NOMBRE.Value</Value>
                               <Style>
-                                <FontSize>7pt</FontSize>
+                                <FontSize>6pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -501,7 +501,7 @@
                             <TextRun>
                               <Value>=Fields!NUMERO.Value</Value>
                               <Style>
-                                <FontSize>7pt</FontSize>
+                                <FontSize>6pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -535,7 +535,7 @@
                             <TextRun>
                               <Value>=Fields!MONEDA.Value</Value>
                               <Style>
-                                <FontSize>7pt</FontSize>
+                                <FontSize>6pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -569,7 +569,7 @@
                             <TextRun>
                               <Value>=Fields!SOLES.Value</Value>
                               <Style>
-                                <FontSize>7pt</FontSize>
+                                <FontSize>6pt</FontSize>
                                 <Format>#,0.00;(#,0.00)</Format>
                               </Style>
                             </TextRun>
@@ -604,7 +604,7 @@
                             <TextRun>
                               <Value>=Fields!DOLAR.Value</Value>
                               <Style>
-                                <FontSize>7pt</FontSize>
+                                <FontSize>6pt</FontSize>
                                 <Format>#,0.00;(#,0.00)</Format>
                               </Style>
                             </TextRun>
@@ -639,7 +639,7 @@
                             <TextRun>
                               <Value>=Fields!TIPO.Value</Value>
                               <Style>
-                                <FontSize>7pt</FontSize>
+                                <FontSize>6pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -673,7 +673,7 @@
                             <TextRun>
                               <Value>=Fields!DOCUMENTO.Value</Value>
                               <Style>
-                                <FontSize>7pt</FontSize>
+                                <FontSize>6pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -707,7 +707,7 @@
                             <TextRun>
                               <Value>=Fields!ASIENTO.Value</Value>
                               <Style>
-                                <FontSize>7pt</FontSize>
+                                <FontSize>6pt</FontSize>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -759,10 +759,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>dsPimentel</DataSetName>
-        <Top>2.85433cm</Top>
+        <Top>2.16646cm</Top>
         <Left>0.46472cm</Left>
-        <Height>1.19999cm</Height>
-        <Width>23.3144cm</Width>
+        <Height>1.06579cm</Height>
+        <Width>18.45374cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -777,20 +777,24 @@
             <TextRuns>
               <TextRun>
                 <Value>Sucursal: </Value>
-                <Style />
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
               </TextRun>
               <TextRun>
                 <Value>=Parameters!parSucursal.Value</Value>
-                <Style />
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox4</rd:DefaultName>
-        <Top>0.3609cm</Top>
+        <Top>0.17639cm</Top>
         <Left>0.46472cm</Left>
-        <Height>0.5cm</Height>
+        <Height>0.45cm</Height>
         <Width>5.25167cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
@@ -809,20 +813,24 @@
             <TextRuns>
               <TextRun>
                 <Value>Tarjeta: </Value>
-                <Style />
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
               </TextRun>
               <TextRun>
                 <Value>=Parameters!parTarjeta.Value</Value>
-                <Style />
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox4</rd:DefaultName>
-        <Top>1.03729cm</Top>
+        <Top>0.72639cm</Top>
         <Left>0.46472cm</Left>
-        <Height>0.5cm</Height>
+        <Height>0.45cm</Height>
         <Width>5.25167cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
@@ -841,20 +849,24 @@
             <TextRuns>
               <TextRun>
                 <Value>Estado: </Value>
-                <Style />
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
               </TextRun>
               <TextRun>
                 <Value>=Parameters!parEstado.Value</Value>
-                <Style />
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox11</rd:DefaultName>
-        <Top>1.71368cm</Top>
+        <Top>1.28222cm</Top>
         <Left>0.46472cm</Left>
-        <Height>0.5cm</Height>
+        <Height>0.45cm</Height>
         <Width>7.87104cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
@@ -866,17 +878,17 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>2in</Height>
+    <Height>1.3921in</Height>
     <Style>
       <Border>
         <Style>None</Style>
       </Border>
     </Style>
   </Body>
-  <Width>9.48612in</Width>
+  <Width>7.6007in</Width>
   <Page>
     <PageHeader>
-      <Height>2.5728cm</Height>
+      <Height>2.00752cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -897,9 +909,9 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>parTitulo1</rd:DefaultName>
-          <Top>1.26696cm</Top>
+          <Top>0.94946cm</Top>
           <Height>0.5cm</Height>
-          <Width>7.10375cm</Width>
+          <Width>5.71639cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -925,9 +937,9 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>parTitulo2</rd:DefaultName>
-          <Top>1.74913cm</Top>
+          <Top>1.43163cm</Top>
           <Height>0.5cm</Height>
-          <Width>7.10375cm</Width>
+          <Width>5.71639cm</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
@@ -937,6 +949,113 @@
             <PaddingRight>2pt</PaddingRight>
           </Style>
         </Textbox>
+        <Image Name="Image1">
+          <Source>Embedded</Source>
+          <Value>LOGO_PIMENTEL_web</Value>
+          <Sizing>FitProportional</Sizing>
+          <Height>0.97083cm</Height>
+          <Width>5.71639cm</Width>
+          <ZIndex>2</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </Image>
+        <Textbox Name="Textbox23">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Liquidacion de tarjetas</Value>
+                  <Style>
+                    <FontSize>11pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox23</rd:DefaultName>
+          <Top>0.59668cm</Top>
+          <Left>6.82183cm</Left>
+          <Height>0.60439cm</Height>
+          <Width>9.02042cm</Width>
+          <ZIndex>3</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="Textbox24">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Del </Value>
+                  <Style />
+                </TextRun>
+                <TextRun>
+                  <Value>=Parameters!parFechaDesde.Value</Value>
+                  <Style>
+                    <Format>d</Format>
+                  </Style>
+                </TextRun>
+                <TextRun>
+                  <Value> Al </Value>
+                  <Style />
+                </TextRun>
+                <TextRun>
+                  <Value>=Parameters!parFechaHasta.Value</Value>
+                  <Style>
+                    <Format>d</Format>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox23</rd:DefaultName>
+          <Top>1.3069cm</Top>
+          <Left>6.82183cm</Left>
+          <Height>0.60695cm</Height>
+          <Width>9.02042cm</Width>
+          <ZIndex>4</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageHeader>
+    <PageFooter>
+      <Height>0.9525cm</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
         <Textbox Name="PageNumber">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
@@ -962,11 +1081,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>PageNumber</rd:DefaultName>
-          <Top>1.90224cm</Top>
-          <Left>20.69641cm</Left>
+          <Top>0.17639cm</Top>
+          <Left>15.58995cm</Left>
           <Height>0.6cm</Height>
           <Width>3.18792cm</Width>
-          <ZIndex>2</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -1003,112 +1121,11 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox29</rd:DefaultName>
-          <Top>0.91418cm</Top>
-          <Left>19.71745cm</Left>
+          <Top>0.17639cm</Top>
+          <Left>0.46472cm</Left>
           <Height>0.6cm</Height>
           <Width>4.16688cm</Width>
-          <ZIndex>3</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Image Name="Image1">
-          <Source>Embedded</Source>
-          <Value>LOGO_PIMENTEL_web</Value>
-          <Sizing>FitProportional</Sizing>
-          <Height>0.97083cm</Height>
-          <Width>6.44229cm</Width>
-          <ZIndex>4</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-          </Style>
-        </Image>
-        <Textbox Name="Textbox23">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>Liquidacion de tarjetas</Value>
-                  <Style>
-                    <FontSize>14pt</FontSize>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Center</TextAlign>
-              </Style>
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox23</rd:DefaultName>
-          <Top>0.91418cm</Top>
-          <Left>7.77433cm</Left>
-          <Height>0.76439cm</Height>
-          <Width>11.19cm</Width>
-          <ZIndex>5</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Textbox24">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>Del </Value>
-                  <Style>
-                    <FontSize>12pt</FontSize>
-                  </Style>
-                </TextRun>
-                <TextRun>
-                  <Value>=Parameters!parFechaDesde.Value</Value>
-                  <Style>
-                    <FontSize>12pt</FontSize>
-                    <Format>d</Format>
-                  </Style>
-                </TextRun>
-                <TextRun>
-                  <Value> Al </Value>
-                  <Style>
-                    <FontSize>12pt</FontSize>
-                  </Style>
-                </TextRun>
-                <TextRun>
-                  <Value>=Parameters!parFechaHasta.Value</Value>
-                  <Style>
-                    <FontSize>12pt</FontSize>
-                    <Format>d</Format>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Center</TextAlign>
-              </Style>
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>Textbox23</rd:DefaultName>
-          <Top>1.74913cm</Top>
-          <Left>7.77433cm</Left>
-          <Height>0.76439cm</Height>
-          <Width>11.19cm</Width>
-          <ZIndex>6</ZIndex>
+          <ZIndex>1</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -1125,13 +1142,13 @@
           <Style>None</Style>
         </Border>
       </Style>
-    </PageHeader>
+    </PageFooter>
     <PageHeight>29.7cm</PageHeight>
     <PageWidth>21cm</PageWidth>
-    <LeftMargin>1cm</LeftMargin>
-    <RightMargin>1cm</RightMargin>
-    <TopMargin>2cm</TopMargin>
-    <BottomMargin>2cm</BottomMargin>
+    <LeftMargin>0.5cm</LeftMargin>
+    <RightMargin>0.5cm</RightMargin>
+    <TopMargin>1cm</TopMargin>
+    <BottomMargin>1cm</BottomMargin>
     <ColumnSpacing>0.13cm</ColumnSpacing>
     <Style />
   </Page>
@@ -1285,6 +1302,7 @@ Ka18GPgNf2nifXx4s+IusXLXetatNczTqzBdsMCySfO0ca+uMlnIAzX51eK/2Cv2k/GPxP8AEPivXvEX
 c/x876t4P/8ABrP/APGK9G/4XH/wUd/6J3f/APhGRf8AxVH/AAuP/go7/wBE7v8A/wAIyL/4quL2GWf8+qn3M+0Wd+JMVZZlgLf9fIf5Hm5/4Jy/Hpjk6p4OJ99Vn/8Akek/4dyfHn/oJ+Df/BpP/wDI9ek/8Lj/AOCjv/RO7/8A8IyL/wCKo/4XH/wUd/6J3f8A/hGRf/FUvq+Wf8+qn3Mf9u+Jf/QzwH/gyH+R5t/w7k+PP/QS8Gn/ALik/wD8j1+hH7JH7MKfs++AtYvvEN1Zav8AEHW2Vb+7sQxhtbdOUt4mZQxGcuzYG5sDGFBr5A/4XH/wUd/6J3f/APhGRf8AxVfpB8BdZ+I+v/sq+FtW+LWnSaV4/nWf+1bWWyFq0ZE7rHmMcLmMIffOa9TAUMCq/NSpyTS3knb/AIc/MOPM843qZH7DM8dh6tGcknGhOMpO15LmS15brXzsew0UUV9SfzCFFFFABRRRQAUdaKKADpQQDRRQAUUUUAFFFFABjvRRRQAUUUUgCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAoAxRRQAUUUUwCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAP/2Q==</ImageData>
     </EmbeddedImage>
   </EmbeddedImages>
+  <Language>es-PE</Language>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
   <rd:ReportID>08a5ed96-7389-4da2-a0e8-7354078bed3c</rd:ReportID>
 </Report>

@@ -37,7 +37,11 @@ namespace ApssaExactus
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-
+            ////Global.vUserUsuario = null;
+            ////Global.vUserClave = null;
+            ////Global.vUserBaseDatos = null;
+            ////Global.vUserAPSSADB = null;
+            this.DialogResult = DialogResult.Cancel;
         }
 
         private void btnImprimir_Click(object sender, EventArgs e)
