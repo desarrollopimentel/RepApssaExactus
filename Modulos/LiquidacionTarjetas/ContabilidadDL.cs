@@ -383,6 +383,88 @@ namespace ApssaExactus
             }
         }
 
+
+
+        public static string dtLiquidarYape_ASIENTO_TRANSAC_DL(string _operacion,
+                                                                DateTime _fecha_al, Decimal _num_operacion, string _caja, string _tarjeta,
+                                                                DateTime _fecha_deposito, Decimal _tipo_cambio, string _moneda,
+                                                                Decimal _liq_monto, Decimal _liq_comis, Decimal _liq_neto,
+                                                                string _tipo_asiento, string _paquete, string _cuenta_banco, string _tipo, string _subtipo,
+                                                                string _usuario, string db, SqlTransaction transaction = null)
+        {
+            string connectionString = ConexionDC.ConectarBD(db);
+            DataSet ds = new DataSet();
+            SqlConnection conn = null;
+
+            string cAsiento = null;
+
+            try
+            {
+                // Usar la conexión de la transacción si se proporciona; de lo contrario, crear una nueva
+                if (transaction != null)
+                {
+                    conn = transaction.Connection;
+                }
+                else
+                {
+                    conn = new SqlConnection(connectionString);
+                    conn.Open();
+                }
+
+                string sqlCommand = "PIMENTEL.SP_APSSA_LIQUIDAR_TARJETAS_PROCESAR_YAPE";
+
+                using (SqlCommand cmd = new SqlCommand(sqlCommand, conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@OPERACION", _operacion);
+                    cmd.Parameters.AddWithValue("@LIQ_FECHA_AL", _fecha_al);
+                    cmd.Parameters.AddWithValue("@LIQ_NUMERO_LIQUIDACION", _num_operacion);
+                    cmd.Parameters.AddWithValue("@LIQ_CAJA", _caja);
+                    cmd.Parameters.AddWithValue("@LIQ_TARJETA", _tarjeta);
+                    cmd.Parameters.AddWithValue("@LIQ_FECHA_DEPOSITO", _fecha_deposito);
+                    cmd.Parameters.AddWithValue("@LIQ_TIPO_CAMBIO", _tipo_cambio);
+                    cmd.Parameters.AddWithValue("@LIQ_MONEDA", _moneda);
+                    cmd.Parameters.AddWithValue("@LIQ_MONTO_LIQUIDAR", _liq_monto);
+                    cmd.Parameters.AddWithValue("@LIQ_MONTO_COMISION", _liq_comis);
+                    cmd.Parameters.AddWithValue("@LIQ_MONTO_NETO", _liq_neto);
+                    cmd.Parameters.AddWithValue("@PAR_TIPO_ASIENTO", _tipo_asiento);
+                    cmd.Parameters.AddWithValue("@PAR_PAQUETE", _paquete);
+                    cmd.Parameters.AddWithValue("@PAR_CUENTA_BANCO", _cuenta_banco);
+                    cmd.Parameters.AddWithValue("@PAR_TIPO", _tipo);
+                    cmd.Parameters.AddWithValue("@PAR_SUBTIPO", _subtipo);
+                    cmd.Parameters.AddWithValue("@LIQ_USUARIO", _usuario);
+
+                    cmd.CommandTimeout = 0;
+
+                    if (transaction != null)
+                    {
+                        cmd.Transaction = transaction;
+                    }
+
+                    DataTable table = new DataTable();
+                    table.Load(cmd.ExecuteReader());
+                    ds.Tables.Add(table);
+                }
+
+                //return ds.Tables[0];
+                //return Convert.ToString(ds.Tables[0]);
+
+                cAsiento = Convert.ToString(ds.Tables[0].Rows[0]["ASIENTO"]);
+                return cAsiento;
+            }
+            finally
+            {
+                // Solo cerrar la conexión si la creamos (es decir, no se proporcionó una transacción)
+                if (transaction == null && conn != null && conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                    conn.Dispose();
+                }
+            }
+        }
+
+
+
         /*
         public static DataTable dtLiquidacionTajetasDocumento_TRANSAC_DL(string _operacion, string _tipo_documento, string _documento, Decimal _monto_liquidado, Decimal _tipo_cambio,
                                                                          Int16 _numero_pago, string _caja, Decimal _numero_operacion, string db, SqlTransaction transaction = null)

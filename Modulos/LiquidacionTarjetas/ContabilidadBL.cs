@@ -92,6 +92,21 @@ namespace ApssaExactus
         }
 
 
+        public static string dtLiquidarYape_TRANSAC_ASIENTO_BL(string _operacion,
+                                                                    DateTime _fecha_al, Decimal _num_operacion, string _caja, string _tarjeta,
+                                                                    DateTime _fecha_deposito, Decimal _tipo_cambio, string _moneda,
+                                                                    Decimal _liq_monto, Decimal _liq_comis, Decimal _liq_neto,
+                                                                    string _tipo_asiento, string _paquete, string _cuenta_banco, string _tipo, string _subtipo,
+                                                                    string _usuario, string db, SqlTransaction transaction = null)
+        {
+            return ContabilidadDL.dtLiquidarYape_ASIENTO_TRANSAC_DL(_operacion, _fecha_al, _num_operacion, _caja, _tarjeta,
+                                                                          _fecha_deposito, _tipo_cambio, _moneda,
+                                                                          _liq_monto, _liq_comis, _liq_neto,
+                                                                          _tipo_asiento, _paquete, _cuenta_banco, _tipo, _subtipo,
+                                                                          _usuario, db, transaction);
+        }
+
+
         //-----------------------------------------------------------------------------------------------------------------------------------
 
         public static DataTable dtLiquidacionTajetasDocumento_BL(string _operacion, string _tipo_documento, string _documento, Decimal _monto_liquidado, Decimal _tipo_cambio,

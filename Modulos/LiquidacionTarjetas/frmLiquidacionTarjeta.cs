@@ -1617,7 +1617,7 @@ namespace ApssaExactus
             if (var_tarjeta=="YAPE")
             {
 
-                MessageBox.Show("Procesando Abonos con YAPE...............", "Liquidacion de YAPE");
+                ////MessageBox.Show("Procesando Abonos con YAPE...............", "Liquidacion de YAPE");
                 ProcesarLiquidacionYape();
 
             } else
@@ -1629,7 +1629,7 @@ namespace ApssaExactus
                     return;
                 }
 
-                MessageBox.Show("Procesando Abonos con Tarjetas...........", "Liquidacion de Tarjetas");
+                ////MessageBox.Show("Procesando Abonos con Tarjetas...........", "Liquidacion de Tarjetas");
                 ProcesarLiquidacionTarjetas();
 
             }
@@ -1888,7 +1888,7 @@ namespace ApssaExactus
                     if (dialogResult == DialogResult.Yes)
                     {
                         GenerarOperacionAutomatico = true;
-                        MessageBox.Show("Se asignara el Numero de Operacion automaticamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        ////MessageBox.Show("Se asignara el Numero de Operacion automaticamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         
                     }
                 }
@@ -1902,7 +1902,7 @@ namespace ApssaExactus
 
             if ((selectedRows.Length > 1) && (GenerarOperacionAutomatico == false) )
             {
-                MessageBox.Show("((selectedRows.Length > 1) && (GenerarOperacionAutomatico == false) )", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ////MessageBox.Show("((selectedRows.Length > 1) && (GenerarOperacionAutomatico == false) )", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
@@ -2017,23 +2017,23 @@ namespace ApssaExactus
                                             acum_comision = Convert.ToDecimal(txtTotalComision.Text);
                                             acum_neto = (acum_abono - acum_comision);
 
-                                            var_ASIENTO_LIQUIDACION = ContabilidadBL.dtLiquidarTarjetas_TRANSAC_ASIENTO_BL("LIQUIDAR",
-                                                                                                va_fecha_al,   ////_fecha_al, 
-                                                                                                NumeroOperacionAutomatico,      ////var_num_operacion,   ////_num_operacion, 
-                                                                                                var_caja,    ////_caja, 
-                                                                                                var_tarjeta, ////_tarjeta,
-                                                                                                var_fecha_deposito,   ////_fecha_deposito, 
-                                                                                                var_tipo_cambio,   ////_tipo_cambio, 
-                                                                                                var_moneda,  ////_moneda,
-                                                                                                acum_abono,                 ////_liq_monto, 
-                                                                                                acum_comision,              ////_liq_comis, 
-                                                                                                acum_neto,                  ////_liq_neto,
-                                                                                                param_liq.tipo_asiento,     ////_tipo_asiento, 
-                                                                                                param_liq.paquete,          ////_paquete, 
-                                                                                                _ctabco_select,             ///// param_liq.cuenta_banco,     ////_cuenta_banco, 
-                                                                                                param_liq.tipo,             ////_tipo, 
-                                                                                                param_liq.subtipo,          ////_subtipo,
-                                                                                                Global.vUserUsuario, Global.vUserBaseDatos, transaction); ////_usuario, db);
+                                            var_ASIENTO_LIQUIDACION = ContabilidadBL.dtLiquidarYape_TRANSAC_ASIENTO_BL("LIQUIDAR",
+                                                                                                    va_fecha_al,   ////_fecha_al, 
+                                                                                                    NumeroOperacionAutomatico,      ////var_num_operacion,   ////_num_operacion, 
+                                                                                                    var_caja,    ////_caja, 
+                                                                                                    var_tarjeta, ////_tarjeta,
+                                                                                                    var_fecha_deposito,   ////_fecha_deposito, 
+                                                                                                    var_tipo_cambio,   ////_tipo_cambio, 
+                                                                                                    var_moneda,  ////_moneda,
+                                                                                                    acum_abono,                 ////_liq_monto, 
+                                                                                                    acum_comision,              ////_liq_comis, 
+                                                                                                    acum_neto,                  ////_liq_neto,
+                                                                                                    param_liq.tipo_asiento,     ////_tipo_asiento, 
+                                                                                                    param_liq.paquete,          ////_paquete, 
+                                                                                                    _ctabco_select,             ///// param_liq.cuenta_banco,     ////_cuenta_banco, 
+                                                                                                    param_liq.tipo,             ////_tipo, 
+                                                                                                    param_liq.subtipo,          ////_subtipo,
+                                                                                                    Global.vUserUsuario, Global.vUserBaseDatos, transaction); ////_usuario, db);
 
 
                                             // MUESTRA ASIENTO GENERADO
