@@ -36,18 +36,29 @@
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.gcAsiento = new DevExpress.XtraGrid.GridControl();
             this.gvAsiento = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.ASIENTO = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CONSECUTIVO = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NIT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CENTRO_COSTO = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CUENTA_CONTABLE = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.FUENTE = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.DEBITO_LOCAL = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CREDITO_LOCAL = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.DEBITO_DOLAR = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.CREDITO_DOLAR = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.REFERENCIA = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.txtDiferenciaSoles = new DevExpress.XtraEditors.TextEdit();
+            this.txtCreditoLocal = new DevExpress.XtraEditors.TextEdit();
+            this.txtDebitoLocal = new DevExpress.XtraEditors.TextEdit();
+            this.txtDiferenciaDolares = new DevExpress.XtraEditors.TextEdit();
+            this.txtCreditoDolar = new DevExpress.XtraEditors.TextEdit();
+            this.txtDebitoDolar = new DevExpress.XtraEditors.TextEdit();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.btnAsientoExportar = new DevExpress.XtraEditors.SimpleButton();
-            this.txtDebitoDolar = new DevExpress.XtraEditors.TextEdit();
-            this.txtCreditoDolar = new DevExpress.XtraEditors.TextEdit();
-            this.txtDiferenciaDolares = new DevExpress.XtraEditors.TextEdit();
-            this.txtDiferenciaSoles = new DevExpress.XtraEditors.TextEdit();
-            this.txtCreditoLocal = new DevExpress.XtraEditors.TextEdit();
-            this.txtDebitoLocal = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
             this.splitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl2)).BeginInit();
@@ -55,18 +66,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtAsiento.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcAsiento)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvAsiento)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDebitoDolar.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCreditoDolar.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDiferenciaDolares.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiferenciaSoles.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCreditoLocal.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDebitoLocal.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDiferenciaDolares.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCreditoDolar.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDebitoDolar.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAsientoCancelar
             // 
             this.btnAsientoCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnAsientoCancelar.Location = new System.Drawing.Point(812, 62);
+            this.btnAsientoCancelar.Location = new System.Drawing.Point(926, 53);
             this.btnAsientoCancelar.Name = "btnAsientoCancelar";
             this.btnAsientoCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnAsientoCancelar.TabIndex = 1;
@@ -95,7 +106,7 @@
             this.splitContainerControl1.Panel2.Controls.Add(this.btnAsientoExportar);
             this.splitContainerControl1.Panel2.Controls.Add(this.btnAsientoCancelar);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(899, 458);
+            this.splitContainerControl1.Size = new System.Drawing.Size(1013, 458);
             this.splitContainerControl1.SplitterPosition = 362;
             this.splitContainerControl1.TabIndex = 3;
             this.splitContainerControl1.Text = "splitContainerControl1";
@@ -111,7 +122,7 @@
             this.splitContainerControl2.Panel1.Text = "Panel1";
             this.splitContainerControl2.Panel2.Controls.Add(this.gcAsiento);
             this.splitContainerControl2.Panel2.Text = "Panel2";
-            this.splitContainerControl2.Size = new System.Drawing.Size(899, 362);
+            this.splitContainerControl2.Size = new System.Drawing.Size(1013, 362);
             this.splitContainerControl2.SplitterPosition = 45;
             this.splitContainerControl2.TabIndex = 1;
             this.splitContainerControl2.Text = "splitContainerControl2";
@@ -143,16 +154,207 @@
             this.gcAsiento.Location = new System.Drawing.Point(0, 0);
             this.gcAsiento.MainView = this.gvAsiento;
             this.gcAsiento.Name = "gcAsiento";
-            this.gcAsiento.Size = new System.Drawing.Size(899, 312);
-            this.gcAsiento.TabIndex = 1;
+            this.gcAsiento.Size = new System.Drawing.Size(1013, 312);
+            this.gcAsiento.TabIndex = 81;
             this.gcAsiento.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvAsiento});
             // 
             // gvAsiento
             // 
+            this.gvAsiento.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.gvAsiento.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gvAsiento.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.gvAsiento.Appearance.HeaderPanel.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.gvAsiento.ColumnPanelRowHeight = 50;
+            this.gvAsiento.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.ASIENTO,
+            this.CONSECUTIVO,
+            this.NIT,
+            this.CENTRO_COSTO,
+            this.CUENTA_CONTABLE,
+            this.FUENTE,
+            this.DEBITO_LOCAL,
+            this.CREDITO_LOCAL,
+            this.DEBITO_DOLAR,
+            this.CREDITO_DOLAR,
+            this.REFERENCIA});
             this.gvAsiento.GridControl = this.gcAsiento;
+            this.gvAsiento.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
             this.gvAsiento.Name = "gvAsiento";
-            this.gvAsiento.OptionsView.ShowGroupPanel = false;
+            this.gvAsiento.VertScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
+            // 
+            // ASIENTO
+            // 
+            this.ASIENTO.Caption = "ASIENTO";
+            this.ASIENTO.FieldName = "ASIENTO";
+            this.ASIENTO.MinWidth = 75;
+            this.ASIENTO.Name = "ASIENTO";
+            this.ASIENTO.Visible = true;
+            this.ASIENTO.VisibleIndex = 0;
+            // 
+            // CONSECUTIVO
+            // 
+            this.CONSECUTIVO.Caption = "Ln";
+            this.CONSECUTIVO.FieldName = "CONSECUTIVO";
+            this.CONSECUTIVO.Name = "CONSECUTIVO";
+            this.CONSECUTIVO.Visible = true;
+            this.CONSECUTIVO.VisibleIndex = 1;
+            this.CONSECUTIVO.Width = 38;
+            // 
+            // NIT
+            // 
+            this.NIT.Caption = "NIT";
+            this.NIT.FieldName = "NIT";
+            this.NIT.MinWidth = 75;
+            this.NIT.Name = "NIT";
+            this.NIT.Visible = true;
+            this.NIT.VisibleIndex = 2;
+            // 
+            // CENTRO_COSTO
+            // 
+            this.CENTRO_COSTO.Caption = "CENTRO COSTO";
+            this.CENTRO_COSTO.FieldName = "CENTRO_COSTO";
+            this.CENTRO_COSTO.MinWidth = 75;
+            this.CENTRO_COSTO.Name = "CENTRO_COSTO";
+            this.CENTRO_COSTO.Visible = true;
+            this.CENTRO_COSTO.VisibleIndex = 3;
+            // 
+            // CUENTA_CONTABLE
+            // 
+            this.CUENTA_CONTABLE.Caption = "CUENTA CONTABLE";
+            this.CUENTA_CONTABLE.FieldName = "CUENTA_CONTABLE";
+            this.CUENTA_CONTABLE.MinWidth = 75;
+            this.CUENTA_CONTABLE.Name = "CUENTA_CONTABLE";
+            this.CUENTA_CONTABLE.Visible = true;
+            this.CUENTA_CONTABLE.VisibleIndex = 4;
+            // 
+            // FUENTE
+            // 
+            this.FUENTE.Caption = "FUENTE";
+            this.FUENTE.FieldName = "FUENTE";
+            this.FUENTE.MinWidth = 75;
+            this.FUENTE.Name = "FUENTE";
+            this.FUENTE.Visible = true;
+            this.FUENTE.VisibleIndex = 5;
+            // 
+            // DEBITO_LOCAL
+            // 
+            this.DEBITO_LOCAL.Caption = "DEBITO LOCAL";
+            this.DEBITO_LOCAL.FieldName = "DEBITO_LOCAL";
+            this.DEBITO_LOCAL.MinWidth = 75;
+            this.DEBITO_LOCAL.Name = "DEBITO_LOCAL";
+            this.DEBITO_LOCAL.Visible = true;
+            this.DEBITO_LOCAL.VisibleIndex = 6;
+            // 
+            // CREDITO_LOCAL
+            // 
+            this.CREDITO_LOCAL.Caption = "CREDITO LOCAL";
+            this.CREDITO_LOCAL.FieldName = "CREDITO_LOCAL";
+            this.CREDITO_LOCAL.MinWidth = 75;
+            this.CREDITO_LOCAL.Name = "CREDITO_LOCAL";
+            this.CREDITO_LOCAL.Visible = true;
+            this.CREDITO_LOCAL.VisibleIndex = 7;
+            // 
+            // DEBITO_DOLAR
+            // 
+            this.DEBITO_DOLAR.Caption = "DEBITO DOLAR";
+            this.DEBITO_DOLAR.FieldName = "DEBITO_DOLAR";
+            this.DEBITO_DOLAR.MinWidth = 75;
+            this.DEBITO_DOLAR.Name = "DEBITO_DOLAR";
+            this.DEBITO_DOLAR.Visible = true;
+            this.DEBITO_DOLAR.VisibleIndex = 8;
+            // 
+            // CREDITO_DOLAR
+            // 
+            this.CREDITO_DOLAR.Caption = "CREDITO DOLAR";
+            this.CREDITO_DOLAR.FieldName = "CREDITO_DOLAR";
+            this.CREDITO_DOLAR.MinWidth = 75;
+            this.CREDITO_DOLAR.Name = "CREDITO_DOLAR";
+            this.CREDITO_DOLAR.Visible = true;
+            this.CREDITO_DOLAR.VisibleIndex = 9;
+            // 
+            // REFERENCIA
+            // 
+            this.REFERENCIA.Caption = "REFERENCIA";
+            this.REFERENCIA.FieldName = "REFERENCIA";
+            this.REFERENCIA.MinWidth = 350;
+            this.REFERENCIA.Name = "REFERENCIA";
+            this.REFERENCIA.Visible = true;
+            this.REFERENCIA.VisibleIndex = 10;
+            this.REFERENCIA.Width = 350;
+            // 
+            // txtDiferenciaSoles
+            // 
+            this.txtDiferenciaSoles.Location = new System.Drawing.Point(338, 33);
+            this.txtDiferenciaSoles.Name = "txtDiferenciaSoles";
+            this.txtDiferenciaSoles.Properties.Appearance.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txtDiferenciaSoles.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtDiferenciaSoles.Properties.Appearance.Options.UseBackColor = true;
+            this.txtDiferenciaSoles.Properties.Appearance.Options.UseFont = true;
+            this.txtDiferenciaSoles.Properties.Mask.EditMask = "n2";
+            this.txtDiferenciaSoles.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtDiferenciaSoles.Size = new System.Drawing.Size(100, 20);
+            this.txtDiferenciaSoles.TabIndex = 162;
+            // 
+            // txtCreditoLocal
+            // 
+            this.txtCreditoLocal.Location = new System.Drawing.Point(216, 33);
+            this.txtCreditoLocal.Name = "txtCreditoLocal";
+            this.txtCreditoLocal.Properties.Appearance.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txtCreditoLocal.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtCreditoLocal.Properties.Appearance.Options.UseBackColor = true;
+            this.txtCreditoLocal.Properties.Appearance.Options.UseFont = true;
+            this.txtCreditoLocal.Properties.Mask.EditMask = "n2";
+            this.txtCreditoLocal.Size = new System.Drawing.Size(100, 20);
+            this.txtCreditoLocal.TabIndex = 161;
+            // 
+            // txtDebitoLocal
+            // 
+            this.txtDebitoLocal.Location = new System.Drawing.Point(110, 33);
+            this.txtDebitoLocal.Name = "txtDebitoLocal";
+            this.txtDebitoLocal.Properties.Appearance.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txtDebitoLocal.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtDebitoLocal.Properties.Appearance.Options.UseBackColor = true;
+            this.txtDebitoLocal.Properties.Appearance.Options.UseFont = true;
+            this.txtDebitoLocal.Properties.Mask.EditMask = "n2";
+            this.txtDebitoLocal.Size = new System.Drawing.Size(100, 20);
+            this.txtDebitoLocal.TabIndex = 160;
+            // 
+            // txtDiferenciaDolares
+            // 
+            this.txtDiferenciaDolares.Location = new System.Drawing.Point(338, 56);
+            this.txtDiferenciaDolares.Name = "txtDiferenciaDolares";
+            this.txtDiferenciaDolares.Properties.Appearance.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txtDiferenciaDolares.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtDiferenciaDolares.Properties.Appearance.Options.UseBackColor = true;
+            this.txtDiferenciaDolares.Properties.Appearance.Options.UseFont = true;
+            this.txtDiferenciaDolares.Properties.Mask.EditMask = "n2";
+            this.txtDiferenciaDolares.Size = new System.Drawing.Size(100, 20);
+            this.txtDiferenciaDolares.TabIndex = 159;
+            // 
+            // txtCreditoDolar
+            // 
+            this.txtCreditoDolar.Location = new System.Drawing.Point(216, 56);
+            this.txtCreditoDolar.Name = "txtCreditoDolar";
+            this.txtCreditoDolar.Properties.Appearance.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txtCreditoDolar.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtCreditoDolar.Properties.Appearance.Options.UseBackColor = true;
+            this.txtCreditoDolar.Properties.Appearance.Options.UseFont = true;
+            this.txtCreditoDolar.Properties.Mask.EditMask = "n2";
+            this.txtCreditoDolar.Size = new System.Drawing.Size(100, 20);
+            this.txtCreditoDolar.TabIndex = 158;
+            // 
+            // txtDebitoDolar
+            // 
+            this.txtDebitoDolar.Location = new System.Drawing.Point(110, 56);
+            this.txtDebitoDolar.Name = "txtDebitoDolar";
+            this.txtDebitoDolar.Properties.Appearance.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txtDebitoDolar.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.txtDebitoDolar.Properties.Appearance.Options.UseBackColor = true;
+            this.txtDebitoDolar.Properties.Appearance.Options.UseFont = true;
+            this.txtDebitoDolar.Properties.Mask.EditMask = "n2";
+            this.txtDebitoDolar.Size = new System.Drawing.Size(100, 20);
+            this.txtDebitoDolar.TabIndex = 157;
             // 
             // labelControl5
             // 
@@ -199,91 +401,18 @@
             this.btnAsientoExportar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnAsientoExportar.Image = ((System.Drawing.Image)(resources.GetObject("btnAsientoExportar.Image")));
             this.btnAsientoExportar.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleLeft;
-            this.btnAsientoExportar.Location = new System.Drawing.Point(716, 62);
+            this.btnAsientoExportar.Location = new System.Drawing.Point(830, 53);
             this.btnAsientoExportar.Name = "btnAsientoExportar";
             this.btnAsientoExportar.Size = new System.Drawing.Size(90, 25);
             this.btnAsientoExportar.TabIndex = 92;
             this.btnAsientoExportar.Text = "Exportar";
             this.btnAsientoExportar.Click += new System.EventHandler(this.btnExportarXls_Click);
             // 
-            // txtDebitoDolar
-            // 
-            this.txtDebitoDolar.Location = new System.Drawing.Point(110, 56);
-            this.txtDebitoDolar.Name = "txtDebitoDolar";
-            this.txtDebitoDolar.Properties.Appearance.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.txtDebitoDolar.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.txtDebitoDolar.Properties.Appearance.Options.UseBackColor = true;
-            this.txtDebitoDolar.Properties.Appearance.Options.UseFont = true;
-            this.txtDebitoDolar.Properties.Mask.EditMask = "n2";
-            this.txtDebitoDolar.Size = new System.Drawing.Size(100, 20);
-            this.txtDebitoDolar.TabIndex = 157;
-            // 
-            // txtCreditoDolar
-            // 
-            this.txtCreditoDolar.Location = new System.Drawing.Point(216, 56);
-            this.txtCreditoDolar.Name = "txtCreditoDolar";
-            this.txtCreditoDolar.Properties.Appearance.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.txtCreditoDolar.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.txtCreditoDolar.Properties.Appearance.Options.UseBackColor = true;
-            this.txtCreditoDolar.Properties.Appearance.Options.UseFont = true;
-            this.txtCreditoDolar.Properties.Mask.EditMask = "n2";
-            this.txtCreditoDolar.Size = new System.Drawing.Size(100, 20);
-            this.txtCreditoDolar.TabIndex = 158;
-            // 
-            // txtDiferenciaDolares
-            // 
-            this.txtDiferenciaDolares.Location = new System.Drawing.Point(338, 56);
-            this.txtDiferenciaDolares.Name = "txtDiferenciaDolares";
-            this.txtDiferenciaDolares.Properties.Appearance.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.txtDiferenciaDolares.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.txtDiferenciaDolares.Properties.Appearance.Options.UseBackColor = true;
-            this.txtDiferenciaDolares.Properties.Appearance.Options.UseFont = true;
-            this.txtDiferenciaDolares.Properties.Mask.EditMask = "n2";
-            this.txtDiferenciaDolares.Size = new System.Drawing.Size(100, 20);
-            this.txtDiferenciaDolares.TabIndex = 159;
-            // 
-            // txtDiferenciaSoles
-            // 
-            this.txtDiferenciaSoles.Location = new System.Drawing.Point(338, 33);
-            this.txtDiferenciaSoles.Name = "txtDiferenciaSoles";
-            this.txtDiferenciaSoles.Properties.Appearance.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.txtDiferenciaSoles.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.txtDiferenciaSoles.Properties.Appearance.Options.UseBackColor = true;
-            this.txtDiferenciaSoles.Properties.Appearance.Options.UseFont = true;
-            this.txtDiferenciaSoles.Properties.Mask.EditMask = "n2";
-            this.txtDiferenciaSoles.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtDiferenciaSoles.Size = new System.Drawing.Size(100, 20);
-            this.txtDiferenciaSoles.TabIndex = 162;
-            // 
-            // txtCreditoLocal
-            // 
-            this.txtCreditoLocal.Location = new System.Drawing.Point(216, 33);
-            this.txtCreditoLocal.Name = "txtCreditoLocal";
-            this.txtCreditoLocal.Properties.Appearance.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.txtCreditoLocal.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.txtCreditoLocal.Properties.Appearance.Options.UseBackColor = true;
-            this.txtCreditoLocal.Properties.Appearance.Options.UseFont = true;
-            this.txtCreditoLocal.Properties.Mask.EditMask = "n2";
-            this.txtCreditoLocal.Size = new System.Drawing.Size(100, 20);
-            this.txtCreditoLocal.TabIndex = 161;
-            // 
-            // txtDebitoLocal
-            // 
-            this.txtDebitoLocal.Location = new System.Drawing.Point(110, 33);
-            this.txtDebitoLocal.Name = "txtDebitoLocal";
-            this.txtDebitoLocal.Properties.Appearance.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.txtDebitoLocal.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
-            this.txtDebitoLocal.Properties.Appearance.Options.UseBackColor = true;
-            this.txtDebitoLocal.Properties.Appearance.Options.UseFont = true;
-            this.txtDebitoLocal.Properties.Mask.EditMask = "n2";
-            this.txtDebitoLocal.Size = new System.Drawing.Size(100, 20);
-            this.txtDebitoLocal.TabIndex = 160;
-            // 
             // frmLiquidacionAsiento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(899, 458);
+            this.ClientSize = new System.Drawing.Size(1013, 458);
             this.Controls.Add(this.splitContainerControl1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -298,12 +427,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtAsiento.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcAsiento)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvAsiento)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDebitoDolar.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCreditoDolar.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDiferenciaDolares.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiferenciaSoles.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCreditoLocal.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDebitoLocal.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDiferenciaDolares.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCreditoDolar.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDebitoDolar.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -318,8 +447,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.SplitContainerControl splitContainerControl2;
-        private DevExpress.XtraGrid.GridControl gcAsiento;
-        private DevExpress.XtraGrid.Views.Grid.GridView gvAsiento;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.TextEdit txtAsiento;
         private DevExpress.XtraEditors.TextEdit txtDiferenciaDolares;
@@ -328,5 +455,18 @@
         private DevExpress.XtraEditors.TextEdit txtDiferenciaSoles;
         private DevExpress.XtraEditors.TextEdit txtCreditoLocal;
         private DevExpress.XtraEditors.TextEdit txtDebitoLocal;
+        private DevExpress.XtraGrid.GridControl gcAsiento;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvAsiento;
+        private DevExpress.XtraGrid.Columns.GridColumn ASIENTO;
+        private DevExpress.XtraGrid.Columns.GridColumn CONSECUTIVO;
+        private DevExpress.XtraGrid.Columns.GridColumn NIT;
+        private DevExpress.XtraGrid.Columns.GridColumn CENTRO_COSTO;
+        private DevExpress.XtraGrid.Columns.GridColumn CUENTA_CONTABLE;
+        private DevExpress.XtraGrid.Columns.GridColumn FUENTE;
+        private DevExpress.XtraGrid.Columns.GridColumn REFERENCIA;
+        private DevExpress.XtraGrid.Columns.GridColumn DEBITO_LOCAL;
+        private DevExpress.XtraGrid.Columns.GridColumn CREDITO_LOCAL;
+        private DevExpress.XtraGrid.Columns.GridColumn DEBITO_DOLAR;
+        private DevExpress.XtraGrid.Columns.GridColumn CREDITO_DOLAR;
     }
 }

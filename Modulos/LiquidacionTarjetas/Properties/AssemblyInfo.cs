@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // La información general de un ensamblado se controla mediante el siguiente 
 // conjunto de atributos. Cambie estos valores de atributo para modificar la información
 // asociada con un ensamblado.
-[assembly: AssemblyTitle("ApssaExactus-LiquidacionTarjetas")]
+[assembly: AssemblyTitle("RepApssaExactus-LiquidacionTarjetas")]
 [assembly: AssemblyDescription("Max Cabanillas Salas")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Max Cabanillas Salas")]
-[assembly: AssemblyProduct("ApssaExactus-LiquidacionTarjetas")]
+[assembly: AssemblyProduct("RepApssaExactus-LiquidacionTarjetas")]
 [assembly: AssemblyCopyright("Copyright ©  2025")]
 [assembly: AssemblyTrademark("Max Cabanillas Salas")]
 [assembly: AssemblyCulture("")]

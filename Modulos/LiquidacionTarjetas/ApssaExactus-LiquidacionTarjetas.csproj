@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ApssaExactus</RootNamespace>
-    <AssemblyName>ApssaExactus-LiquidacionTarjetas</AssemblyName>
+    <AssemblyName>RepApssaExactus-LiquidacionTarjetas</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -192,6 +192,7 @@
     <EmbeddedResource Include="frmLiquidacionTarjeta.resx">
       <DependentUpon>frmLiquidacionTarjeta.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

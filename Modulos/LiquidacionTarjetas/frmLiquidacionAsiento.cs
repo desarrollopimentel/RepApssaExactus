@@ -130,7 +130,7 @@ namespace ApssaExactus
             gv.OptionsBehavior.Editable = false;
             gv.OptionsSelection.EnableAppearanceFocusedCell = false;
             gv.OptionsView.ColumnAutoWidth = false;
-            gv.BestFitColumns();
+            ////gv.BestFitColumns();
             gv.Appearance.Row.Font = new System.Drawing.Font(gv.Appearance.Row.Font, FontStyle.Bold);
             gv.Appearance.Row.Options.UseFont = true;
 

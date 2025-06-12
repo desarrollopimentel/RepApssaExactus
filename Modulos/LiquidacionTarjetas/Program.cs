@@ -51,12 +51,12 @@ namespace ApssaExactus
 
             //PRODUCCION
             //Application.Run(new frmCargoEntregaRendirV2(_base, _user));
-            Application.Run(new frmLiquidacionTarjeta(_base, _user));
+            //Application.Run(new frmLiquidacionTarjeta(_base, _user));
             //DESARROLLO
             //Application.Run(new frmCargoEntregaRendirV2("TESTING", "MCABANILLASS"));
             //Application.Run(new frmLiquidacionTarjeta("REPORTES", "MCABANILLASS"));
             ////Application.Run(new frmLiquidacionTarjeta("PIMENTEL", "MCABANILLASS"));
-            //Application.Run(new frmLiquidacionTarjeta("TESTING", "MCABANILLASS"));
+            Application.Run(new frmLiquidacionTarjeta("TESTING", "MCABANILLASS"));
 
         }
     }
